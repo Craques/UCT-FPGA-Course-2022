@@ -3,7 +3,6 @@ import Structures::*;
 module TxController #(DATA_LENGTH = 4) (
   input                 ipClk,
   input                 ipReset,
-  input                 ipTxReady,
   input UART_PACKET     ipTxStream,
 
   output reg            opTxWrEnable,
@@ -27,7 +26,6 @@ module TxController #(DATA_LENGTH = 4) (
     * PROCEDURE TO TRANSMIT INVOLVES COLLECTING 4 PACKETS AND STORING THEIR DATA IN THE WRITE REGISTERS. *
     * THE FIRST DATA ON SYNC WILL BE THE ADDRESS. EVERYTHING WILL BE DONE ON VALID, GATE ON OPTXWRENABLE *
     ******************************************************************************************************/
-
     if (reset) begin
       opWrData <= 32'bz;
       opAddress <= 8'bz;  
