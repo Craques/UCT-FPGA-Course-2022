@@ -1,12 +1,13 @@
 module ReadController #(
   parameter DATA_LENGTH = 4
 ) (
-    
-    input [31:0] ipReadData,
-    input reg opTxReady,
-    input UART_PACKET ipRxStream,
-    output UART_PACKET opTxStream,
-    output reg opReadAddress
+  input   [31:0]        ipReadData,
+  input   reg           opTxReady,
+  input   UART_PACKET   ipRxStream,
+  output  UART_PACKET   opTxStream,
+  output  reg           opReadAddress,
+  input   reg           ipReset,
+  input   reg           ipClk
 );
 
   reg reset;
@@ -24,6 +25,7 @@ module ReadController #(
 
   State state;
   always @(posedge ipClk) begin
+    reset <= ipReset;
     if(reset) begin
       dataLength <= DATA_LENGTH;
       state <= IDLE;
