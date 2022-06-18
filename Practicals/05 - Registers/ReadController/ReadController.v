@@ -1,3 +1,5 @@
+import Structures::*;
+
 module ReadController #(
   parameter DATA_LENGTH = 4
 ) (
@@ -20,7 +22,7 @@ module ReadController #(
   typedef enum { 
     IDLE,
     GET_ADDRESS,
-    SET_DATA,
+    SET_DATA
   } State;
 
   State state;
@@ -43,7 +45,7 @@ module ReadController #(
             end
           end
           GET_ADDRESS: begin
-            opAddress <= ipRxStream.Data;
+            opReadAddress <= ipRxStream.Data;
           end
           SET_DATA: begin
             if (opTxReady) begin
@@ -60,7 +62,7 @@ module ReadController #(
                   opTxStream.Data <= ipReadData[31:24];
                 end
                 3: begin
-                  opTxStream.Sop <= 0;
+                  opTxStream.SoP <= 0;
                   opTxStream.Data <= ipReadData[23:16];
                 end
                 2: begin
