@@ -6,10 +6,11 @@ module ReadController #(
   input   [31:0]        ipReadData,
   input   reg           opTxReady,
   input   UART_PACKET   ipRxStream,
-  output  UART_PACKET   opTxStream,
-  output  reg           opReadAddress,
   input   reg           ipReset,
-  input   reg           ipClk
+  input   reg           ipClk,
+  
+  output  UART_PACKET   opTxStream,
+  output  reg           opReadAddress
 );
 
   reg reset;
