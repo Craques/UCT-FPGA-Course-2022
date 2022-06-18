@@ -1,3 +1,7 @@
+`timescale 1ns/1ns
+
+import Structures::*;
+
 module ReadController_TB;
 	reg [31:0] ipReadData = 32'h11112222333344445555666677778888;
 	reg opTxReady;
@@ -5,7 +9,7 @@ module ReadController_TB;
 	reg ipReset = 1;
 	UART_PACKET ipRxStream;
 	UART_PACKET opTxStream;
-	output reg opReadAddress;
+	reg [1:0] opReadAddress;
 
 	initial begin
 		//Send Sync and destination for read
@@ -14,7 +18,6 @@ module ReadController_TB;
 		ipRxStream.Valid <= 1;
 		//initial data is address
 		ipRxStream.Data <= 8'h02030405;
-		ipRxStream.
 		opTxReady <= 1;
 	end
 
@@ -37,6 +40,7 @@ module ReadController_TB;
 		.ipRxStream(ipRxStream),
 		.opTxStream(opTxStream),
 		.ipReset(ipReset),
-		.ipClk(ipClk)
+		.ipClk(ipClk),
+		.opReadAddress(opReadAddress)
 	);
 endmodule
