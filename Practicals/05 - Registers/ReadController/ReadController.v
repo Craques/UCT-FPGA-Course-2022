@@ -14,7 +14,7 @@ module ReadController #(
 );
 
   reg reset;
-  reg dataLength = DATA_LENGTH;
+  reg [3:0] dataLength = DATA_LENGTH;
 
   /*********************************************************************************************************************
   * FOR THE READING END WE ONLY RECEIVE THE ADDRESS AS DATA. WE WILL USE THE ADDRESS TO SELECT WHERE TO READ FROM AND *
@@ -41,15 +41,15 @@ module ReadController #(
             opTxStream.Source <=  8'hz; // can be anything, not sure if it matters
             opTxStream.Destination <= 8'hz; // we have to write in the receiver
             opTxStream.Length <= DATA_LENGTH;
-            $display("WE ARE IN IDLE");
-            $display("HERE IS THE DATA, %h", ipRxStream.Data);
+            opTxStream.SoP <= 0;
+            opTxStream.EoP <= 0;
             if (ipRxStream.Destination == 8'h00 && ipRxStream.Valid) begin
               state <= GET_ADDRESS;
             end
           end
           GET_ADDRESS: begin
             opReadAddress <= ipRxStream.Data;
-            // state <= SET_DATA;
+            state <= SET_DATA;
           end
           SET_DATA: begin
           

@@ -3,7 +3,7 @@
 import Structures::*;
 
 module ReadController_TB;
-	reg [31:0] ipReadData = 32'h11112222333344445555666677778888;
+	reg [31:0] ipReadData = 32'b0111_0110_0101_0100_0011_0010_0001_0000;
 	reg opTxReady;
 	reg ipClk = 0;
 	reg ipReset = 1;
@@ -18,7 +18,7 @@ module ReadController_TB;
 		ipRxStream.Destination <= 8'h00;
 		ipRxStream.Valid <= 1;
 		//initial data is address
-		ipRxStream.Data <= 8'h02030405;
+		ipRxStream.Data <= 8'h11;
 		opTxReady <= 1;
 		opTxStream.Valid <= 1;
 	end
@@ -28,11 +28,8 @@ module ReadController_TB;
 	end
 
 
-	always @(negedge opTxStream.Valid) begin
-		if(opTxStream.Valid) begin
-			count <= count + 1;
-			ipRxStream.Data <= count;
-		end
+	always @(posedge opTxStream.EoP) begin
+		$stop;
 	end
 
 	ReadController DUT(
