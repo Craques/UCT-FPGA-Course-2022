@@ -32,7 +32,7 @@ module Test #(parameter BLOCK_WIDTH = 32) (
     .opTxWrEnable(opTxWrEnable)
   );
 
-  RxController rxController(
+  ReadController readController(
     .ipClk(ipClk),
     .ipReset(ipReset),
     .ipRdRegisters(ipRdRegisters),

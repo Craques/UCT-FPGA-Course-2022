@@ -5,20 +5,22 @@ import Structures::*;
 module ReadController_TB;
 	reg [31:0] ipReadData = 32'h11112222333344445555666677778888;
 	reg opTxReady;
-	reg ipClk;
+	reg ipClk = 0;
 	reg ipReset = 1;
+	reg [7:0] count = 0;
 	UART_PACKET ipRxStream;
 	UART_PACKET opTxStream;
-	reg [1:0] opReadAddress;
+	reg [7:0] opReadAddress;
 
 	initial begin
 		//Send Sync and destination for read
-		#25 ipReset <= 0;
+		#10 ipReset <= 0;
 		ipRxStream.Destination <= 8'h00;
 		ipRxStream.Valid <= 1;
 		//initial data is address
 		ipRxStream.Data <= 8'h02030405;
 		opTxReady <= 1;
+		opTxStream.Valid <= 1;
 	end
 
 	always #10 begin
@@ -26,11 +28,10 @@ module ReadController_TB;
 	end
 
 
-	always @(posedge ipClk) begin
-		if (opTxStream.EoP) begin
-			opTxReady <= 1;
-		end else begin
-			opTxReady <= 0;
+	always @(negedge opTxStream.Valid) begin
+		if(opTxStream.Valid) begin
+			count <= count + 1;
+			ipRxStream.Data <= count;
 		end
 	end
 

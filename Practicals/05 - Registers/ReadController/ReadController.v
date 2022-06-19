@@ -3,18 +3,18 @@ import Structures::*;
 module ReadController #(
   parameter DATA_LENGTH = 4
 ) (
-  input   [31:0]        ipReadData,
+  input   reg [31:0]    ipReadData,
   input   reg           opTxReady,
   input   UART_PACKET   ipRxStream,
   input   reg           ipReset,
   input   reg           ipClk,
   
   output  UART_PACKET   opTxStream,
-  output  reg           opReadAddress
+  output  reg [7:0]     opReadAddress
 );
 
   reg reset;
-  reg dataLength;
+  reg dataLength = DATA_LENGTH;
 
   /*********************************************************************************************************************
   * FOR THE READING END WE ONLY RECEIVE THE ADDRESS AS DATA. WE WILL USE THE ADDRESS TO SELECT WHERE TO READ FROM AND *
@@ -41,15 +41,18 @@ module ReadController #(
             opTxStream.Source <=  8'hz; // can be anything, not sure if it matters
             opTxStream.Destination <= 8'hz; // we have to write in the receiver
             opTxStream.Length <= DATA_LENGTH;
+            $display("WE ARE IN IDLE");
+            $display("HERE IS THE DATA, %h", ipRxStream.Data);
             if (ipRxStream.Destination == 8'h00 && ipRxStream.Valid) begin
               state <= GET_ADDRESS;
             end
           end
           GET_ADDRESS: begin
             opReadAddress <= ipRxStream.Data;
+            // state <= SET_DATA;
           end
           SET_DATA: begin
-            if (opTxReady) begin
+          
               // we have to read 4 bytes here and send them back
               opTxStream.Valid <= 1;
               opTxStream.Source <= ipRxStream.Source; // can be anything, not sure if it matters
@@ -80,18 +83,12 @@ module ReadController #(
               endcase
 
             end
-          end
+          
           default: begin
             state <= IDLE;
           end
         endcase
       end
-
-
-     
     end
   end
-
-
-  
 endmodule
