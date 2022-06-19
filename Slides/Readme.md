@@ -4,6 +4,10 @@
 
 https://github.com/STFleming/EmSys
 
+## Cornell course
+
+https://www.youtube.com/playlist?list=PLDqMkB5cbBA4OW0fDTu1FY6aw4uBWOpBa
+
 ## Day 3
 
 ### FPGA pipelines
@@ -37,6 +41,7 @@ https://youtu.be/I6eZ4ZyI1Zg
 - https://www.youtube.com/watch?v=wWadNvkdLqY
 - https://youtu.be/MKiP-4o3cFI?t=500
 - `https://www.youtube.com/watch?v=YDC5zaEZGhM`
+- `https://youtu.be/zpFWWUKLyXE` practical
 
 ### Gray code and ambiguity
 
