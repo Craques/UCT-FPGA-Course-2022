@@ -1,0 +1,203 @@
+
+Copyright (C) 1994-2020 Synopsys, Inc.
+This Synopsys software and all associated documentation are proprietary to Synopsys, Inc.
+and may only be used pursuant to the terms and conditions of a written license agreement
+with Synopsys, Inc. All other use, reproduction, modification, or distribution of the
+Synopsys software or the associated documentation is strictly prohibited.
+Tool: Synplify Pro (R)
+Build: Q-2020.03L-SP1
+Install: C:\lscc\diamond\3.12\synpbase
+OS: Windows 6.2
+
+Hostname: DESKTOP-UPLLRGT
+
+Implementation : impl1
+Synopsys HDL Compiler, Version comp202003synp2, Build 182R, Built Oct 29 2020 10:49:53, @
+
+@N|Running in 64-bit mode
+###########################################################[
+
+Copyright (C) 1994-2020 Synopsys, Inc.
+This Synopsys software and all associated documentation are proprietary to Synopsys, Inc.
+and may only be used pursuant to the terms and conditions of a written license agreement
+with Synopsys, Inc. All other use, reproduction, modification, or distribution of the
+Synopsys software or the associated documentation is strictly prohibited.
+Tool: Synplify Pro (R)
+Build: Q-2020.03L-SP1
+Install: C:\lscc\diamond\3.12\synpbase
+OS: Windows 6.2
+
+Hostname: DESKTOP-UPLLRGT
+
+Implementation : impl1
+Synopsys Verilog Compiler, Version comp202003synp2, Build 182R, Built Oct 29 2020 10:49:53, @
+
+@N|Running in 64-bit mode
+@N: CG1349 :	| Running Verilog Compiler in System Verilog mode
+
+@N: CG1350 :	| Running Verilog Compiler in Multiple File Compilation Unit mode
+
+@I::"C:\lscc\diamond\3.12\synpbase\lib\lucent\xp2.v" (library work)
+@I::"C:\lscc\diamond\3.12\synpbase\lib\lucent\pmi_def.v" (library work)
+@I::"C:\lscc\diamond\3.12\synpbase\lib\vlog\hypermods.v" (library __hyper__lib__)
+@I::"C:\lscc\diamond\3.12\synpbase\lib\vlog\umr_capim.v" (library snps_haps)
+@I::"C:\lscc\diamond\3.12\synpbase\lib\vlog\scemi_objects.v" (library snps_haps)
+@I::"C:\lscc\diamond\3.12\synpbase\lib\vlog\scemi_pipes.svh" (library snps_haps)
+@I::"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\Structures\Structures.v" (library work)
+@I::"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\UART\UART.v" (library work)
+@I::"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\UART_PACKETS\UART_packets.v" (library work)
+@I::"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\Registers\Registers.v" (library work)
+@I::"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\ReadController\ReadController.v" (library work)
+@I::"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\WriteController\WriteController.v" (library work)
+@I::"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\Test\Test.v" (library work)
+Verilog syntax check successful!
+File C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\Test\Test.v changed - recompiling
+@N: CG364 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\Structures\Structures.v":1:8:1:17|Synthesizing module Structures in library work.
+@N: CG364 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\UART_PACKETS\UART_packets.v":1:0:1:5|Synthesizing module work_C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\Structures\Structures.v_unit in library work.
+Selecting top level module Test
+@N: CG364 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\WriteController\WriteController.v":3:7:3:21|Synthesizing module WriteController in library work.
+Running optimization stage 1 on WriteController .......
+@N: CG364 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\ReadController\ReadController.v":3:7:3:20|Synthesizing module ReadController in library work.
+Running optimization stage 1 on ReadController .......
+@N: CL189 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\ReadController\ReadController.v":30:2:30:7|Register bit opTxStream.Destination[7] is always 0.
+@N: CL189 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\ReadController\ReadController.v":30:2:30:7|Register bit opTxStream.Destination[6] is always 0.
+@N: CL189 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\ReadController\ReadController.v":30:2:30:7|Register bit opTxStream.Destination[5] is always 0.
+@N: CL189 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\ReadController\ReadController.v":30:2:30:7|Register bit opTxStream.Destination[4] is always 0.
+@N: CL189 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\ReadController\ReadController.v":30:2:30:7|Register bit opTxStream.Destination[3] is always 0.
+@N: CL189 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\ReadController\ReadController.v":30:2:30:7|Register bit opTxStream.Destination[2] is always 0.
+@N: CL189 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\ReadController\ReadController.v":30:2:30:7|Register bit opTxStream.Destination[1] is always 0.
+@N: CL189 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\ReadController\ReadController.v":30:2:30:7|Register bit opTxStream.Destination[0] is always 1.
+@N: CL189 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\ReadController\ReadController.v":30:2:30:7|Register bit opTxStream.Length[0] is always 0.
+@N: CL189 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\ReadController\ReadController.v":30:2:30:7|Register bit opTxStream.Length[1] is always 0.
+@N: CL189 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\ReadController\ReadController.v":30:2:30:7|Register bit opTxStream.Length[2] is always 1.
+@N: CL189 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\ReadController\ReadController.v":30:2:30:7|Register bit opTxStream.Length[3] is always 0.
+@N: CL189 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\ReadController\ReadController.v":30:2:30:7|Register bit opTxStream.Length[4] is always 0.
+@N: CL189 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\ReadController\ReadController.v":30:2:30:7|Register bit opTxStream.Length[5] is always 0.
+@N: CL189 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\ReadController\ReadController.v":30:2:30:7|Register bit opTxStream.Length[6] is always 0.
+@N: CL189 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\ReadController\ReadController.v":30:2:30:7|Register bit opTxStream.Length[7] is always 0.
+@N: CG364 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\Registers\Registers.v":9:7:9:15|Synthesizing module Registers in library work.
+Running optimization stage 1 on Registers .......
+@N: CG364 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\UART\UART.v":19:7:19:10|Synthesizing module UART in library work.
+Running optimization stage 1 on UART .......
+@N: CG364 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\UART_PACKETS\UART_packets.v":4:7:4:18|Synthesizing module UART_Packets in library work.
+@N: CG793 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\UART_PACKETS\UART_packets.v":154:5:154:12|Ignoring system task $display
+@E: CG410 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\UART_PACKETS\UART_packets.v":59:14:59:24|Only one assignment is legal on UART_TxBusy
+@E: CG410 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\UART_PACKETS\UART_packets.v":62:14:62:25|Only one assignment is legal on UART_RX_DATA
+@E: CG410 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\UART_PACKETS\UART_packets.v":63:14:63:25|Only one assignment is legal on UART_RxValid
+Running optimization stage 1 on UART_Packets .......
+@W: CL169 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\UART_PACKETS\UART_packets.v":66:1:66:6|Pruning unused register UART_TxBusy. Make sure that there are no unused intermediate registers.
+@W: CL169 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\UART_PACKETS\UART_packets.v":66:1:66:6|Pruning unused register UART_RxValid. Make sure that there are no unused intermediate registers.
+@W: CL169 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\UART_PACKETS\UART_packets.v":66:1:66:6|Pruning unused register UART_RX_DATA[7:0]. Make sure that there are no unused intermediate registers.
+@W: CL169 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\UART_PACKETS\UART_packets.v":66:1:66:6|Pruning unused register UART_TxData_cl[7]. Make sure that there are no unused intermediate registers.
+@W: CL169 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\UART_PACKETS\UART_packets.v":66:1:66:6|Pruning unused register UART_TxData_cl[6]. Make sure that there are no unused intermediate registers.
+@W: CL169 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\UART_PACKETS\UART_packets.v":66:1:66:6|Pruning unused register UART_TxData_cl[5]. Make sure that there are no unused intermediate registers.
+@W: CL169 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\UART_PACKETS\UART_packets.v":66:1:66:6|Pruning unused register UART_TxData_cl[4]. Make sure that there are no unused intermediate registers.
+@W: CL169 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\UART_PACKETS\UART_packets.v":66:1:66:6|Pruning unused register UART_TxData_cl[3]. Make sure that there are no unused intermediate registers.
+@W: CL169 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\UART_PACKETS\UART_packets.v":66:1:66:6|Pruning unused register UART_TxData_cl[2]. Make sure that there are no unused intermediate registers.
+@W: CL169 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\UART_PACKETS\UART_packets.v":66:1:66:6|Pruning unused register UART_TxData_cl[1]. Make sure that there are no unused intermediate registers.
+@W: CL169 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\UART_PACKETS\UART_packets.v":66:1:66:6|Pruning unused register UART_TxData_cl[0]. Make sure that there are no unused intermediate registers.
+@W: CL177 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\UART_PACKETS\UART_packets.v":84:2:84:5|Sharing sequential element UART_TxData_tri_enable. Add a syn_preserve attribute to the element to prevent sharing.
+@W: CL177 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\UART_PACKETS\UART_packets.v":84:2:84:5|Sharing sequential element UART_TxData_tri_enable. Add a syn_preserve attribute to the element to prevent sharing.
+@W: CL177 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\UART_PACKETS\UART_packets.v":84:2:84:5|Sharing sequential element UART_TxData_tri_enable. Add a syn_preserve attribute to the element to prevent sharing.
+@W: CL177 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\UART_PACKETS\UART_packets.v":84:2:84:5|Sharing sequential element UART_TxData_tri_enable. Add a syn_preserve attribute to the element to prevent sharing.
+@W: CL177 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\UART_PACKETS\UART_packets.v":84:2:84:5|Sharing sequential element UART_TxData_tri_enable. Add a syn_preserve attribute to the element to prevent sharing.
+@W: CL177 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\UART_PACKETS\UART_packets.v":84:2:84:5|Sharing sequential element UART_TxData_tri_enable. Add a syn_preserve attribute to the element to prevent sharing.
+@W: CL177 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\UART_PACKETS\UART_packets.v":84:2:84:5|Sharing sequential element UART_TxData_tri_enable. Add a syn_preserve attribute to the element to prevent sharing.
+@N: CG364 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\Test\Test.v":3:7:3:10|Synthesizing module Test in library work.
+@W: CG781 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\Test\Test.v":34:17:34:30|Input opTxReady on instance readController is undriven; assigning to 0.  Simulation mismatch possible. Either assign the input or remove the declaration. 
+@E: CG410 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\Test\Test.v":62:16:62:25|Only one assignment is legal on opRxStream.Valid
+@E: CG410 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\Test\Test.v":62:16:62:25|Only one assignment is legal on opRxStream.Data
+@E: CG410 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\Test\Test.v":62:16:62:25|Only one assignment is legal on opRxStream.EoP
+@E: CG410 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\Test\Test.v":62:16:62:25|Only one assignment is legal on opRxStream.SoP
+@E: CG410 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\Test\Test.v":62:16:62:25|Only one assignment is legal on opRxStream.Length
+@E: CG410 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\Test\Test.v":62:16:62:25|Only one assignment is legal on opRxStream.Destination
+@E: CG410 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\Test\Test.v":62:16:62:25|Only one assignment is legal on opRxStream.Source
+@W: CG360 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\Test\Test.v":13:13:13:25|Removing wire opReadAddress, as there is no assignment to it.
+@W: CG133 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\Structures\Structures.v":13:14:13:19|Object ipTxStream.Source is declared but not assigned. Either assign a value or remove the declaration.
+@W: CG133 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\Structures\Structures.v":14:14:14:24|Object ipTxStream.Destination is declared but not assigned. Either assign a value or remove the declaration.
+@W: CG133 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\Structures\Structures.v":15:14:15:19|Object ipTxStream.Length is declared but not assigned. Either assign a value or remove the declaration.
+@W: CG133 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\Structures\Structures.v":16:10:16:12|Object ipTxStream.SoP is declared but not assigned. Either assign a value or remove the declaration.
+@W: CG133 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\Structures\Structures.v":17:10:17:12|Object ipTxStream.EoP is declared but not assigned. Either assign a value or remove the declaration.
+@W: CG133 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\Structures\Structures.v":18:14:18:17|Object ipTxStream.Data is declared but not assigned. Either assign a value or remove the declaration.
+@W: CG133 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\Structures\Structures.v":19:10:19:14|Object ipTxStream.Valid is declared but not assigned. Either assign a value or remove the declaration.
+@W: CG133 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\Structures\Structures.v":3:14:3:23|Object readRegisters.ClockTicks is declared but not assigned. Either assign a value or remove the declaration.
+@W: CG133 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\Structures\Structures.v":4:13:4:19|Object readRegisters.Buttons is declared but not assigned. Either assign a value or remove the declaration.
+Running optimization stage 1 on Test .......
+Running optimization stage 2 on Test .......
+@A: CL153 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\Structures\Structures.v":3:14:3:23|*Unassigned bits of readRegisters.ClockTicks[31:0] are referenced and tied to 0 -- simulation mismatch possible.
+@A: CL153 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\Structures\Structures.v":4:13:4:19|*Unassigned bits of readRegisters.Buttons[3:0] are referenced and tied to 0 -- simulation mismatch possible.
+@A: CL153 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\Structures\Structures.v":13:14:13:19|*Unassigned bits of ipTxStream.Source[7:0] are referenced and tied to 0 -- simulation mismatch possible.
+@A: CL153 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\Structures\Structures.v":14:14:14:24|*Unassigned bits of ipTxStream.Destination[7:0] are referenced and tied to 0 -- simulation mismatch possible.
+@A: CL153 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\Structures\Structures.v":15:14:15:19|*Unassigned bits of ipTxStream.Length[7:0] are referenced and tied to 0 -- simulation mismatch possible.
+@A: CL153 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\Structures\Structures.v":16:10:16:12|*Unassigned bits of ipTxStream.SoP are referenced and tied to 0 -- simulation mismatch possible.
+@A: CL153 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\Structures\Structures.v":17:10:17:12|*Unassigned bits of ipTxStream.EoP are referenced and tied to 0 -- simulation mismatch possible.
+@A: CL153 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\Structures\Structures.v":18:14:18:17|*Unassigned bits of ipTxStream.Data[7:0] are referenced and tied to 0 -- simulation mismatch possible.
+@A: CL153 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\Structures\Structures.v":19:10:19:14|*Unassigned bits of ipTxStream.Valid are referenced and tied to 0 -- simulation mismatch possible.
+Running optimization stage 2 on UART_Packets .......
+@N: CL189 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\UART_PACKETS\UART_packets.v":66:1:66:6|Register bit opRxStream.EoP is always 1.
+@N: CL201 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\UART_PACKETS\UART_packets.v":66:1:66:6|Trying to extract state machine for register txState.
+Extracted state machine for register txState
+State machine has 6 reachable states with original encodings of:
+   00000000000000000000000000000000
+   00000000000000000000000000000001
+   00000000000000000000000000000010
+   00000000000000000000000000000011
+   00000000000000000000000000000100
+   00000000000000000000000000000101
+@N: CL201 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\UART_PACKETS\UART_packets.v":66:1:66:6|Trying to extract state machine for register rxState.
+Extracted state machine for register rxState
+State machine has 5 reachable states with original encodings of:
+   00000000000000000000000000000000
+   00000000000000000000000000000001
+   00000000000000000000000000000010
+   00000000000000000000000000000011
+   00000000000000000000000000000100
+Running optimization stage 2 on UART .......
+@N: CL189 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\UART\UART.v":53:1:53:6|Register bit rxCounter[10] is always 0.
+@N: CL189 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\UART\UART.v":53:1:53:6|Register bit txCounter[10] is always 0.
+@W: CL260 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\UART\UART.v":53:1:53:6|Pruning register bit 10 of txCounter[10:0]. If this is not the intended behavior, drive the input with valid values, or an input from the top level.
+@W: CL260 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\UART\UART.v":53:1:53:6|Pruning register bit 10 of rxCounter[10:0]. If this is not the intended behavior, drive the input with valid values, or an input from the top level.
+@N: CL189 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\UART\UART.v":53:1:53:6|Register bit rxCounter[9] is always 0.
+@N: CL189 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\UART\UART.v":53:1:53:6|Register bit txCounter[9] is always 0.
+@W: CL260 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\UART\UART.v":53:1:53:6|Pruning register bit 9 of txCounter[9:0]. If this is not the intended behavior, drive the input with valid values, or an input from the top level.
+@W: CL260 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\UART\UART.v":53:1:53:6|Pruning register bit 9 of rxCounter[9:0]. If this is not the intended behavior, drive the input with valid values, or an input from the top level.
+@N: CL201 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\UART\UART.v":53:1:53:6|Trying to extract state machine for register txState.
+Extracted state machine for register txState
+State machine has 2 reachable states with original encodings of:
+   00000000000000000000000000000000
+   00000000000000000000000000000001
+Running optimization stage 2 on Registers .......
+@W: CL246 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\Registers\Registers.v":17:22:17:29|Input port bits 31 to 8 of ipWrData[31:0] are unused. Assign logic for all port bits or change the input port size.
+Running optimization stage 2 on ReadController .......
+@N: CL201 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\ReadController\ReadController.v":30:2:30:7|Trying to extract state machine for register state.
+Extracted state machine for register state
+State machine has 3 reachable states with original encodings of:
+   00000000000000000000000000000000
+   00000000000000000000000000000001
+   00000000000000000000000000000010
+@W: CL246 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\ReadController\ReadController.v":8:24:8:33|Input port bits 18 to 9 of ipRxStream[34:0] are unused. Assign logic for all port bits or change the input port size.
+@N: CL159 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\ReadController\ReadController.v":7:24:7:32|Input opTxReady is unused.
+Running optimization stage 2 on WriteController .......
+@N: CL189 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\WriteController\WriteController.v":23:2:23:7|Register bit dataLength[3] is always 0.
+@W: CL260 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\WriteController\WriteController.v":23:2:23:7|Pruning register bit 3 of dataLength[3:0]. If this is not the intended behavior, drive the input with valid values, or an input from the top level.
+@N: CL201 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\WriteController\WriteController.v":23:2:23:7|Trying to extract state machine for register state.
+Extracted state machine for register state
+State machine has 3 reachable states with original encodings of:
+   00000000000000000000000000000000
+   00000000000000000000000000000001
+   00000000000000000000000000000011
+@W: CL246 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\WriteController\WriteController.v":6:24:6:33|Input port bits 26 to 11 of ipTxStream[34:0] are unused. Assign logic for all port bits or change the input port size.
+
+For a summary of runtime and memory usage per design unit, please see file:
+==========================================================
+@L: C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\TestProject\impl1\synwork\layer0.rt.csv
+
+Process took 0h:00m:01s realtime, 0h:00m:01s cputime
+# Sun Jun 19 21:10:08 2022
+
+###########################################################]
+@END
+Process took 0h:00m:01s realtime, 0h:00m:01s cputime
+# Sun Jun 19 21:10:08 2022
+
+###########################################################]

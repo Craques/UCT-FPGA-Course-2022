@@ -61,6 +61,5 @@ module Test #(parameter BLOCK_WIDTH = 32) (
     .ipRx(ipRx),
     .opRxStream(opRxStream)
   );
-
   assign opLEDs = opWrRegisters.LEDs;
 endmodule //Test

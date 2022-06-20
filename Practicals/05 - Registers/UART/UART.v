@@ -60,6 +60,8 @@ module UART #(parameter WIDTH =8, parameter CLOCK_DIV = 434) (
 			clockEnable <= 0;
 			txState <= IDLE;
 			opTx <=1;
+			opTxBusy <= 0;
+			opRxValid <= 0;
 			localRxData <= 10'h3FF;
 		end else begin	
 			if(txCounter == 0)begin

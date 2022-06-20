@@ -1,0 +1,11 @@
+@E: CG410 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\UART_PACKETS\UART_packets.v":59:14:59:24|Only one assignment is legal on UART_TxBusy
+@E: CG410 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\UART_PACKETS\UART_packets.v":62:14:62:25|Only one assignment is legal on UART_RX_DATA
+@E: CG410 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\UART_PACKETS\UART_packets.v":63:14:63:25|Only one assignment is legal on UART_RxValid
+@E: CG410 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\Test\Test.v":62:16:62:25|Only one assignment is legal on opRxStream.Valid
+@E: CG410 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\Test\Test.v":62:16:62:25|Only one assignment is legal on opRxStream.Data
+@E: CG410 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\Test\Test.v":62:16:62:25|Only one assignment is legal on opRxStream.EoP
+@E: CG410 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\Test\Test.v":62:16:62:25|Only one assignment is legal on opRxStream.SoP
+@E: CG410 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\Test\Test.v":62:16:62:25|Only one assignment is legal on opRxStream.Length
+@E: CG410 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\Test\Test.v":62:16:62:25|Only one assignment is legal on opRxStream.Destination
+@E: CG410 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\Test\Test.v":62:16:62:25|Only one assignment is legal on opRxStream.Source
+

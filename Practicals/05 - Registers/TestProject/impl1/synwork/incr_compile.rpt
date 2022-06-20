@@ -1,0 +1,55 @@
+
+Copyright (C) 1994-2020 Synopsys, Inc.
+This Synopsys software and all associated documentation are proprietary to Synopsys, Inc.
+and may only be used pursuant to the terms and conditions of a written license agreement
+with Synopsys, Inc. All other use, reproduction, modification, or distribution of the
+Synopsys software or the associated documentation is strictly prohibited.
+Tool: Synplify Pro (R)
+Build: Q-2020.03L-SP1
+Install: C:\lscc\diamond\3.12\synpbase
+OS: Windows 6.2
+
+Hostname: DESKTOP-UPLLRGT
+
+Implementation : impl1
+Synopsys HDL compiler and linker, Version comp202003synp2, Build 182R, Built Oct 29 2020 10:49:53, @
+
+Modified Files: 1
+FID:  path (prevtimestamp, timestamp)
+3        C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\Test\Test.v (2022-06-19 20:56:45, 2022-06-19 21:09:04)
+
+*******************************************************************
+Modules that may have changed as a result of file changes: 6
+MID:  lib.cell.view
+0        work.ReadController.verilog may have changed because the following files changed:
+                        C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\Test\Test.v (2022-06-19 20:56:45, 2022-06-19 21:09:04) <-- (may instantiate this module)
+1        work.Registers.verilog may have changed because the following files changed:
+                        C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\Test\Test.v (2022-06-19 20:56:45, 2022-06-19 21:09:04) <-- (may instantiate this module)
+2        work.Test.verilog may have changed because the following files changed:
+                        C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\Test\Test.v (2022-06-19 20:56:45, 2022-06-19 21:09:04) <-- (module definition)
+3        work.UART.verilog may have changed because the following files changed:
+                        C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\Test\Test.v (2022-06-19 20:56:45, 2022-06-19 21:09:04) <-- (may instantiate this module)
+4        work.UART_Packets.verilog may have changed because the following files changed:
+                        C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\Test\Test.v (2022-06-19 20:56:45, 2022-06-19 21:09:04) <-- (may instantiate this module)
+5        work.WriteController.verilog may have changed because the following files changed:
+                        C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\Test\Test.v (2022-06-19 20:56:45, 2022-06-19 21:09:04) <-- (may instantiate this module)
+
+*******************************************************************
+Unmodified files: 12
+FID:  path (timestamp)
+0        C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\ReadController\ReadController.v (2022-06-19 17:29:05)
+1        C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\Registers\Registers.v (2022-06-19 16:00:00)
+2        C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\Structures\Structures.v (2022-06-18 21:01:43)
+4        C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\UART\UART.v (2022-06-18 21:01:43)
+5        C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\UART_PACKETS\UART_packets.v (2022-06-19 21:06:42)
+6        C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\WriteController\WriteController.v (2022-06-19 17:33:52)
+7        C:\lscc\diamond\3.12\synpbase\lib\lucent\pmi_def.v (2020-10-29 19:20:54)
+8        C:\lscc\diamond\3.12\synpbase\lib\lucent\xp2.v (2020-10-29 19:20:54)
+9        C:\lscc\diamond\3.12\synpbase\lib\vlog\hypermods.v (2020-10-29 19:23:10)
+10       C:\lscc\diamond\3.12\synpbase\lib\vlog\scemi_objects.v (2020-10-29 19:23:10)
+11       C:\lscc\diamond\3.12\synpbase\lib\vlog\scemi_pipes.svh (2020-10-29 19:23:10)
+12       C:\lscc\diamond\3.12\synpbase\lib\vlog\umr_capim.v (2020-10-29 19:23:10)
+
+*******************************************************************
+Unchanged modules: 0
+MID:  lib.cell.view

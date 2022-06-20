@@ -71,12 +71,9 @@ module UART_Packets(
 		reset <= ipReset;
 		
 		if (reset) begin
-			UART_TxBusy <= 0;
-			UART_RxValid <= 0;
 			opTxReady <= 1;
 			rxState <= RX_IDLE;
 			txState <= TX_IDLE;
-			UART_RxValid <= 0;
 			UART_RX_DATA <= 8'bz;
 			UART_TxData <= 8'bz;
 			UART_TxSend <= 0;
