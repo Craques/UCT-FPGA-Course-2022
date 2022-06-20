@@ -64,7 +64,6 @@ module UART #(parameter WIDTH =8, parameter CLOCK_DIV = 434) (
 			opRxValid <= 0;
 			localRxData <= 10'h3FF;
 			opRxData <= 8'bz;
-			ipTxSend <= 0;
 		end else begin	
 			if(txCounter == 0)begin
 				txCounter <= CLOCK_DIV - 1;
