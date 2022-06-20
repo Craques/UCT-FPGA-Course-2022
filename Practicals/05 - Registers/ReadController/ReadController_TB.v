@@ -9,7 +9,7 @@ module ReadController_TB;
 	reg ipReset = 1;
 	reg [7:0] count = 0;
 	UART_PACKET ipRxStream;
-	UART_PACKET opTxStream;
+	UART_PACKET opRxStream;
 	reg [7:0] opReadAddress;
 
 	initial begin
@@ -20,7 +20,7 @@ module ReadController_TB;
 		//initial data is address
 		ipRxStream.Data <= 8'h11;
 		opTxReady <= 1;
-		opTxStream.Valid <= 1;
+		opRxStream.Valid <= 1;
 	end
 
 	always #10 begin
@@ -28,7 +28,7 @@ module ReadController_TB;
 	end
 
 
-	always @(posedge opTxStream.EoP) begin
+	always @(posedge opRxStream.EoP) begin
 		$stop;
 	end
 
@@ -36,7 +36,7 @@ module ReadController_TB;
 		.ipReadData(ipReadData),
 		.opTxReady(opTxReady),
 		.ipRxStream(ipRxStream),
-		.opTxStream(opTxStream),
+		.opRxStream(opRxStream),
 		.ipReset(ipReset),
 		.ipClk(ipClk),
 		.opReadAddress(opReadAddress)

@@ -9,7 +9,7 @@ module ReadController #(
   input   reg           ipReset,
   input   reg           ipClk,
   
-  output  UART_PACKET   opTxStream,
+  output  UART_PACKET   opRxStream,
   output  reg [7:0]     opReadAddress
 );
 
@@ -37,12 +37,12 @@ module ReadController #(
          case (state)
           IDLE: begin
             dataLength <= DATA_LENGTH;
-            opTxStream.Valid <= 0;
-            opTxStream.Source <=  8'hz; // can be anything, not sure if it matters
-            opTxStream.Destination <= 8'hz; // we have to write in the receiver
-            opTxStream.Length <= DATA_LENGTH;
-            opTxStream.SoP <= 0;
-            opTxStream.EoP <= 0;
+            opRxStream.Valid <= 0;
+            opRxStream.Source <=  8'hz; // can be anything, not sure if it matters
+            opRxStream.Destination <= 8'hz; // we have to write in the receiver
+            opRxStream.Length <= DATA_LENGTH;
+            opRxStream.SoP <= 0;
+            opRxStream.EoP <= 0;
             if (ipRxStream.Destination == 8'h00 && ipRxStream.Valid) begin
               state <= GET_ADDRESS;
             end
@@ -54,27 +54,27 @@ module ReadController #(
           SET_DATA: begin
           
               // we have to read 4 bytes here and send them back
-              opTxStream.Valid <= 1;
-              opTxStream.Source <= ipRxStream.Source; // can be anything, not sure if it matters
-              opTxStream.Destination <= 8'h01; // we have to write in the receiver
-              opTxStream.Length <= DATA_LENGTH;
+              opRxStream.Valid <= 1;
+              opRxStream.Source <= ipRxStream.Source; // can be anything, not sure if it matters
+              opRxStream.Destination <= 8'h01; // we have to write in the receiver
+              opRxStream.Length <= DATA_LENGTH;
 
               dataLength <= dataLength - 1;
               case(dataLength)
                 4:begin
-                  opTxStream.SoP <= 1;
-                  opTxStream.Data <= ipReadData[31:24];
+                  opRxStream.SoP <= 1;
+                  opRxStream.Data <= ipReadData[31:24];
                 end
                 3: begin
-                  opTxStream.SoP <= 0;
-                  opTxStream.Data <= ipReadData[23:16];
+                  opRxStream.SoP <= 0;
+                  opRxStream.Data <= ipReadData[23:16];
                 end
                 2: begin
-                  opTxStream.Data <= ipReadData[15:8];
+                  opRxStream.Data <= ipReadData[15:8];
                 end
                 1: begin
-                  opTxStream.Data <= ipReadData[7:0];
-                  opTxStream.EoP <= 1;
+                  opRxStream.Data <= ipReadData[7:0];
+                  opRxStream.EoP <= 1;
                   state <= IDLE;
                 end
                 default: begin

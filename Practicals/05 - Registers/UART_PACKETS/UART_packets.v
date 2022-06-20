@@ -4,12 +4,11 @@ import Structures::*;
 module UART_Packets(
   input              ipClk,
   input              ipReset,
-
   input var  UART_PACKET ipTxStream,
+  input              ipRx,
+
   output logic       opTxReady,
   output logic       opTx,
-
-  input              ipRx,
   output UART_PACKET opRxStream
 );
 	//------------------------------------------------------------------------------
