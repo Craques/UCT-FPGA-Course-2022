@@ -74,9 +74,6 @@ module UART_Packets(
 			opTxReady <= 1;
 			rxState <= RX_IDLE;
 			txState <= TX_IDLE;
-			UART_RX_DATA <= 8'bz;
-			UART_TxData <= 8'bz;
-			UART_TxSend <= 0;
 		end
 		
 		case(txState)
