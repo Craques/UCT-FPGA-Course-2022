@@ -3,7 +3,7 @@ import Structures::*;
 module WriteController #(DATA_LENGTH = 4) (
   input                 ipClk,
   input                 ipReset,
-  input UART_PACKET     ipTxStream,
+  input UART_PACKET     opRxStream,
 
   output reg            opTxWrEnable,
   output reg [7:0]      opAddress,
@@ -31,25 +31,25 @@ module WriteController #(DATA_LENGTH = 4) (
       opAddress <= 8'bz;  
       state <= IDLE;
       opTxWrEnable <= 0;
-    end else if (ipTxStream.Valid) begin
+    end else if (opRxStream.Valid) begin
      case (state)
       IDLE: begin
         dataLength <= DATA_LENGTH;
         opTxWrEnable <=1;
-        if(ipTxStream.Source == 8'h01 && ipTxStream.SoP == 1) begin
+        if(opRxStream.Source == 8'h01 && opRxStream.SoP == 1) begin
           opTxWrEnable <= 0;
           state <= GET_ADDRESS;
         end
       end
       GET_ADDRESS: begin
-        opAddress <= ipTxStream.Data;
+        opAddress <= opRxStream.Data;
         state <= GET_DATA;
       end
       GET_DATA: begin
         if(dataLength > 0) begin
           dataLength <= dataLength -1;
-          opWrData <= {opWrData, ipTxStream.Data};
-          if(ipTxStream.EoP) begin
+          opWrData <= {opWrData, opRxStream.Data};
+          if(opRxStream.EoP) begin
             state <= IDLE;
           end
         end else begin

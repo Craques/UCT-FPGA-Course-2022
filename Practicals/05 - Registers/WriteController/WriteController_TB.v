@@ -61,7 +61,7 @@ module WriteController_TB;
     .ipReset(ipReset),
     .opAddress(ipAddress),
     .opWrData(ipWrData),
-    .ipTxStream(ipTxPacket),
+    .opRxStream(ipTxPacket),
     .opTxWrEnable(opTxWrEnable)
   );
 
