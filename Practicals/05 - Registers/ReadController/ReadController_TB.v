@@ -8,17 +8,17 @@ module ReadController_TB;
 	reg ipClk = 0;
 	reg ipReset = 1;
 	reg [7:0] count = 0;
-	UART_PACKET ipRxStream;
+	UART_PACKET ipTxStream;
 	UART_PACKET opRxStream;
 	reg [7:0] opReadAddress;
 
 	initial begin
 		//Send Sync and destination for read
 		#10 ipReset <= 0;
-		ipRxStream.Destination <= 8'h00;
-		ipRxStream.Valid <= 1;
+		opRxStream.Destination <= 8'h00;
+		opRxStream.Valid <= 1;
 		//initial data is address
-		ipRxStream.Data <= 8'h11;
+		opRxStream.Data <= 8'h11;
 		opTxReady <= 1;
 		opRxStream.Valid <= 1;
 	end
@@ -35,7 +35,7 @@ module ReadController_TB;
 	ReadController DUT(
 		.ipReadData(ipReadData),
 		.opTxReady(opTxReady),
-		.ipRxStream(ipRxStream),
+		.ipTxStream(ipTxStream),
 		.opRxStream(opRxStream),
 		.ipReset(ipReset),
 		.ipClk(ipClk),

@@ -55,8 +55,8 @@ module ReadController #(
           
               // we have to read 4 bytes here and send them back
               ipTxStream.Valid <= 1;
-              ipTxStream.Source <= ipRxStream.Source; // can be anything, not sure if it matters
-              ipTxStream.Destination <= 8'h01; // we have to write in the receiver
+              ipTxStream.Source <= opRxStream.Source; // can be anything, not sure if it matters
+              ipTxStream.Destination <= opRxStream.Destination; // we have to write in the receiver
               ipTxStream.Length <= DATA_LENGTH;
 
               dataLength <= dataLength - 1;
