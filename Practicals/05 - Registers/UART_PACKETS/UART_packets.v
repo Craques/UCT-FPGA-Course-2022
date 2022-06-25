@@ -170,6 +170,7 @@ module UART_Packets(
 
 				case (rxState)
 					RX_IDLE: begin
+						opRxStream.EoP <= 0;
 						if ( UART_RX_DATA == 8'h55  ) begin
 							opRxStream.SoP <= 1;
 							rxState <= RX_GET_DESTINATION;
