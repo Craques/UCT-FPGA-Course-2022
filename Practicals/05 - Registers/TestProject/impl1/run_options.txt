@@ -1,7 +1,7 @@
 #--  Synopsys, Inc.
 #--  Version Q-2020.03L-SP1
 #--  Project file C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\TestProject\impl1\run_options.txt
-#--  Written on Mon Jun 20 21:54:38 2022
+#--  Written on Sun Jun 19 21:10:06 2022
 
 
 #project files

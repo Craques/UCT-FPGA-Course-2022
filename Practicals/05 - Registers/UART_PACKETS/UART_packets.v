@@ -6,7 +6,6 @@ module UART_Packets(
   input              ipReset,
   input var  UART_PACKET ipTxStream,
   input              ipRx,
-	input reg [7:0]			opRxData,
 
   output logic       opTxReady,
   output logic       opTx,
@@ -19,6 +18,7 @@ module UART_Packets(
 	reg 				reset = 0;
 	reg					UART_TxBusy;
 	reg					UART_RxValid;
+	reg  [7:0]	UART_RX_DATA;
 	reg  [7:0]	UART_TxData;
 
 	//Variables to store local values;
@@ -58,7 +58,7 @@ module UART_Packets(
 		.opTxBusy ( UART_TxBusy 		),
 		.opTx     ( opTx  					),
 		.ipRx     ( ipRx  					),
-		.opRxData ( opRxData 		),
+		.opRxData ( UART_RX_DATA 		),
 		.opRxValid( UART_RxValid 		)
 	);
 
@@ -170,27 +170,26 @@ module UART_Packets(
 
 				case (rxState)
 					RX_IDLE: begin
-						opRxStream.EoP <= 0;
-						if ( opRxData == 8'h55  ) begin
+						if ( UART_RX_DATA == 8'h55  ) begin
 							opRxStream.SoP <= 1;
 							rxState <= RX_GET_DESTINATION;
 						end
 					end
 					RX_GET_DESTINATION: begin
-						opRxStream.Destination <= opRxData;
+						opRxStream.Destination <= UART_RX_DATA;
 						rxState <= RX_GET_SOURCE;
 					end
 					RX_GET_SOURCE: begin
-						opRxStream.Source <= opRxData;
+						opRxStream.Source <= UART_RX_DATA;
 						rxState <= RX_GET_LENGTH;
 					end
 					RX_GET_LENGTH: begin
-						receiveDataLength <= opRxData;
-						opRxStream.Length <= opRxData;
+						receiveDataLength <= UART_RX_DATA;
+						opRxStream.Length <= UART_RX_DATA;
 						rxState <= RX_GET_DATA;
 					end
 					RX_GET_DATA: begin
-						opRxStream.Data <= opRxData;
+						opRxStream.Data <= UART_RX_DATA;
 						opRxStream.Valid <= 1;
 						//check length
 						if (receiveDataLength == 1) begin

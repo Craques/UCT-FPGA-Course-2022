@@ -16,32 +16,32 @@ Synopsys HDL compiler and linker, Version comp202003synp2, Build 182R, Built Oct
 
 Modified Files: 1
 FID:  path (prevtimestamp, timestamp)
-3        C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\Test\Test.v (2022-06-20 21:44:24, 2022-06-20 21:54:30)
+3        C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\Test\Test.v (2022-06-19 20:56:45, 2022-06-19 21:09:04)
 
 *******************************************************************
 Modules that may have changed as a result of file changes: 6
 MID:  lib.cell.view
 0        work.ReadController.verilog may have changed because the following files changed:
-                        C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\Test\Test.v (2022-06-20 21:44:24, 2022-06-20 21:54:30) <-- (may instantiate this module)
+                        C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\Test\Test.v (2022-06-19 20:56:45, 2022-06-19 21:09:04) <-- (may instantiate this module)
 1        work.Registers.verilog may have changed because the following files changed:
-                        C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\Test\Test.v (2022-06-20 21:44:24, 2022-06-20 21:54:30) <-- (may instantiate this module)
+                        C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\Test\Test.v (2022-06-19 20:56:45, 2022-06-19 21:09:04) <-- (may instantiate this module)
 2        work.Test.verilog may have changed because the following files changed:
-                        C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\Test\Test.v (2022-06-20 21:44:24, 2022-06-20 21:54:30) <-- (module definition)
+                        C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\Test\Test.v (2022-06-19 20:56:45, 2022-06-19 21:09:04) <-- (module definition)
 3        work.UART.verilog may have changed because the following files changed:
-                        C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\Test\Test.v (2022-06-20 21:44:24, 2022-06-20 21:54:30) <-- (may instantiate this module)
+                        C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\Test\Test.v (2022-06-19 20:56:45, 2022-06-19 21:09:04) <-- (may instantiate this module)
 4        work.UART_Packets.verilog may have changed because the following files changed:
-                        C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\Test\Test.v (2022-06-20 21:44:24, 2022-06-20 21:54:30) <-- (may instantiate this module)
+                        C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\Test\Test.v (2022-06-19 20:56:45, 2022-06-19 21:09:04) <-- (may instantiate this module)
 5        work.WriteController.verilog may have changed because the following files changed:
-                        C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\Test\Test.v (2022-06-20 21:44:24, 2022-06-20 21:54:30) <-- (may instantiate this module)
+                        C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\Test\Test.v (2022-06-19 20:56:45, 2022-06-19 21:09:04) <-- (may instantiate this module)
 
 *******************************************************************
 Unmodified files: 12
 FID:  path (timestamp)
-0        C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\ReadController\ReadController.v (2022-06-20 21:19:07)
+0        C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\ReadController\ReadController.v (2022-06-19 17:29:05)
 1        C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\Registers\Registers.v (2022-06-19 16:00:00)
 2        C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\Structures\Structures.v (2022-06-18 21:01:43)
-4        C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\UART\UART.v (2022-06-20 21:03:51)
-5        C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\UART_PACKETS\UART_packets.v (2022-06-20 21:46:39)
+4        C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\UART\UART.v (2022-06-18 21:01:43)
+5        C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\UART_PACKETS\UART_packets.v (2022-06-19 21:06:42)
 6        C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\WriteController\WriteController.v (2022-06-19 17:33:52)
 7        C:\lscc\diamond\3.12\synpbase\lib\lucent\pmi_def.v (2020-10-29 19:20:54)
 8        C:\lscc\diamond\3.12\synpbase\lib\lucent\xp2.v (2020-10-29 19:20:54)

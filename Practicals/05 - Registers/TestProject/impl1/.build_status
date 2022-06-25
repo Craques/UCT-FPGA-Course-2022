@@ -18,15 +18,8 @@
             <Task name="PARTrace" build_result="0" update_result="3" update_time="0"/>
             <Task name="IOTiming" build_result="0" update_result="3" update_time="0"/>
         </Milestone>
-        <Milestone name="Synthesis" build_result="1" build_time="1655754881">
-            <Task name="Synplify_Synthesis" build_result="1" update_result="2" update_time="1655754881"/>
-        </Milestone>
-        <Milestone name="TOOL_Report" build_result="0" build_time="0">
-            <Task name="HDLE" build_result="0" update_result="2" update_time="1655754871"/>
-            <Task name="BKM" build_result="0" update_result="2" update_time="1655754871"/>
-            <Task name="SSO" build_result="0" update_result="3" update_time="0"/>
-            <Task name="PIODRC" build_result="0" update_result="3" update_time="0"/>
-            <Task name="DEC" build_result="0" update_result="3" update_time="0"/>
+        <Milestone name="Synthesis" build_result="1" build_time="1655665810">
+            <Task name="Synplify_Synthesis" build_result="1" update_result="2" update_time="1655665810"/>
         </Milestone>
         <Milestone name="Translate" build_result="0" build_time="0">
             <Task name="Translate" build_result="0" update_result="3" update_time="0"/>
@@ -34,4 +27,4 @@
         <Report name="TestProject_impl1.edi" last_build_time="0" last_build_size="0"/>
     </Strategy>
 </BuildStatus>
-   
+                                                                                                                                              

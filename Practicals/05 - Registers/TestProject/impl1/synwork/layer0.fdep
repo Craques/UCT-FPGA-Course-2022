@@ -7,12 +7,12 @@
 #CUR:"C:\\lscc\\diamond\\3.12\\synpbase\\lib\\vlog\\scemi_objects.v":1603992190
 #CUR:"C:\\lscc\\diamond\\3.12\\synpbase\\lib\\vlog\\scemi_pipes.svh":1603992190
 #CUR:"C:\\Users\\charles\\Desktop\\fpga\\Practicals\\05 - Registers\\Structures\\Structures.v":1655578903
-#CUR:"C:\\Users\\charles\\Desktop\\fpga\\Practicals\\05 - Registers\\UART\\UART.v":1655751831
-#CUR:"C:\\Users\\charles\\Desktop\\fpga\\Practicals\\05 - Registers\\UART_PACKETS\\UART_packets.v":1655754399
+#CUR:"C:\\Users\\charles\\Desktop\\fpga\\Practicals\\05 - Registers\\UART\\UART.v":1655578903
+#CUR:"C:\\Users\\charles\\Desktop\\fpga\\Practicals\\05 - Registers\\UART_PACKETS\\UART_packets.v":1655665602
 #CUR:"C:\\Users\\charles\\Desktop\\fpga\\Practicals\\05 - Registers\\Registers\\Registers.v":1655647200
-#CUR:"C:\\Users\\charles\\Desktop\\fpga\\Practicals\\05 - Registers\\ReadController\\ReadController.v":1655752747
+#CUR:"C:\\Users\\charles\\Desktop\\fpga\\Practicals\\05 - Registers\\ReadController\\ReadController.v":1655652545
 #CUR:"C:\\Users\\charles\\Desktop\\fpga\\Practicals\\05 - Registers\\WriteController\\WriteController.v":1655652832
-#CUR:"C:\\Users\\charles\\Desktop\\fpga\\Practicals\\05 - Registers\\Test\\Test.v":1655754870
+#CUR:"C:\\Users\\charles\\Desktop\\fpga\\Practicals\\05 - Registers\\Test\\Test.v":1655665744
 #numinternalfiles:6
 #defaultlanguage:verilog
 0			"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\Structures\Structures.v" verilog

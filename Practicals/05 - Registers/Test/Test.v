@@ -36,7 +36,7 @@ module Test #(parameter BLOCK_WIDTH = 32) (
     .ipRxStream(ipTxStream),
     .ipReset(ipReset),
     .ipClk(ipClk),
-    .opRxStream(opRxStream),
+    .opTxStream(opRxStream),
     .opReadAddress(ipAddress)
   );
   
@@ -52,7 +52,6 @@ module Test #(parameter BLOCK_WIDTH = 32) (
     .opRdData(localReadMemory)
   );
 
- //may have to use a seperate uart to transmit data
   UART_Packets uartPackets(
     .ipClk(ipClk),
     .ipReset(ipReset),
