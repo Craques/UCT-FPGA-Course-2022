@@ -27,13 +27,13 @@ module Test #(parameter BLOCK_WIDTH = 32) (
     .ipReset(ipReset),
     .opAddress(ipAddress), // this will be input to the Registers module, taken from incoming stream
     .opWrData(localWriteMemory),// data from the packet that will be input to the registers module
-    .ipTxStream(ipTxStream),
+    .ipTxStream(opRxStream),
     .opTxWrEnable(opTxWrEnable)
   );
 
   ReadController readController(
     .ipReadData(localReadMemory),
-    .ipRxStream(ipTxStream),
+    .ipTxStream(ipTxStream),
     .ipReset(ipReset),
     .ipClk(ipClk),
     .opRxStream(opRxStream),

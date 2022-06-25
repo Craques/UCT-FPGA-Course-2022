@@ -5,11 +5,11 @@ module ReadController #(
 ) (
   input   reg [31:0]    ipReadData,
   input   reg           opTxReady,
-  input   UART_PACKET   ipRxStream,
   input   reg           ipReset,
   input   reg           ipClk,
+  input  UART_PACKET   opRxStream, // packet module will generate this
   
-  output  UART_PACKET   opRxStream,
+  output  UART_PACKET   ipTxStream, // we will be assigning items to send here
   output  reg [7:0]     opReadAddress
 );
 
@@ -33,48 +33,48 @@ module ReadController #(
       dataLength <= DATA_LENGTH;
       state <= IDLE;
     end else begin
-      if (ipRxStream.Valid) begin
+      if (opRxStream.Valid) begin
          case (state)
           IDLE: begin
             dataLength <= DATA_LENGTH;
-            opRxStream.Valid <= 0;
-            opRxStream.Source <=  8'hz; // can be anything, not sure if it matters
-            opRxStream.Destination <= 8'hz; // we have to write in the receiver
-            opRxStream.Length <= DATA_LENGTH;
-            opRxStream.SoP <= 0;
-            opRxStream.EoP <= 0;
-            if (ipRxStream.Destination == 8'h00 && ipRxStream.Valid) begin
+            ipTxStream.Valid <= 0;
+            ipTxStream.Source <=  8'hz; // can be anything, not sure if it matters
+            ipTxStream.Destination <= 8'hz; // we have to write in the receiver
+            ipTxStream.Length <= DATA_LENGTH;
+            ipTxStream.SoP <= 0;
+            ipTxStream.EoP <= 0;
+            if (opRxStream.Destination == 8'h00 && opRxStream.Valid) begin
               state <= GET_ADDRESS;
             end
           end
           GET_ADDRESS: begin
-            opReadAddress <= ipRxStream.Data;
+            opReadAddress <= opRxStream.Data;
             state <= SET_DATA;
           end
           SET_DATA: begin
           
               // we have to read 4 bytes here and send them back
-              opRxStream.Valid <= 1;
-              opRxStream.Source <= ipRxStream.Source; // can be anything, not sure if it matters
-              opRxStream.Destination <= 8'h01; // we have to write in the receiver
-              opRxStream.Length <= DATA_LENGTH;
+              ipTxStream.Valid <= 1;
+              ipTxStream.Source <= ipRxStream.Source; // can be anything, not sure if it matters
+              ipTxStream.Destination <= 8'h01; // we have to write in the receiver
+              ipTxStream.Length <= DATA_LENGTH;
 
               dataLength <= dataLength - 1;
               case(dataLength)
                 4:begin
-                  opRxStream.SoP <= 1;
-                  opRxStream.Data <= ipReadData[31:24];
+                  ipTxStream.SoP <= 1;
+                  ipTxStream.Data <= ipReadData[31:24];
                 end
                 3: begin
-                  opRxStream.SoP <= 0;
-                  opRxStream.Data <= ipReadData[23:16];
+                  ipTxStream.SoP <= 0;
+                  ipTxStream.Data <= ipReadData[23:16];
                 end
                 2: begin
-                  opRxStream.Data <= ipReadData[15:8];
+                  ipTxStream.Data <= ipReadData[15:8];
                 end
                 1: begin
-                  opRxStream.Data <= ipReadData[7:0];
-                  opRxStream.EoP <= 1;
+                  ipTxStream.Data <= ipReadData[7:0];
+                  ipTxStream.EoP <= 1;
                   state <= IDLE;
                 end
                 default: begin
