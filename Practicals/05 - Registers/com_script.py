@@ -20,9 +20,9 @@ def Read(s, Address):
 
 with serial.Serial(port='COM9', baudrate=115200) as s:
     for n in range(500):
-        print("HELLO WORLD %d", n)
         print(Read(s, Buttons))
         Time = Read(s, ClockTicks)
+        print("HELLO WORLD")
         Write(s, LEDs, Time >> 23)
 
         print(Time)
