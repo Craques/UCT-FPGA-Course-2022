@@ -1,0 +1,67 @@
+<Project ModBy="Inserter" SigType="0" Name="C:/Users/charles/Desktop/fpga/Practicals/05 - Registers/TestProject/reveal.rvl" Date="2022-06-26">
+    <IP Version="1_6_042617"/>
+    <Design DesignEntry="Schematic/Verilog HDL" Synthesis="synplify" DeviceFamily="LatticeXP2" DesignName="TestProject"/>
+    <Core InsertDataset="0" Insert="1" Reveal_sig="431306788" Name="Test_LA0" ID="0">
+        <Setting>
+            <Clock SampleClk="ipClk" SampleEnable="1" EnableClk="readController/ipReset" EnableClk_Pri="1"/>
+            <TraceBuffer Implementation="0" BitTimeStamp="0" hasTimeStamp="0" IncTrigSig="0" BufferDepth="32"/>
+            <Capture Mode="0" MinSamplesPerTrig="8"/>
+            <Event CntEnable="0" MaxEventCnt="8"/>
+            <TrigOut Polarity="0" MinPulseWidth="0" TrigOutNetType="1" EnableTrigOut="0" TrigOutNet="reveal_debug_Test_LA0_net"/>
+            <DistRAM Disable="0"/>
+        </Setting>
+        <Dataset Name="Base">
+            <Trace>
+                <Bus Name="readController/ipReadData">
+                    <Sig Type="SIG" Name="readController/ipReadData:0"/>
+                    <Sig Type="SIG" Name="readController/ipReadData:1"/>
+                    <Sig Type="SIG" Name="readController/ipReadData:2"/>
+                    <Sig Type="SIG" Name="readController/ipReadData:3"/>
+                    <Sig Type="SIG" Name="readController/ipReadData:4"/>
+                    <Sig Type="SIG" Name="readController/ipReadData:5"/>
+                    <Sig Type="SIG" Name="readController/ipReadData:6"/>
+                    <Sig Type="SIG" Name="readController/ipReadData:7"/>
+                    <Sig Type="SIG" Name="readController/ipReadData:8"/>
+                    <Sig Type="SIG" Name="readController/ipReadData:9"/>
+                    <Sig Type="SIG" Name="readController/ipReadData:10"/>
+                    <Sig Type="SIG" Name="readController/ipReadData:11"/>
+                    <Sig Type="SIG" Name="readController/ipReadData:12"/>
+                    <Sig Type="SIG" Name="readController/ipReadData:13"/>
+                    <Sig Type="SIG" Name="readController/ipReadData:14"/>
+                    <Sig Type="SIG" Name="readController/ipReadData:15"/>
+                    <Sig Type="SIG" Name="readController/ipReadData:16"/>
+                    <Sig Type="SIG" Name="readController/ipReadData:17"/>
+                    <Sig Type="SIG" Name="readController/ipReadData:18"/>
+                    <Sig Type="SIG" Name="readController/ipReadData:19"/>
+                    <Sig Type="SIG" Name="readController/ipReadData:20"/>
+                    <Sig Type="SIG" Name="readController/ipReadData:21"/>
+                    <Sig Type="SIG" Name="readController/ipReadData:22"/>
+                    <Sig Type="SIG" Name="readController/ipReadData:23"/>
+                    <Sig Type="SIG" Name="readController/ipReadData:24"/>
+                    <Sig Type="SIG" Name="readController/ipReadData:25"/>
+                    <Sig Type="SIG" Name="readController/ipReadData:26"/>
+                    <Sig Type="SIG" Name="readController/ipReadData:27"/>
+                    <Sig Type="SIG" Name="readController/ipReadData:28"/>
+                    <Sig Type="SIG" Name="readController/ipReadData:29"/>
+                    <Sig Type="SIG" Name="readController/ipReadData:30"/>
+                    <Sig Type="SIG" Name="readController/ipReadData:31"/>
+                </Bus>
+                <Bus Name="readController/state">
+                    <Sig Type="SIG" Name="readController/state:0"/>
+                    <Sig Type="SIG" Name="readController/state:1"/>
+                </Bus>
+                <Bus Name="readController/dataLength">
+                    <Sig Type="SIG" Name="readController/dataLength:0"/>
+                    <Sig Type="SIG" Name="readController/dataLength:1"/>
+                    <Sig Type="SIG" Name="readController/dataLength:2"/>
+                    <Sig Type="SIG" Name="readController/dataLength:3"/>
+                </Bus>
+                <Sig Type="SIG" Name="readController/ipReset"/>
+            </Trace>
+            <Trigger>
+                <TU Serialbits="0" Type="0" ID="1" Sig="writeController/opTxWrEnable,"/>
+                <TE MaxSequence="1" MaxEvnCnt="1" ID="1" Resource="1"/>
+            </Trigger>
+        </Dataset>
+    </Core>
+</Project>

@@ -1,0 +1,67 @@
+<Project ModBy="Analyzer" Name="C:/Users/charles/Desktop/fpga/Practicals/05 - Registers/TestProject/reveal.rvs" Date="2022-06-26">
+ <Core Name="Test_LA0">
+  <Setting>
+   <Capture SamplesPerTrig="32" NumTrigsCap="1"/>
+   <Event EventCnt="0" CntEnableRun="0"/>
+   <TrigSetting PreTrgSamples="" AND_ALL="0" PostTrgSamples="" TURadix="0"/>
+  </Setting>
+  <Dataset Name="Base">
+   <Trace>
+    <Bus Name="readController/ipReadData" Radix="0">
+     <Sig Name="readController/ipReadData:0"/>
+     <Sig Name="readController/ipReadData:1"/>
+     <Sig Name="readController/ipReadData:2"/>
+     <Sig Name="readController/ipReadData:3"/>
+     <Sig Name="readController/ipReadData:4"/>
+     <Sig Name="readController/ipReadData:5"/>
+     <Sig Name="readController/ipReadData:6"/>
+     <Sig Name="readController/ipReadData:7"/>
+     <Sig Name="readController/ipReadData:8"/>
+     <Sig Name="readController/ipReadData:9"/>
+     <Sig Name="readController/ipReadData:10"/>
+     <Sig Name="readController/ipReadData:11"/>
+     <Sig Name="readController/ipReadData:12"/>
+     <Sig Name="readController/ipReadData:13"/>
+     <Sig Name="readController/ipReadData:14"/>
+     <Sig Name="readController/ipReadData:15"/>
+     <Sig Name="readController/ipReadData:16"/>
+     <Sig Name="readController/ipReadData:17"/>
+     <Sig Name="readController/ipReadData:18"/>
+     <Sig Name="readController/ipReadData:19"/>
+     <Sig Name="readController/ipReadData:20"/>
+     <Sig Name="readController/ipReadData:21"/>
+     <Sig Name="readController/ipReadData:22"/>
+     <Sig Name="readController/ipReadData:23"/>
+     <Sig Name="readController/ipReadData:24"/>
+     <Sig Name="readController/ipReadData:25"/>
+     <Sig Name="readController/ipReadData:26"/>
+     <Sig Name="readController/ipReadData:27"/>
+     <Sig Name="readController/ipReadData:28"/>
+     <Sig Name="readController/ipReadData:29"/>
+     <Sig Name="readController/ipReadData:30"/>
+     <Sig Name="readController/ipReadData:31"/>
+    </Bus>
+    <Bus Name="readController/state" Radix="RVL_ENUM_readController_state">
+     <Sig Name="readController/state:0"/>
+     <Sig Name="readController/state:1"/>
+    </Bus>
+    <Bus Name="readController/dataLength" Radix="0">
+     <Sig Name="readController/dataLength:0"/>
+     <Sig Name="readController/dataLength:1"/>
+     <Sig Name="readController/dataLength:2"/>
+     <Sig Name="readController/dataLength:3"/>
+    </Bus>
+    <Sig Name="readController/ipReset"/>
+   </Trace>
+   <Trigger>
+    <TU Operator="1" Name="TU1" ID="1" Value="0000" Radix="0"/>
+    <TE Enable="1" Expression="TU1" Name="TE1" ID="1"/>
+   </Trigger>
+  </Dataset>
+ </Core>
+ <Token width="2" type="ENUM" name="RVL_ENUM_readController_state">
+  <entry key="IDLE" value="0"/>
+  <entry key="GET_ADDRESS" value="1"/>
+  <entry key="SET_DATA" value="2"/>
+ </Token>
+</Project>

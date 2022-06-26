@@ -13,7 +13,8 @@ module Registers(
   input  RD_REGISTERS ipRdRegisters,
   output WR_REGISTERS opWrRegisters,
 
-  input         [ 7:0]ipAddress,
+  input         [ 7:0]ipReadAddress,
+  input         [ 7:0]ipWriteAddress,
   input         [31:0]ipWrData,
   input               ipWrEnable,
   output reg    [31:0]opRdData
@@ -23,7 +24,7 @@ module Registers(
 reg Reset;
 
 always @(posedge ipClk) begin
-  case(ipAddress)
+  case(ipReadAddress)
     8'h00  : opRdData <= ipRdRegisters.ClockTicks;
     8'h01  : opRdData <= ipRdRegisters.Buttons;
     8'h02  : opRdData <= opWrRegisters.LEDs;
@@ -38,7 +39,7 @@ always @(posedge ipClk) begin
   //----------------------------------------------------------------------------
 
   end else if(ipWrEnable) begin
-    case(ipAddress)
+    case(ipWriteAddress)
       8'h02: opWrRegisters.LEDs <= ipWrData;
       default:;
     endcase

@@ -1,17 +1,19 @@
 import Structures::*;
 
 module Test #(parameter BLOCK_WIDTH = 32) (
-  input ipClk,
-  input ipReset,
-  input ipRx,
+  input  ipClk,
+  input  ipReset,
+  input  ipRx,
+  input [3:0] ipButtons,
+
   output opTx,
-  output [7:0] opLEDs
+  output  [7:0] opLEDs
 );
 
-  wire opTxReady;
-  wire [7:0] ipAddress;
-  wire [7:0] opReadAddress; 
-  wire opTxWrEnable;
+  reg opTxReady;
+  reg [7:0] opWriteAddress;
+  reg [7:0] opReadAddress; 
+  reg opTxWrEnable;
   UART_PACKET opRxStream;
   UART_PACKET ipTxStream;
 
@@ -22,12 +24,17 @@ module Test #(parameter BLOCK_WIDTH = 32) (
   reg [BLOCK_WIDTH -1:0] localWriteMemory;
   reg [BLOCK_WIDTH -1:0] localReadMemory;
 
+  always @(posedge ipClk) begin
+   readRegisters.Buttons <= ipButtons;
+  end
+  
+
   WriteController writeController(
     .ipClk(ipClk),
     .ipReset(ipReset),
-    .opAddress(ipAddress), // this will be input to the Registers module, taken from incoming stream
+    .opAddress(opWriteAddress), // this will be input to the Registers module, taken from incoming stream
     .opWrData(localWriteMemory),// data from the packet that will be input to the registers module
-    .opTxStream(opRxStream),
+    .opRxStream(opRxStream),
     .opTxWrEnable(opTxWrEnable)
   );
 
@@ -37,7 +44,7 @@ module Test #(parameter BLOCK_WIDTH = 32) (
     .ipReset(ipReset),
     .ipClk(ipClk),
     .opRxStream(opRxStream),
-    .opReadAddress(ipAddress)
+    .opReadAddress(opReadAddress)
   );
   
 
@@ -46,7 +53,8 @@ module Test #(parameter BLOCK_WIDTH = 32) (
     .ipReset(ipReset),
     .ipRdRegisters(readRegisters),
     .opWrRegisters(opWrRegisters),
-    .ipAddress(ipAddress), 
+    .ipReadAddress(opReadAddress), 
+    .ipWriteAddress(opWriteAddress), 
     .ipWrData(localWriteMemory),
     .ipWrEnable(opTxWrEnable),
     .opRdData(localReadMemory)
