@@ -11,8 +11,7 @@ module Test #(parameter BLOCK_WIDTH = 32) (
 );
 
   reg opTxReady;
-  reg [7:0] opWriteAddress;
-  reg [7:0] opReadAddress; 
+  wire [7:0] ipAddress;
   reg opTxWrEnable;
   UART_PACKET opRxStream;
   UART_PACKET ipTxStream;
@@ -32,7 +31,7 @@ module Test #(parameter BLOCK_WIDTH = 32) (
   WriteController writeController(
     .ipClk(ipClk),
     .ipReset(ipReset),
-    .opAddress(opWriteAddress), // this will be input to the Registers module, taken from incoming stream
+    .opAddress(ipAddress), // this will be input to the Registers module, taken from incoming stream
     .opWrData(localWriteMemory),// data from the packet that will be input to the registers module
     .opRxStream(opRxStream),
     .opTxWrEnable(opTxWrEnable)
@@ -44,7 +43,7 @@ module Test #(parameter BLOCK_WIDTH = 32) (
     .ipReset(ipReset),
     .ipClk(ipClk),
     .opRxStream(opRxStream),
-    .opReadAddress(opReadAddress)
+    .opReadAddress(ipAddress)
   );
   
 
@@ -53,8 +52,7 @@ module Test #(parameter BLOCK_WIDTH = 32) (
     .ipReset(ipReset),
     .ipRdRegisters(readRegisters),
     .opWrRegisters(opWrRegisters),
-    .ipReadAddress(opReadAddress), 
-    .ipWriteAddress(opWriteAddress), 
+    .ipAddress(ipAddress),  
     .ipWrData(localWriteMemory),
     .ipWrEnable(opTxWrEnable),
     .opRdData(localReadMemory)
