@@ -2,13 +2,13 @@ module Test_TB;
 
   reg ipClk = 0;
   reg ipReset = 0;
-  reg ipRx= 0;
+  reg ipRx;
   reg [3:0] ipButtons;
   reg [7:0] opLEDs;
   reg [7:0] SYNC = 8'h55;
-  reg [7:0] Destination = 8'h01;
+  reg [7:0] Destination = 8'h00;
   reg [7:0] Source = 8'b10101010;
-  reg [7:0] Length = 8'b00000101;
+  reg [7:0] Length = 8'h5;
   reg [7:0] Data = 8'b00001111;
 
 
@@ -16,7 +16,7 @@ module Test_TB;
   reg  [7:0]ipTxData;
   reg       ipTxSend = 1;
   reg      opTxBusy =0;
-  wire      opTx;
+  reg      opTx;
   reg opRxValid;
   reg [7:0] opRxData;
 
@@ -24,12 +24,16 @@ module Test_TB;
     ipClk = ~ipClk;
   end
 
-  integer n=8;
+  integer n=9;
+  always @(posedge opTxBusy) begin
+     n <= n - 1;
+  end
+  
   always @(posedge ipClk) begin
-    if(n == -1)begin
+    if(n == -100)begin
       $stop;
     end else if(!opTxBusy) begin
-      n <= n - 1;
+     
       case (n)
         8: begin
           ipTxData <= SYNC;
@@ -40,8 +44,11 @@ module Test_TB;
         6: begin
           ipTxData <= Source;
         end
-        4: begin
+        5: begin
           ipTxData <= Length;
+        end
+        4: begin
+          ipTxData <=Data;
         end
         3: begin
           ipTxData <=Data;
