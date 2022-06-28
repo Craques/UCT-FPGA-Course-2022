@@ -38,13 +38,9 @@ module WriteController #(DATA_LENGTH = 4) (
         opTxWrEnable <=1;
         if(opRxStream.Source == 8'h01 && opRxStream.SoP == 1) begin
           opTxWrEnable <= 0;
-          state <= GET_ADDRESS;
+          opAddress <= opRxStream.Data;
+          state <= GET_DATA;
         end
-      end
-      GET_ADDRESS: begin
-        opAddress <= opRxStream.Data;
-        $display("DATA %x", opRxStream.Data)
-        state <= GET_DATA;
       end
       GET_DATA: begin
         if(dataLength > 0) begin
