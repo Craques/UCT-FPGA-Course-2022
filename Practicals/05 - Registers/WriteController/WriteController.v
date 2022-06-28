@@ -43,6 +43,7 @@ module WriteController #(DATA_LENGTH = 4) (
       end
       GET_ADDRESS: begin
         opAddress <= opRxStream.Data;
+        $display("DATA %x", opRxStream.Data)
         state <= GET_DATA;
       end
       GET_DATA: begin

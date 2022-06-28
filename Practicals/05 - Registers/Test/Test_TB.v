@@ -6,11 +6,13 @@ module Test_TB;
   reg [3:0] ipButtons;
   reg [7:0] opLEDs;
   reg [7:0] SYNC = 8'h55;
-  reg [7:0] Destination = 8'h00;
+  reg [7:0] ReadDestination = 8'h00;
+  reg [7:0] WriteDestination = 8'h01;
   reg [7:0] Source = 8'b10101010;
   reg [7:0] Length = 8'h5;
   reg [7:0] Data = 8'b00001111;
-
+  reg [7:0] ReadAddress = 8'h02;
+  reg [7:0] WriteAddress = 8'h02;
 
   // uart data
   reg  [7:0]ipTxData;
@@ -25,42 +27,88 @@ module Test_TB;
   end
 
   integer n=9;
+  integer writeLength = 9;
+  integer readEnable = 0;
+
+
   always @(posedge opTxBusy) begin
-     n <= n - 1;
+    if(!readEnable) begin
+      writeLength <= writeLength - 1;
+    end
   end
-  
-  always @(posedge ipClk) begin
-    if(n == -100)begin
-      $stop;
+
+  always @(posedge opTxBusy) begin
+     if(readEnable) begin
+       n <= n -1;
+     end
+  end
+
+
+/**********************************************************
+ * THIS SECTION WILL CONTAIN THE LOGIC TO WRITE TO MEMORY *
+ **********************************************************/
+
+ always @(posedge ipClk) begin
+    if(writeLength == -1)begin
+      #50 readEnable <=1;
     end else if(!opTxBusy) begin
      
-      case (n)
+      case (writeLength)
         8: begin
           ipTxData <= SYNC;
         end
         7: begin
-          ipTxData <= Destination;
+          ipTxData <= WriteDestination;
         end
         6: begin
-          ipTxData <= Source;
+          ipTxData <= 8'h01;
         end
         5: begin
           ipTxData <= Length;
         end
         4: begin
-          ipTxData <=Data;
+          ipTxData <= WriteAddress;
         end
         3: begin
-          ipTxData <=Data;
+          ipTxData <= 8'h03;
         end
         2: begin
-          ipTxData <=Data;
+          ipTxData <= 8'h04;
         end
         1: begin
-          ipTxData <=Data;
+          ipTxData <= 8'h05;
         end
         0: begin
-          ipTxData <=Data;
+          ipTxData <= 8'h06;
+        end
+      endcase
+    end
+  end
+
+  /**********************************************************
+ * THIS SECTION WILL CONTAIN THE LOGIC TO READ FROM MEMORY *
+ **********************************************************/
+  
+  always @(posedge ipClk) begin
+    if(n == -100)begin
+      $stop;
+    end else if(!opTxBusy && readEnable) begin
+     
+      case (n)
+        4: begin
+          ipTxData <= SYNC;
+        end
+        3: begin
+          ipTxData <= ReadDestination;
+        end
+        2: begin
+          ipTxData <= Source;
+        end
+        1: begin
+          ipTxData <= Length;
+        end
+        0: begin
+          ipTxData <= ReadAddress;
         end
       endcase
     end
