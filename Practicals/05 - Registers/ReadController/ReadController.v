@@ -43,7 +43,7 @@ module ReadController #(
             ipTxStream.Length <= DATA_LENGTH;
             ipTxStream.SoP <= 0;
             ipTxStream.EoP <= 0;
-            if (opRxStream.Destination == 8'h00 && opRxStream.Valid) begin
+            if (opRxStream.Destination == 8'h00) begin
               state <= GET_ADDRESS;
             end
           end
