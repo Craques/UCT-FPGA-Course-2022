@@ -43,7 +43,8 @@ module Test #(parameter BLOCK_WIDTH = 32) (
     .ipReset(ipReset),
     .ipClk(ipClk),
     .opRxStream(opRxStream),
-    .opReadAddress(ipAddress)
+    .opReadAddress(ipAddress),
+    .ipTxReady(opTxReady)
   );
   
 

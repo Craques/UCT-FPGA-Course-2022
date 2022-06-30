@@ -75,19 +75,25 @@ module UART_Packets(
 			txState <= TX_IDLE;
 			UART_TxData <= 8'bz;
 			UART_TxSend <= 0;
+			UART_TxBusy <= 0;
 		end else begin
 			case(txState)
 				TX_IDLE: begin
 					if(!UART_TxBusy && !UART_TxSend) begin
 						opTxReady <= 1;
 					end
-
-					if (ipTxStream.Valid && ipTxStream.SoP && !UART_TxBusy && !UART_TxSend) begin
+					$display("WE ARRIVED");
+					$display("VALID %d", ipTxStream.Valid);
+					$display("SoP %d", ipTxStream.SoP);
+					$display("BUSY %d", UART_TxBusy);
+					$display("SEND %d", UART_TxSend);
+					
+					if (ipTxStream.Valid && !UART_TxBusy) begin
 						locaTxDestination <= ipTxStream.Destination;
 						localTxLength <= ipTxStream.Length;
 						localTxSource <= ipTxStream.Source;
 						localTxData <= ipTxStream.Data;
-
+						$display("THEN WE NEVER LEFT");
 						UART_TxSend <= 1;
 						opTxReady <= 0;
 						txState <= TX_SEND_SYNC;
@@ -100,9 +106,11 @@ module UART_Packets(
 
 				TX_SEND_SYNC: begin
 					UART_TxData <= 8'h55;
+					$display("Got HERE");
 					if ( !UART_TxBusy && !UART_TxSend) begin
 						UART_TxSend <= 1;
 					end else if(UART_TxSend && UART_TxBusy) begin
+						$display("NEVER GOT HERE");
 						txState <= TX_SEND_DESTINATION;
 						UART_TxSend <= 0;
 					end 

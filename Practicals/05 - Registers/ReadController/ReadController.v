@@ -4,7 +4,7 @@ module ReadController #(
   parameter DATA_LENGTH = 4
 ) (
   input   reg [31:0]    ipReadData,
-  input   reg           opTxReady,
+  input   reg           ipTxReady,
   input   reg           ipReset,
   input   reg           ipClk,
   input  UART_PACKET   opRxStream, // packet module will generate this
@@ -44,46 +44,46 @@ module ReadController #(
             ipTxStream.SoP <= 0;
             ipTxStream.EoP <= 0;
             if (opRxStream.Destination == 8'h00) begin
-              state <= GET_ADDRESS;
-            end
-          end
-          GET_ADDRESS: begin
-            opReadAddress <= opRxStream.Data;
-            state <= SET_DATA;
-          end
-          SET_DATA: begin
-          
+              opReadAddress <= opRxStream.Data;
               // we have to read 4 bytes here and send them back
               ipTxStream.Valid <= 1;
-              ipTxStream.Source <= opRxStream.Source; // can be anything, not sure if it matters
-              ipTxStream.Destination <= opRxStream.Destination; // we have to write in the receiver
+              state <= SET_DATA;
+              ipTxStream.Source <= opRxStream.Destination; // can be anything, not sure if it matters
+              ipTxStream.Destination <= opRxStream.Source; // we have to write in the receiver
               ipTxStream.Length <= DATA_LENGTH;
-
-              dataLength <= dataLength - 1;
-              case(dataLength)
-                4:begin
-                  ipTxStream.SoP <= 1;
-                  ipTxStream.Data <= ipReadData[31:24];
-                end
-                3: begin
-                  ipTxStream.SoP <= 0;
-                  ipTxStream.Data <= ipReadData[23:16];
-                end
-                2: begin
-                  ipTxStream.Data <= ipReadData[15:8];
-                end
-                1: begin
-                  ipTxStream.Data <= ipReadData[7:0];
-                  ipTxStream.EoP <= 1;
-                  state <= IDLE;
-                end
-                default: begin
-                  state <= IDLE;
-                end 
-              endcase
-
             end
-          
+          end
+          SET_DATA: begin
+                if(ipTxReady) begin
+                  dataLength <= dataLength - 1;
+                end
+                
+                case(dataLength)
+                  4:begin
+                    ipTxStream.SoP <= 1;
+                    $display("ONE");
+                    ipTxStream.Data <= ipReadData[31:24];
+                  end
+                  3: begin
+                    $display("TWO");
+                    ipTxStream.SoP <= 0;
+                    ipTxStream.Data <= ipReadData[23:16];
+                  end
+                  2: begin
+                  $display("FOUR");
+                    ipTxStream.Data <= ipReadData[15:8];
+                  end
+                  1: begin
+                    $display("THREE");
+                    ipTxStream.Data <= ipReadData[7:0];
+                    ipTxStream.EoP <= 1;
+                    state <= IDLE;
+                  end
+                  default: begin
+                    state <= IDLE;
+                  end 
+                endcase
+            end
           default: begin
             state <= IDLE;
           end
