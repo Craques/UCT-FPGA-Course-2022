@@ -22,7 +22,6 @@ module ReadController #(
   *********************************************************************************************************************/
   typedef enum { 
     IDLE,
-    GET_ADDRESS,
     SET_DATA
   } State;
 
@@ -48,42 +47,45 @@ module ReadController #(
               // we have to read 4 bytes here and send them back
               ipTxStream.Valid <= 1;
               state <= SET_DATA;
-              ipTxStream.Source <= opRxStream.Destination; // can be anything, not sure if it matters
-              ipTxStream.Destination <= opRxStream.Source; // we have to write in the receiver
+              ipTxStream.Source <= opRxStream.Source; // can be anything, not sure if it matters
+              ipTxStream.Destination <= opRxStream.Destination; // we have to write in the receiver
               ipTxStream.Length <= DATA_LENGTH;
             end
           end
           SET_DATA: begin
-                if(ipTxReady) begin
-                  dataLength <= dataLength - 1;
-                end
-                
-                case(dataLength)
-                  4:begin
-                    ipTxStream.SoP <= 1;
-                    $display("ONE");
-                    ipTxStream.Data <= ipReadData[31:24];
-                  end
-                  3: begin
-                    $display("TWO");
-                    ipTxStream.SoP <= 0;
-                    ipTxStream.Data <= ipReadData[23:16];
-                  end
-                  2: begin
-                  $display("FOUR");
-                    ipTxStream.Data <= ipReadData[15:8];
-                  end
-                  1: begin
-                    $display("THREE");
-                    ipTxStream.Data <= ipReadData[7:0];
-                    ipTxStream.EoP <= 1;
-                    state <= IDLE;
-                  end
-                  default: begin
-                    state <= IDLE;
-                  end 
-                endcase
+            $display("DATA_LENGTH, %d", ipTxReady);
+            if(ipTxReady) begin
+              $display("WE GOT HERE BRO");
+              dataLength <= dataLength - 1;
             end
+            case(dataLength)
+              4:begin
+                ipTxStream.SoP <= 1;
+                dataLength <=3;
+                ipTxStream.Data <= ipReadData[31:24];
+              end
+              3: begin
+                $display("TWO");
+                ipTxStream.SoP <= 0;
+                  dataLength <= 2;
+                ipTxStream.Data <= ipReadData[23:16];
+              end
+              2: begin
+              $display("FOUR");
+                dataLength <= 1;
+                ipTxStream.Data <= ipReadData[15:8];
+              end
+              1: begin
+                $display("THREE");
+                ipTxStream.Data <= ipReadData[7:0];
+                ipTxStream.EoP <= 1;
+                state <= IDLE;
+              end
+              default: begin
+                state <= IDLE;
+              end 
+            endcase
+          end
           default: begin
             state <= IDLE;
           end
