@@ -61,18 +61,15 @@ module ReadController #(
             case(dataLength)
               4:begin
                 ipTxStream.SoP <= 1;
-                dataLength <=3;
                 ipTxStream.Data <= ipReadData[31:24];
               end
               3: begin
                 $display("TWO");
                 ipTxStream.SoP <= 0;
-                  dataLength <= 2;
                 ipTxStream.Data <= ipReadData[23:16];
               end
               2: begin
               $display("FOUR");
-                dataLength <= 1;
                 ipTxStream.Data <= ipReadData[15:8];
               end
               1: begin
