@@ -22,7 +22,8 @@ module ReadController #(
   *********************************************************************************************************************/
   typedef enum { 
     IDLE,
-    SET_DATA
+    SET_DATA,
+    BUSY
   } State;
 
   State state;
@@ -32,44 +33,48 @@ module ReadController #(
       dataLength <= DATA_LENGTH;
       state <= IDLE;
     end else begin
-      if (opRxStream.Valid) begin
-         case (state)
-          IDLE: begin
-            dataLength <= DATA_LENGTH;
-            ipTxStream.Valid <= 0;
-            ipTxStream.Source <=  8'hz; // can be anything, not sure if it matters
-            ipTxStream.Destination <= 8'hz; // we have to write in the receiver
+      
+        case (state)
+        IDLE: begin
+          dataLength <= DATA_LENGTH;
+          ipTxStream.Valid <= 0;
+          ipTxStream.Source <=  8'hz; // can be anything, not sure if it matters
+          ipTxStream.Destination <= 8'hz; // we have to write in the receiver
+          ipTxStream.Length <= DATA_LENGTH;
+          ipTxStream.SoP <= 0;
+          ipTxStream.EoP <= 0;
+          if (opRxStream.Destination == 8'h00 && opRxStream.Valid) begin
+            opReadAddress <= opRxStream.Data;
+            // we have to read 4 bytes here and send them back
+            ipTxStream.Valid <= 1;
+            state <= SET_DATA;
+            ipTxStream.Source <= opRxStream.Destination; // can be anything, not sure if it matters
+            ipTxStream.Destination <= opRxStream.Source; // we have to write in the receiver
             ipTxStream.Length <= DATA_LENGTH;
-            ipTxStream.SoP <= 0;
-            ipTxStream.EoP <= 0;
-            if (opRxStream.Destination == 8'h00) begin
-              opReadAddress <= opRxStream.Data;
-              // we have to read 4 bytes here and send them back
-              ipTxStream.Valid <= 1;
-              state <= SET_DATA;
-              ipTxStream.Source <= opRxStream.Source; // can be anything, not sure if it matters
-              ipTxStream.Destination <= opRxStream.Destination; // we have to write in the receiver
-              ipTxStream.Length <= DATA_LENGTH;
-            end
           end
-          SET_DATA: begin
-            $display("DATA_LENGTH, %d", ipTxReady);
-            if(ipTxReady) begin
-              $display("WE GOT HERE BRO");
-              dataLength <= dataLength - 1;
-            end
+        end
+        BUSY: begin
+          if(ipTxReady) begin
+            dataLength <= dataLength - 1;
+            state <= SET_DATA;
+          end
+        end
+        SET_DATA: begin
+          
+          if (ipTxReady) begin
             case(dataLength)
               4:begin
                 ipTxStream.SoP <= 1;
+                state <= BUSY;
                 ipTxStream.Data <= ipReadData[31:24];
               end
               3: begin
-                $display("TWO");
+                state <= BUSY;
                 ipTxStream.SoP <= 0;
                 ipTxStream.Data <= ipReadData[23:16];
               end
               2: begin
-              $display("FOUR");
+                state <= BUSY;
                 ipTxStream.Data <= ipReadData[15:8];
               end
               1: begin
@@ -83,11 +88,13 @@ module ReadController #(
               end 
             endcase
           end
-          default: begin
-            state <= IDLE;
-          end
-        endcase
-      end
+          
+        end
+        default: begin
+          state <= IDLE;
+        end
+      endcase
+    
     end
   end
 endmodule
