@@ -26,57 +26,88 @@
   <LACoreCount>1</LACoreCount>
   <WinUI CoreIndex="0">
    <TraceSigTreeData>
-    <TraceSignal IsHidden="false" Name="readController/ipReadData" NodeType="1" PortIndex="0">
-     <BusRadix Radix="0"/>
-     <IsExpanded Expand="false"/>
-    </TraceSignal>
-    <TraceSignal IsHidden="false" Name="readController/ipReadData:0" NodeType="2" PortIndex="0"/>
-    <TraceSignal IsHidden="false" Name="readController/ipReadData:1" NodeType="2" PortIndex="1"/>
-    <TraceSignal IsHidden="false" Name="readController/ipReadData:2" NodeType="2" PortIndex="2"/>
-    <TraceSignal IsHidden="false" Name="readController/ipReadData:3" NodeType="2" PortIndex="3"/>
-    <TraceSignal IsHidden="false" Name="readController/ipReadData:4" NodeType="2" PortIndex="4"/>
-    <TraceSignal IsHidden="false" Name="readController/ipReadData:5" NodeType="2" PortIndex="5"/>
-    <TraceSignal IsHidden="false" Name="readController/ipReadData:6" NodeType="2" PortIndex="6"/>
-    <TraceSignal IsHidden="false" Name="readController/ipReadData:7" NodeType="2" PortIndex="7"/>
-    <TraceSignal IsHidden="false" Name="readController/ipReadData:8" NodeType="2" PortIndex="8"/>
-    <TraceSignal IsHidden="false" Name="readController/ipReadData:9" NodeType="2" PortIndex="9"/>
-    <TraceSignal IsHidden="false" Name="readController/ipReadData:10" NodeType="2" PortIndex="10"/>
-    <TraceSignal IsHidden="false" Name="readController/ipReadData:11" NodeType="2" PortIndex="11"/>
-    <TraceSignal IsHidden="false" Name="readController/ipReadData:12" NodeType="2" PortIndex="12"/>
-    <TraceSignal IsHidden="false" Name="readController/ipReadData:13" NodeType="2" PortIndex="13"/>
-    <TraceSignal IsHidden="false" Name="readController/ipReadData:14" NodeType="2" PortIndex="14"/>
-    <TraceSignal IsHidden="false" Name="readController/ipReadData:15" NodeType="2" PortIndex="15"/>
-    <TraceSignal IsHidden="false" Name="readController/ipReadData:16" NodeType="2" PortIndex="16"/>
-    <TraceSignal IsHidden="false" Name="readController/ipReadData:17" NodeType="2" PortIndex="17"/>
-    <TraceSignal IsHidden="false" Name="readController/ipReadData:18" NodeType="2" PortIndex="18"/>
-    <TraceSignal IsHidden="false" Name="readController/ipReadData:19" NodeType="2" PortIndex="19"/>
-    <TraceSignal IsHidden="false" Name="readController/ipReadData:20" NodeType="2" PortIndex="20"/>
-    <TraceSignal IsHidden="false" Name="readController/ipReadData:21" NodeType="2" PortIndex="21"/>
-    <TraceSignal IsHidden="false" Name="readController/ipReadData:22" NodeType="2" PortIndex="22"/>
-    <TraceSignal IsHidden="false" Name="readController/ipReadData:23" NodeType="2" PortIndex="23"/>
-    <TraceSignal IsHidden="false" Name="readController/ipReadData:24" NodeType="2" PortIndex="24"/>
-    <TraceSignal IsHidden="false" Name="readController/ipReadData:25" NodeType="2" PortIndex="25"/>
-    <TraceSignal IsHidden="false" Name="readController/ipReadData:26" NodeType="2" PortIndex="26"/>
-    <TraceSignal IsHidden="false" Name="readController/ipReadData:27" NodeType="2" PortIndex="27"/>
-    <TraceSignal IsHidden="false" Name="readController/ipReadData:28" NodeType="2" PortIndex="28"/>
-    <TraceSignal IsHidden="false" Name="readController/ipReadData:29" NodeType="2" PortIndex="29"/>
-    <TraceSignal IsHidden="false" Name="readController/ipReadData:30" NodeType="2" PortIndex="30"/>
-    <TraceSignal IsHidden="false" Name="readController/ipReadData:31" NodeType="2" PortIndex="31"/>
-    <TraceSignal IsHidden="false" Name="readController/state" NodeType="1" PortIndex="32">
+    <TraceSignal IsHidden="false" Name="readController/state" NodeType="1" PortIndex="0">
      <BusRadix Radix="RVL_ENUM_readController_state"/>
      <IsExpanded Expand="false"/>
     </TraceSignal>
-    <TraceSignal IsHidden="false" Name="readController/state:0" NodeType="2" PortIndex="32"/>
-    <TraceSignal IsHidden="false" Name="readController/state:1" NodeType="2" PortIndex="33"/>
-    <TraceSignal IsHidden="false" Name="readController/dataLength" NodeType="1" PortIndex="34">
+    <TraceSignal IsHidden="false" Name="readController/state:0" NodeType="2" PortIndex="0"/>
+    <TraceSignal IsHidden="false" Name="ipTxStream.Destination" NodeType="1" PortIndex="1">
      <BusRadix Radix="0"/>
      <IsExpanded Expand="false"/>
     </TraceSignal>
-    <TraceSignal IsHidden="false" Name="readController/dataLength:0" NodeType="2" PortIndex="34"/>
-    <TraceSignal IsHidden="false" Name="readController/dataLength:1" NodeType="2" PortIndex="35"/>
-    <TraceSignal IsHidden="false" Name="readController/dataLength:2" NodeType="2" PortIndex="36"/>
-    <TraceSignal IsHidden="false" Name="readController/dataLength:3" NodeType="2" PortIndex="37"/>
-    <TraceSignal IsHidden="false" Name="readController/ipReset" NodeType="0" PortIndex="38"/>
+    <TraceSignal IsHidden="false" Name="ipTxStream.Destination:0" NodeType="2" PortIndex="1"/>
+    <TraceSignal IsHidden="false" Name="ipTxStream.Destination:1" NodeType="2" PortIndex="2"/>
+    <TraceSignal IsHidden="false" Name="ipTxStream.Destination:2" NodeType="2" PortIndex="3"/>
+    <TraceSignal IsHidden="false" Name="ipTxStream.Destination:3" NodeType="2" PortIndex="4"/>
+    <TraceSignal IsHidden="false" Name="ipTxStream.Destination:4" NodeType="2" PortIndex="5"/>
+    <TraceSignal IsHidden="false" Name="ipTxStream.Destination:5" NodeType="2" PortIndex="6"/>
+    <TraceSignal IsHidden="false" Name="ipTxStream.Destination:6" NodeType="2" PortIndex="7"/>
+    <TraceSignal IsHidden="false" Name="ipTxStream.Destination:7" NodeType="2" PortIndex="8"/>
+    <TraceSignal IsHidden="false" Name="ipTxStream.EoP" NodeType="0" PortIndex="9"/>
+    <TraceSignal IsHidden="false" Name="ipTxStream.Length" NodeType="1" PortIndex="10">
+     <BusRadix Radix="0"/>
+     <IsExpanded Expand="false"/>
+    </TraceSignal>
+    <TraceSignal IsHidden="false" Name="ipTxStream.Length:0" NodeType="2" PortIndex="10"/>
+    <TraceSignal IsHidden="false" Name="ipTxStream.Length:1" NodeType="2" PortIndex="11"/>
+    <TraceSignal IsHidden="false" Name="ipTxStream.Length:2" NodeType="2" PortIndex="12"/>
+    <TraceSignal IsHidden="false" Name="ipTxStream.Length:3" NodeType="2" PortIndex="13"/>
+    <TraceSignal IsHidden="false" Name="ipTxStream.Length:4" NodeType="2" PortIndex="14"/>
+    <TraceSignal IsHidden="false" Name="ipTxStream.Length:5" NodeType="2" PortIndex="15"/>
+    <TraceSignal IsHidden="false" Name="ipTxStream.Length:6" NodeType="2" PortIndex="16"/>
+    <TraceSignal IsHidden="false" Name="ipTxStream.Length:7" NodeType="2" PortIndex="17"/>
+    <TraceSignal IsHidden="false" Name="ipTxStream.SoP" NodeType="0" PortIndex="18"/>
+    <TraceSignal IsHidden="false" Name="ipTxStream.Source" NodeType="1" PortIndex="19">
+     <BusRadix Radix="0"/>
+     <IsExpanded Expand="false"/>
+    </TraceSignal>
+    <TraceSignal IsHidden="false" Name="ipTxStream.Source:0" NodeType="2" PortIndex="19"/>
+    <TraceSignal IsHidden="false" Name="ipTxStream.Source:1" NodeType="2" PortIndex="20"/>
+    <TraceSignal IsHidden="false" Name="ipTxStream.Source:2" NodeType="2" PortIndex="21"/>
+    <TraceSignal IsHidden="false" Name="ipTxStream.Source:3" NodeType="2" PortIndex="22"/>
+    <TraceSignal IsHidden="false" Name="ipTxStream.Source:4" NodeType="2" PortIndex="23"/>
+    <TraceSignal IsHidden="false" Name="ipTxStream.Source:5" NodeType="2" PortIndex="24"/>
+    <TraceSignal IsHidden="false" Name="ipTxStream.Source:6" NodeType="2" PortIndex="25"/>
+    <TraceSignal IsHidden="false" Name="ipTxStream.Source:7" NodeType="2" PortIndex="26"/>
+    <TraceSignal IsHidden="false" Name="ipTxStream.Valid" NodeType="0" PortIndex="27"/>
+    <TraceSignal IsHidden="false" Name="readController/dataLength" NodeType="1" PortIndex="28">
+     <BusRadix Radix="0"/>
+     <IsExpanded Expand="false"/>
+    </TraceSignal>
+    <TraceSignal IsHidden="false" Name="readController/dataLength:0" NodeType="2" PortIndex="28"/>
+    <TraceSignal IsHidden="false" Name="readController/dataLength:1" NodeType="2" PortIndex="29"/>
+    <TraceSignal IsHidden="false" Name="readController/dataLength:2" NodeType="2" PortIndex="30"/>
+    <TraceSignal IsHidden="false" Name="readController/dataLength:3" NodeType="2" PortIndex="31"/>
+    <TraceSignal IsHidden="false" Name="ipTxStream.Data" NodeType="1" PortIndex="32">
+     <BusRadix Radix="0"/>
+     <IsExpanded Expand="false"/>
+    </TraceSignal>
+    <TraceSignal IsHidden="false" Name="ipTxStream.Data:0" NodeType="2" PortIndex="32"/>
+    <TraceSignal IsHidden="false" Name="ipTxStream.Data:1" NodeType="2" PortIndex="33"/>
+    <TraceSignal IsHidden="false" Name="ipTxStream.Data:2" NodeType="2" PortIndex="34"/>
+    <TraceSignal IsHidden="false" Name="ipTxStream.Data:3" NodeType="2" PortIndex="35"/>
+    <TraceSignal IsHidden="false" Name="ipTxStream.Data:4" NodeType="2" PortIndex="36"/>
+    <TraceSignal IsHidden="false" Name="ipTxStream.Data:5" NodeType="2" PortIndex="37"/>
+    <TraceSignal IsHidden="false" Name="ipTxStream.Data:6" NodeType="2" PortIndex="38"/>
+    <TraceSignal IsHidden="false" Name="ipTxStream.Data:7" NodeType="2" PortIndex="39"/>
+    <TraceSignal IsHidden="false" Name="writeController/state" NodeType="1" PortIndex="40">
+     <BusRadix Radix="RVL_ENUM_writeController_state"/>
+     <IsExpanded Expand="false"/>
+    </TraceSignal>
+    <TraceSignal IsHidden="false" Name="writeController/state:0" NodeType="2" PortIndex="40"/>
+    <TraceSignal IsHidden="false" Name="writeController/state:1" NodeType="2" PortIndex="41"/>
+    <TraceSignal IsHidden="false" Name="opRxStream.Data" NodeType="1" PortIndex="42">
+     <BusRadix Radix="0"/>
+     <IsExpanded Expand="false"/>
+    </TraceSignal>
+    <TraceSignal IsHidden="false" Name="opRxStream.Data:0" NodeType="2" PortIndex="42"/>
+    <TraceSignal IsHidden="false" Name="opRxStream.Data:1" NodeType="2" PortIndex="43"/>
+    <TraceSignal IsHidden="false" Name="opRxStream.Data:2" NodeType="2" PortIndex="44"/>
+    <TraceSignal IsHidden="false" Name="opRxStream.Data:3" NodeType="2" PortIndex="45"/>
+    <TraceSignal IsHidden="false" Name="opRxStream.Data:4" NodeType="2" PortIndex="46"/>
+    <TraceSignal IsHidden="false" Name="opRxStream.Data:5" NodeType="2" PortIndex="47"/>
+    <TraceSignal IsHidden="false" Name="opRxStream.Data:6" NodeType="2" PortIndex="48"/>
+    <TraceSignal IsHidden="false" Name="opRxStream.Data:7" NodeType="2" PortIndex="49"/>
    </TraceSigTreeData>
    <TriggerUI UserSelect="0" PreSelectType="0" PreSelect="1" UserSelectPos="0"/>
    <CoreRun Run="true"/>
