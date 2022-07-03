@@ -1,7 +1,7 @@
-<Project ModBy="Inserter" SigType="0" Name="C:/Users/charles/Desktop/fpga/Practicals/05 - Registers/TestProject/reveal.rvl" Date="2022-07-02">
+<Project ModBy="Inserter" SigType="0" Name="C:/Users/charles/Desktop/fpga/Practicals/05 - Registers/TestProject/reveal.rvl" Date="2022-07-04">
     <IP Version="1_6_042617"/>
     <Design DesignEntry="Schematic/Verilog HDL" Synthesis="synplify" DeviceFamily="LatticeXP2" DesignName="TestProject"/>
-    <Core InsertDataset="0" Insert="1" Reveal_sig="432372232" Name="Test_LA0" ID="0">
+    <Core InsertDataset="0" Insert="1" Reveal_sig="432539492" Name="Test_LA0" ID="0">
         <Setting>
             <Clock SampleClk="ipClk" SampleEnable="0" EnableClk="" EnableClk_Pri="0"/>
             <TraceBuffer Implementation="0" BitTimeStamp="0" hasTimeStamp="0" IncTrigSig="0" BufferDepth="32"/>
@@ -14,6 +14,7 @@
             <Trace>
                 <Bus Name="readController/state">
                     <Sig Type="SIG" Name="readController/state:0"/>
+                    <Sig Type="SIG" Name="readController/state:1"/>
                 </Bus>
                 <Bus Name="ipTxStream.Destination">
                     <Sig Type="SIG" Name="ipTxStream.Destination:0"/>

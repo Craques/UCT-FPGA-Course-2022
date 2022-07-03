@@ -18,11 +18,10 @@ def Read(s, Address):
     return struct.unpack_from('<I', s.read(9), offset=5)[0]
 #-------------------------------------------------------------------------------
 
-with serial.Serial(port='COM9', baudrate=115200) as s:
+with serial.Serial(port='COM4', baudrate=115200) as s:
     for n in range(500):
         print(Read(s, Buttons))
         Time = Read(s, ClockTicks)
-        print("HELLO WORLD")
         Write(s, LEDs, Time >> 23)
 
         print(Time)
