@@ -39,10 +39,10 @@ module Test #(parameter BLOCK_WIDTH = 32) (
 
   ReadController readController(
     .ipReadData(localReadMemory),
-    .ipTxStream(ipTxStream),
+    .opTxStream(ipTxStream), //output will be transmitted
     .ipReset(ipReset),
     .ipClk(ipClk),
-    .opRxStream(opRxStream),
+    .ipRxStream(opRxStream),
     .opReadAddress(ipAddress),
     .ipTxReady(opTxReady)
   );
