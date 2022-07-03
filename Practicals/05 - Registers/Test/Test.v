@@ -33,7 +33,7 @@ module Test #(parameter BLOCK_WIDTH = 32) (
     .ipReset(ipReset),
     .opAddress(ipAddress), // this will be input to the Registers module, taken from incoming stream
     .opWrData(localWriteMemory),// data from the packet that will be input to the registers module
-    .opRxStream(opRxStream),
+    .ipRxStream(opRxStream), //input generated from bits
     .opTxWrEnable(opTxWrEnable)
   );
 

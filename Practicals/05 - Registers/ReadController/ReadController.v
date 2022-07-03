@@ -27,22 +27,52 @@ module ReadController #(
   } State;
 
   State state;
-  always @(posedge ipClk) begin
+
+  always @(posedge ipTxReady) begin
     reset <= ipReset;
-    if(reset) begin
+    if (reset) begin
       dataLength <= DATA_LENGTH;
+    end
+
+    if(state == SET_DATA && dataLength > 0) begin
+      dataLength <= dataLength -1; 
+      case(dataLength)
+        4:begin
+          opTxStream.SoP <= 1;
+          opTxStream.EoP <= 0;
+          opTxStream.Data <= 8'h01;
+        end
+        3: begin
+          opTxStream.SoP <= 0;
+          opTxStream.Data <=  8'h02;
+        end
+        2: begin
+          opTxStream.Data <=  8'h03;
+        end
+        1: begin
+          opTxStream.Data <=  8'h04;
+          opTxStream.EoP <= 1;
+        end
+        default: begin
+        end 
+      endcase 
+    end else begin
+      state <= IDLE;
+    end
+  end
+
+  always @(posedge ipClk) begin
+    
+    if(reset) begin
       state <= IDLE;
     end else begin
-      
         case (state)
         IDLE: begin
-          dataLength <= DATA_LENGTH;
           opTxStream.Valid <= 0;
           opTxStream.Source <=  8'hz; // can be anything, not sure if it matters
           opTxStream.Destination <= 8'hz; // we have to write in the receiver
           opTxStream.Length <= DATA_LENGTH;
-          opTxStream.SoP <= 0;
-          opTxStream.EoP <= 0;
+          
           if (ipRxStream.Destination == 8'h00 && ipRxStream.Valid) begin
             opReadAddress <= ipRxStream.Data;
             // we have to read 4 bytes here and send them back
@@ -53,42 +83,11 @@ module ReadController #(
             opTxStream.Length <= DATA_LENGTH;
           end
         end
-        BUSY: begin
-          if(ipTxReady) begin
-            dataLength <= dataLength - 1;
-            state <= SET_DATA;
-          end
-        end
+       
         SET_DATA: begin
-          
-          if (ipTxReady) begin
-            case(dataLength)
-              4:begin
-                opTxStream.SoP <= 1;
-                state <= BUSY;
-                opTxStream.Data <= ipReadData[31:24];
-              end
-              3: begin
-                state <= BUSY;
-                opTxStream.SoP <= 0;
-                opTxStream.Data <= ipReadData[23:16];
-              end
-              2: begin
-                state <= BUSY;
-                opTxStream.Data <= ipReadData[15:8];
-              end
-              1: begin
-                $display("THREE");
-                opTxStream.Data <= ipReadData[7:0];
-                opTxStream.EoP <= 1;
-                state <= IDLE;
-              end
-              default: begin
-                state <= IDLE;
-              end 
-            endcase
+          if (dataLength == 0 && ipTxReady) begin
+            opTxStream.Valid <= 0;
           end
-          
         end
         default: begin
           state <= IDLE;

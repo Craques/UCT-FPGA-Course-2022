@@ -150,7 +150,7 @@ module UART_Packets(
 					end else if(UART_TxBusy && UART_TxSend) begin
 						UART_TxSend <= 0;
 						opTxReady <= 0;
-						if (localTxLength == 1 || ipTxStream.EoP) begin
+						if (localTxLength == 0) begin
 							txState <= TX_IDLE;
 						end else begin
 							localTxLength <= localTxLength - 1;
