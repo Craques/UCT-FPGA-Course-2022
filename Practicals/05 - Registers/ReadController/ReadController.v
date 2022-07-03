@@ -7,9 +7,9 @@ module ReadController #(
   input   reg           ipTxReady,
   input   reg           ipReset,
   input   reg           ipClk,
-  input  UART_PACKET   opRxStream, // packet module will generate this
+  input  UART_PACKET   ipRxStream, // packet module will generate this
   
-  output  UART_PACKET   ipTxStream, // we will be assigning items to send here
+  output  UART_PACKET   opTxStream, // we will be assigning items to send here
   output  reg [7:0]     opReadAddress
 );
 
@@ -37,20 +37,20 @@ module ReadController #(
         case (state)
         IDLE: begin
           dataLength <= DATA_LENGTH;
-          ipTxStream.Valid <= 0;
-          ipTxStream.Source <=  8'hz; // can be anything, not sure if it matters
-          ipTxStream.Destination <= 8'hz; // we have to write in the receiver
-          ipTxStream.Length <= DATA_LENGTH;
-          ipTxStream.SoP <= 0;
-          ipTxStream.EoP <= 0;
-          if (opRxStream.Destination == 8'h00 && opRxStream.Valid) begin
-            opReadAddress <= opRxStream.Data;
+          opTxStream.Valid <= 0;
+          opTxStream.Source <=  8'hz; // can be anything, not sure if it matters
+          opTxStream.Destination <= 8'hz; // we have to write in the receiver
+          opTxStream.Length <= DATA_LENGTH;
+          opTxStream.SoP <= 0;
+          opTxStream.EoP <= 0;
+          if (ipRxStream.Destination == 8'h00 && ipRxStream.Valid) begin
+            opReadAddress <= ipRxStream.Data;
             // we have to read 4 bytes here and send them back
-            ipTxStream.Valid <= 1;
+            opTxStream.Valid <= 1;
             state <= SET_DATA;
-            ipTxStream.Source <= opRxStream.Destination; // can be anything, not sure if it matters
-            ipTxStream.Destination <= opRxStream.Source; // we have to write in the receiver
-            ipTxStream.Length <= DATA_LENGTH;
+            opTxStream.Source <= ipRxStream.Destination; // can be anything, not sure if it matters
+            opTxStream.Destination <= ipRxStream.Source; // we have to write in the receiver
+            opTxStream.Length <= DATA_LENGTH;
           end
         end
         BUSY: begin
@@ -64,23 +64,23 @@ module ReadController #(
           if (ipTxReady) begin
             case(dataLength)
               4:begin
-                ipTxStream.SoP <= 1;
+                opTxStream.SoP <= 1;
                 state <= BUSY;
-                ipTxStream.Data <= ipReadData[31:24];
+                opTxStream.Data <= ipReadData[31:24];
               end
               3: begin
                 state <= BUSY;
-                ipTxStream.SoP <= 0;
-                ipTxStream.Data <= ipReadData[23:16];
+                opTxStream.SoP <= 0;
+                opTxStream.Data <= ipReadData[23:16];
               end
               2: begin
                 state <= BUSY;
-                ipTxStream.Data <= ipReadData[15:8];
+                opTxStream.Data <= ipReadData[15:8];
               end
               1: begin
                 $display("THREE");
-                ipTxStream.Data <= ipReadData[7:0];
-                ipTxStream.EoP <= 1;
+                opTxStream.Data <= ipReadData[7:0];
+                opTxStream.EoP <= 1;
                 state <= IDLE;
               end
               default: begin
