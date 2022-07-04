@@ -1,95 +1,96 @@
-<Project ModBy="Inserter" Name="C:/Users/charles/Desktop/fpga/Practicals/05 - Registers/TestProject/reveal.rvl" Date="2022-07-04">
-    <Core Name="Test_LA0">
-        <Setting>
-            <Capture SamplesPerTrig="32" NumTrigsCap="1"/>
-            <Event EventCnt="0" CntEnableRun="0"/>
-            <TrigSetting PreTrgSamples="" AND_ALL="0" PostTrgSamples="" TURadix="0"/>
-        </Setting>
-        <Dataset Name="Base">
-            <Trace>
-                <Bus Name="readController/state" Radix="RVL_ENUM_readController_state">
-                    <Sig Name="readController/state:0"/>
-                    <Sig Name="readController/state:1"/>
-                </Bus>
-                <Bus Name="ipTxStream.Destination" Radix="0">
-                    <Sig Name="ipTxStream.Destination:0"/>
-                    <Sig Name="ipTxStream.Destination:1"/>
-                    <Sig Name="ipTxStream.Destination:2"/>
-                    <Sig Name="ipTxStream.Destination:3"/>
-                    <Sig Name="ipTxStream.Destination:4"/>
-                    <Sig Name="ipTxStream.Destination:5"/>
-                    <Sig Name="ipTxStream.Destination:6"/>
-                    <Sig Name="ipTxStream.Destination:7"/>
-                </Bus>
-                <Sig Name="ipTxStream.EoP"/>
-                <Bus Name="ipTxStream.Length" Radix="0">
-                    <Sig Name="ipTxStream.Length:0"/>
-                    <Sig Name="ipTxStream.Length:1"/>
-                    <Sig Name="ipTxStream.Length:2"/>
-                    <Sig Name="ipTxStream.Length:3"/>
-                    <Sig Name="ipTxStream.Length:4"/>
-                    <Sig Name="ipTxStream.Length:5"/>
-                    <Sig Name="ipTxStream.Length:6"/>
-                    <Sig Name="ipTxStream.Length:7"/>
-                </Bus>
-                <Sig Name="ipTxStream.SoP"/>
-                <Bus Name="ipTxStream.Source" Radix="0">
-                    <Sig Name="ipTxStream.Source:0"/>
-                    <Sig Name="ipTxStream.Source:1"/>
-                    <Sig Name="ipTxStream.Source:2"/>
-                    <Sig Name="ipTxStream.Source:3"/>
-                    <Sig Name="ipTxStream.Source:4"/>
-                    <Sig Name="ipTxStream.Source:5"/>
-                    <Sig Name="ipTxStream.Source:6"/>
-                    <Sig Name="ipTxStream.Source:7"/>
-                </Bus>
-                <Sig Name="ipTxStream.Valid"/>
-                <Bus Name="readController/dataLength" Radix="0">
-                    <Sig Name="readController/dataLength:0"/>
-                    <Sig Name="readController/dataLength:1"/>
-                    <Sig Name="readController/dataLength:2"/>
-                    <Sig Name="readController/dataLength:3"/>
-                </Bus>
-                <Bus Name="ipTxStream.Data" Radix="0">
-                    <Sig Name="ipTxStream.Data:0"/>
-                    <Sig Name="ipTxStream.Data:1"/>
-                    <Sig Name="ipTxStream.Data:2"/>
-                    <Sig Name="ipTxStream.Data:3"/>
-                    <Sig Name="ipTxStream.Data:4"/>
-                    <Sig Name="ipTxStream.Data:5"/>
-                    <Sig Name="ipTxStream.Data:6"/>
-                    <Sig Name="ipTxStream.Data:7"/>
-                </Bus>
-                <Bus Name="writeController/state" Radix="RVL_ENUM_writeController_state">
-                    <Sig Name="writeController/state:0"/>
-                    <Sig Name="writeController/state:1"/>
-                </Bus>
-                <Bus Name="opRxStream.Data" Radix="0">
-                    <Sig Name="opRxStream.Data:0"/>
-                    <Sig Name="opRxStream.Data:1"/>
-                    <Sig Name="opRxStream.Data:2"/>
-                    <Sig Name="opRxStream.Data:3"/>
-                    <Sig Name="opRxStream.Data:4"/>
-                    <Sig Name="opRxStream.Data:5"/>
-                    <Sig Name="opRxStream.Data:6"/>
-                    <Sig Name="opRxStream.Data:7"/>
-                </Bus>
-            </Trace>
-            <Trigger>
-                <TU Operator="6" Name="TU1" ID="1" Value="1" Radix="0"/>
-                <TE Enable="1" Expression="TU1" Name="TE1" ID="1"/>
-            </Trigger>
-        </Dataset>
-    </Core>
-    <Token width="2" type="ENUM" name="RVL_ENUM_readController_state">
-        <entry key="IDLE" value="0"/>
-        <entry key="SET_DATA" value="1"/>
-        <entry key="BUSY" value="2"/>
-    </Token>
-    <Token width="2" type="ENUM" name="RVL_ENUM_writeController_state">
-        <entry key="IDLE" value="0"/>
-        <entry key="GET_ADDRESS" value="1"/>
-        <entry key="GET_OPERATION" value="2"/>
-        <entry key="GET_DATA" value="3"/>
-    </Token>
+<Project ModBy="Analyzer" Name="C:/Users/charles/Desktop/fpga/Practicals/05 - Registers/TestProject/reveal.rvs" Date="2022-07-04">
+ <Core Name="Test_LA0">
+  <Setting>
+   <Capture SamplesPerTrig="32" NumTrigsCap="1"/>
+   <Event EventCnt="0" CntEnableRun="0"/>
+   <TrigSetting PreTrgSamples="" AND_ALL="0" PostTrgSamples="" TURadix="0"/>
+  </Setting>
+  <Dataset Name="Base">
+   <Trace>
+    <Bus Name="readController/state" Radix="RVL_ENUM_readController_state">
+     <Sig Name="readController/state:0"/>
+     <Sig Name="readController/state:1"/>
+    </Bus>
+    <Bus Name="ipTxStream.Destination" Radix="0">
+     <Sig Name="ipTxStream.Destination:0"/>
+     <Sig Name="ipTxStream.Destination:1"/>
+     <Sig Name="ipTxStream.Destination:2"/>
+     <Sig Name="ipTxStream.Destination:3"/>
+     <Sig Name="ipTxStream.Destination:4"/>
+     <Sig Name="ipTxStream.Destination:5"/>
+     <Sig Name="ipTxStream.Destination:6"/>
+     <Sig Name="ipTxStream.Destination:7"/>
+    </Bus>
+    <Sig Name="ipTxStream.EoP"/>
+    <Bus Name="ipTxStream.Length" Radix="0">
+     <Sig Name="ipTxStream.Length:0"/>
+     <Sig Name="ipTxStream.Length:1"/>
+     <Sig Name="ipTxStream.Length:2"/>
+     <Sig Name="ipTxStream.Length:3"/>
+     <Sig Name="ipTxStream.Length:4"/>
+     <Sig Name="ipTxStream.Length:5"/>
+     <Sig Name="ipTxStream.Length:6"/>
+     <Sig Name="ipTxStream.Length:7"/>
+    </Bus>
+    <Sig Name="ipTxStream.SoP"/>
+    <Bus Name="ipTxStream.Source" Radix="0">
+     <Sig Name="ipTxStream.Source:0"/>
+     <Sig Name="ipTxStream.Source:1"/>
+     <Sig Name="ipTxStream.Source:2"/>
+     <Sig Name="ipTxStream.Source:3"/>
+     <Sig Name="ipTxStream.Source:4"/>
+     <Sig Name="ipTxStream.Source:5"/>
+     <Sig Name="ipTxStream.Source:6"/>
+     <Sig Name="ipTxStream.Source:7"/>
+    </Bus>
+    <Sig Name="ipTxStream.Valid"/>
+    <Bus Name="readController/dataLength" Radix="0">
+     <Sig Name="readController/dataLength:0"/>
+     <Sig Name="readController/dataLength:1"/>
+     <Sig Name="readController/dataLength:2"/>
+     <Sig Name="readController/dataLength:3"/>
+    </Bus>
+    <Bus Name="ipTxStream.Data" Radix="0">
+     <Sig Name="ipTxStream.Data:0"/>
+     <Sig Name="ipTxStream.Data:1"/>
+     <Sig Name="ipTxStream.Data:2"/>
+     <Sig Name="ipTxStream.Data:3"/>
+     <Sig Name="ipTxStream.Data:4"/>
+     <Sig Name="ipTxStream.Data:5"/>
+     <Sig Name="ipTxStream.Data:6"/>
+     <Sig Name="ipTxStream.Data:7"/>
+    </Bus>
+    <Bus Name="writeController/state" Radix="RVL_ENUM_writeController_state">
+     <Sig Name="writeController/state:0"/>
+     <Sig Name="writeController/state:1"/>
+    </Bus>
+    <Bus Name="opRxStream.Data" Radix="0">
+     <Sig Name="opRxStream.Data:0"/>
+     <Sig Name="opRxStream.Data:1"/>
+     <Sig Name="opRxStream.Data:2"/>
+     <Sig Name="opRxStream.Data:3"/>
+     <Sig Name="opRxStream.Data:4"/>
+     <Sig Name="opRxStream.Data:5"/>
+     <Sig Name="opRxStream.Data:6"/>
+     <Sig Name="opRxStream.Data:7"/>
+    </Bus>
+    <Sig Name="opRxStream.Valid"/>
+   </Trace>
+   <Trigger>
+    <TU Operator="6" Name="TU1" ID="1" Value="1" Radix="0"/>
+    <TE Enable="1" Expression="TU1" Name="TE1" ID="1"/>
+   </Trigger>
+  </Dataset>
+ </Core>
+ <Token width="2" type="ENUM" name="RVL_ENUM_readController_state">
+  <entry key="IDLE" value="0"/>
+  <entry key="SET_DATA" value="1"/>
+  <entry key="BUSY" value="2"/>
+ </Token>
+ <Token width="2" type="ENUM" name="RVL_ENUM_writeController_state">
+  <entry key="IDLE" value="0"/>
+  <entry key="GET_ADDRESS" value="1"/>
+  <entry key="GET_OPERATION" value="2"/>
+  <entry key="GET_DATA" value="3"/>
+ </Token>
 </Project>

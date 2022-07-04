@@ -21,10 +21,10 @@ def Read(s, Address):
 with serial.Serial(port='COM4', baudrate=115200) as s:
     for n in range(500):
         print(Read(s, Buttons))
-        Time = Read(s, ClockTicks)
-        Write(s, LEDs, Time >> 23)
+        # Time = Read(s, ClockTicks)
+        Write(s, LEDs, 0xaa)
 
-        print(Time)
+        # print(Time)
         sys.stdout.flush()
         time.sleep(0.02)
 #-------------------------------------------------------------------------------
