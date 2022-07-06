@@ -1,6 +1,6 @@
 module FIFO #(
   param FIFO_DEPTH = 32,
-  param DATA_LENGTH = 8;
+  param DATA_LENGTH = 8
 ) (
   //fifo params
   input                       ipClk,
@@ -72,17 +72,11 @@ module FIFO #(
       count <= 0;
     end else begin
       case ({ipReadEnable, ipWriteEnable})
-        1'b00: begin
-          count <= count;
-        end
         1'b01: begin
           count <= count + 1;  
         end
         1'b10: begin
           count <= count -1;
-        end
-        1'b11: begin
-          count <= count;  
         end
         default: begin
           count <= count
