@@ -1,29 +1,29 @@
 module FIFO #(
-  param FIFO_DEPTH = 32,
-  param DATA_LENGTH = 8
+  parameter FIFO_DEPTH = 32,
+  parameter DATA_LENGTH = 8
 ) (
   //fifo params
-  input                       ipClk,
-  input                       ipReset,
+  input                           ipClk,
+  input                           ipReset,
 
   //read params
-  input                       ipReadEnable,
-  output [DATA_LENGTH - 1:0]  opReadData,
-  output [DATA_LENGTH - 1:0]  opFIFOEmpty,
+  input                           ipReadEnable,
+  output reg [DATA_LENGTH - 1:0]  opReadData,
+  output reg                      opFIFOEmpty,
   
   //write params
-  input                       ipWriteEnable,
-  input                       ipWriteData,
-  output                      opFIFOFull
+  input                           ipWriteEnable,
+  input  reg [DATA_LENGTH - 1:0]  ipWriteData,
+  output reg                      opFIFOFull
 );
 
 //local parameters
   reg reset;
   reg [DATA_LENGTH - 1: 0]  FIFOMemory [FIFO_DEPTH-1: 0];
   //will have to figure out how to dynamically set the length of count;
-  reg [6:0]                 count;
-  reg [5:0]                 readPointer;
-  reg [5:0]                 writePointer;
+  reg [6:0]                 count = 0;
+  reg [5:0]                 readPointer = 0;
+  reg [5:0]                 writePointer = 0;
 
 
   //assign reset on clockedge
@@ -57,7 +57,7 @@ module FIFO #(
     end
 
     if (reset) begin
-      writePointer <= 0
+      writePointer <= 0;
     end else if(ipWriteEnable) begin
       FIFOMemory[writePointer] <= ipWriteData;
       writePointer <= writePointer + 1;
@@ -72,14 +72,17 @@ module FIFO #(
       count <= 0;
     end else begin
       case ({ipReadEnable, ipWriteEnable})
-        1'b01: begin
+        2'b01: begin
+          $display("ADDING");
           count <= count + 1;  
         end
-        1'b10: begin
-          count <= count -1;
+        2'b10: begin
+          $display("SUBTRACTING");
+          count <= count - 1;
         end
         default: begin
-          count <= count
+          $display("ERROR");
+          count <= count;
         end
       endcase
     end

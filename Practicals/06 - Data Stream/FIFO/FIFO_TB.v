@@ -11,31 +11,43 @@ module FIFO_TB;
   reg opFIFOEmpty;
 
   always #10 begin
-    ipClk = ~ipClk
+    ipClk = ~ipClk;
   end
 
   initial begin
-    ipReset <= 1;
-    #10 ipReset <= 0;
+    ipReset <= 0;
   
-    //write data first
-    ipReadEnable <= 1;
-    ipWriteEnable <= 0;
-
-    for (int i=0; i<32; i++) begin
-      #10;
-      ipWriteData <= i;
-    end
     
-    //read data next
-    ipReadEnable <= 0;
-    ipWriteEnable <= 1;
+    // for (int i=0; i<32; i++) begin
+    //   #10;
+    //   ipWriteData <= i;
+    // end
+    
+    // //read data next
+    // ipReadEnable <= 0;
+    // ipWriteEnable <= 1;
 
-    for (int i=0; i<32; i++) begin
-       ipReadEnable <= 1;
-       #10;
-    end
+    // for (int i=0; i<32; i++) begin
+    //    ipReadEnable <= 1;
+    //    #10;
+    // end
   end
+
+  
+  always @(posedge ipClk) begin
+    int i; 
+    i <= i + 1;
+    if (i <32 ) begin
+      ipWriteData <= i;
+      ipReadEnable <= 0;
+      ipWriteEnable <= 1;
+    end 
+  end
+
+
+  // always @(posedge ipClk) begin
+    
+  // end
 
 
   FIFO DUT(
@@ -49,5 +61,5 @@ module FIFO_TB;
     .ipWriteEnable(ipWriteData),
     .ipWriteData(ipWriteData),
     .opFIFOFull(opFIFOFull)
-  ) 
+  ); 
 endmodule
