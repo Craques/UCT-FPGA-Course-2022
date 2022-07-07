@@ -17,7 +17,7 @@ module FIFO #(
   output reg                      opFIFOFull
 );
 
-//local parameters
+  //local parameters
   reg reset;
   reg [DATA_LENGTH - 1: 0]          FIFOMemory [FIFO_DEPTH-1: 0];
   //will have to figure out how to dynamically set the length of count;
@@ -33,48 +33,40 @@ module FIFO #(
 
   //perfom read operation
   always @(posedge ipClk ) begin
+    // handle external state
     if(count == 0) begin
         opFIFOEmpty <= 1;
+    end else if (count == 32) begin
+      opFIFOFull <= 1;
     end else begin
+      opFIFOFull <= 0;
       opFIFOEmpty <= 0;
     end
 
     if (reset) begin
-      readPointer <= 0;
-    end else if(ipReadEnable) begin
-      opReadData <= FIFOMemory[readPointer];
-      readPointer <= readPointer + 1;
-    end
- 
-    if (count == 32) begin
-      opFIFOFull <= 1;
-    end else begin
-      opFIFOFull <= 0;
-    end
-
-    if (reset) begin
-      writePointer <= 0;
-    end else if(ipWriteEnable) begin
-      FIFOMemory[writePointer] <= ipWriteData;
-      writePointer <= writePointer + 1;
-    end
- 
-    if (reset) begin
       count <= 0;
+      writePointer <= 0;
+      readPointer <= 0;
     end else begin
+      // Write data
+      if(ipWriteEnable) begin
+        FIFOMemory[writePointer] <= ipWriteData;
+        writePointer <= writePointer + 1;
+      end
+
+      //read data 
+      if(ipReadEnable) begin
+        opReadData <= FIFOMemory[readPointer];
+        readPointer <= readPointer + 1;
+      end
+
       if (!ipReadEnable && ipWriteEnable) begin
-       $display("ADDING");
         count <= count + 1;  
       end else if(ipReadEnable && !ipWriteEnable) begin
-        $display("SUBTRACTING");
         count <= count - 1;
       end else begin
-        $display("ERROR");
-        $display("WRITE ENABLE %d", ipWriteEnable);
-        $display("Read ENABLE %d", ipReadEnable);
         count <= count;
       end
     end
   end
-  
 endmodule
