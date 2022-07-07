@@ -37,10 +37,10 @@ module FIFO_TB;
   always @(posedge ipClk) begin
     int i; 
     i <= i + 1;
+    ipReadEnable <= 0;
+    ipWriteEnable <= 1;
     if (i <32 ) begin
       ipWriteData <= i;
-      ipReadEnable <= 0;
-      ipWriteEnable <= 1;
     end 
   end
 
@@ -58,7 +58,7 @@ module FIFO_TB;
     .opFIFOEmpty(opFIFOEmpty),
     
     //write params
-    .ipWriteEnable(ipWriteData),
+    .ipWriteEnable(ipWriteEnable),
     .ipWriteData(ipWriteData),
     .opFIFOFull(opFIFOFull)
   ); 
