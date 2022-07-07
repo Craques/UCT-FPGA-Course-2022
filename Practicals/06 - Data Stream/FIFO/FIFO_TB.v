@@ -16,32 +16,26 @@ module FIFO_TB;
 
   initial begin
     ipReset <= 0;
-  
-    
-    // for (int i=0; i<32; i++) begin
-    //   #10;
-    //   ipWriteData <= i;
-    // end
-    
-    // //read data next
-    // ipReadEnable <= 0;
-    // ipWriteEnable <= 1;
-
-    // for (int i=0; i<32; i++) begin
-    //    ipReadEnable <= 1;
-    //    #10;
-    // end
   end
 
   
   always @(posedge ipClk) begin
     int i; 
-    i <= i + 1;
-    ipReadEnable <= 0;
-    ipWriteEnable <= 1;
-    if (i <32 ) begin
+    int j;
+    if (i < 32 ) begin
+      ipReadEnable <= 0;
+      ipWriteEnable <= 1;
+      i <= i + 1;
       ipWriteData <= i;
-    end 
+      j <= i + 1;
+    end else begin
+      j <= j - 1;
+      ipReadEnable <= 1;
+      ipWriteEnable <= 0;
+      if (j ==-2) begin
+        $stop;
+      end
+    end
   end
 
 
