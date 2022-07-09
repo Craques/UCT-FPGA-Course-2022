@@ -15,7 +15,7 @@ module ReadController #(
 
   reg reset;
   reg [3:0] dataLength = DATA_LENGTH;
-
+  reg [1:0] edgeDetector = 0;
   /*********************************************************************************************************************
   * FOR THE READING END WE ONLY RECEIVE THE ADDRESS AS DATA. WE WILL USE THE ADDRESS TO SELECT WHERE TO READ FROM AND *
   *                         SET THE DATA TO THE OUTPUT READ STREAM. WE NEED TO GATE ON VALID                          *
@@ -28,22 +28,17 @@ module ReadController #(
 
   State state;
 
-  always @(posedge ipTxReady) begin
-    reset <= ipReset;
-    if (reset) begin
-      dataLength <= DATA_LENGTH;
-    end
-
-    if(state == SET_DATA && dataLength > 0) begin
-      dataLength <= dataLength -1; 
-    end 
-  end
 
   always @(posedge ipClk) begin
+    reset <= ipReset;
     
     if(reset) begin
       state <= IDLE;
+      dataLength <= DATA_LENGTH;
     end else begin
+        edgeDetector <= {ipTxReady, edgeDetector[1]};
+
+
         case (state)
         IDLE: begin
           opTxStream.Valid <= 0;
@@ -62,24 +57,27 @@ module ReadController #(
         end
        
         SET_DATA: begin
-           opTxStream.Valid <= 0;
+          if (edgeDetector[1] == 1 && edgeDetector[0] == 0) begin
+            dataLength <= dataLength - 1;
+            opTxStream.Valid <= 1;
+          end else begin
+            opTxStream.Valid <= 0;
+          end
+
+
           case(dataLength)
             4:begin
               opTxStream.SoP <= 1;
-              opTxStream.Valid <= 1;
               opTxStream.Data <=  ipReadData[31:24];
             end
             3: begin
               opTxStream.SoP <= 0;
-              opTxStream.Valid <= 1;
               opTxStream.Data <=  ipReadData[23:16];
             end
             2: begin
-              opTxStream.Valid <= 1;
               opTxStream.Data <=  ipReadData[15:8];
             end
             1: begin
-              opTxStream.Valid <= 1;
               opTxStream.Data <=  ipReadData[7:0];
               opTxStream.EoP <= 1;
             end

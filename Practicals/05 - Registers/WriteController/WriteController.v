@@ -11,7 +11,6 @@ module WriteController #(DATA_LENGTH = 4) (
 );
   typedef enum { 
     IDLE,
-    GET_ADDRESS,
     GET_OPERATION, 
     GET_DATA
   } State;

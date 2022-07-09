@@ -4,7 +4,7 @@ import Structures::*;
 
 module ReadController_TB;
 	reg [31:0] ipReadData = 32'b0111_0110_0101_0100_0011_0010_0001_0000;
-	reg opTxReady;
+	reg opTxReady = 0;
 	reg ipClk = 0;
 	reg ipReset = 1;
 	reg [7:0] count = 0;
@@ -16,10 +16,11 @@ module ReadController_TB;
 		//Send Sync and destination for read
 		#10 ipReset <= 0;
 		opRxStream.Destination <= 8'h00;
+		opRxStream.Source <= 8'haa;
 		opRxStream.Valid <= 1;
 		//initial data is address
 		opRxStream.Data <= 8'h11;
-		opTxReady <= 1;
+	
 		opRxStream.Valid <= 1;
 	end
 
@@ -27,6 +28,9 @@ module ReadController_TB;
 		ipClk <= ~ipClk;
 	end
 
+	always #100 begin
+			opTxReady <= ~opTxReady;
+	end
 
 	always @(posedge opRxStream.EoP) begin
 		$stop;
@@ -34,9 +38,9 @@ module ReadController_TB;
 
 	ReadController DUT(
 		.ipReadData(ipReadData),
-		.opTxReady(opTxReady),
-		.ipTxStream(ipTxStream),
-		.opRxStream(opRxStream),
+		.ipTxReady(opTxReady),
+		.ipRxStream(opRxStream),
+		.opTxStream(ipTxStream),
 		.ipReset(ipReset),
 		.ipClk(ipClk),
 		.opReadAddress(opReadAddress)
