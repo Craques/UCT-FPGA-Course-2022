@@ -18,5 +18,7 @@ impl1/*
 
 **/Simulation/*
 
+**/TestProject/*
+
 !impl1/*.xcf
 !impl1/*.jed
