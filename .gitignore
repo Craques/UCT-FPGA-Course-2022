@@ -12,6 +12,9 @@
 *.svf
 *.trc
 
+
+**/impl1/*
+
 impl1/*
 
 **/impl1/*
