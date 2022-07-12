@@ -22,8 +22,7 @@ module ReadController #(
   *********************************************************************************************************************/
   typedef enum { 
     IDLE,
-    SET_DATA,
-    BUSY
+    SET_DATA
   } State;
 
   State state;

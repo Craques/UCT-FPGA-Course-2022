@@ -3,7 +3,7 @@ module Test_TB;
   reg ipClk = 0;
   reg ipReset = 0;
   reg ipRx;
-  reg [3:0] ipButtons;
+  reg [3:0] ipButtons = 4'b1101;
   reg [7:0] opLEDs;
   reg [7:0] SYNC = 8'h55;
   reg [7:0] ReadDestination = 8'h00;

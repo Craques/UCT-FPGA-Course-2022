@@ -11,38 +11,38 @@ cModel Technology
 dC:/Users/charles/Desktop/fpga/Practicals/06 - Data Stream/FIFO/Simulation
 vReadController
 Z0 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
-Z1 DXx4 work 10 Structures 0 22 eS^6^E=gz5WWP[A8@j5c81
-DXx4 work 21 ReadController_v_unit 0 22 42=Oaa<[fEP=i6;iin?I12
-Z2 !s110 1657387298
+Z1 DXx4 work 10 Structures 0 22 OaZzldl:RdJ@;;W;]5;g[2
+DXx4 work 21 ReadController_v_unit 0 22 S@STWoc_<4?Un2LID;ln_0
+Z2 !s110 1657649645
 Z3 VDg1SIo80bB@j0V0VzS_@n1
 r1
 !s85 0
 !i10b 1
-!s100 =eV6eS_^F>7;1z0GU[ob03
-ITDg:i?gigP^51G[Ml;`iZ1
+!s100 Gj68?XLajY1czaDZH=Qil3
+ISTWXSg_6A5<o6IhjE@Jn82
 !s105 ReadController_v_unit
 S1
 Z4 dC:/Users/charles/Desktop/fpga/Practicals/05 - Registers
-Z5 w1657387256
+Z5 w1657452610
 Z6 8C:/Users/charles/Desktop/fpga/Practicals/05 - Registers/ReadController/ReadController.v
 Z7 FC:/Users/charles/Desktop/fpga/Practicals/05 - Registers/ReadController/ReadController.v
-!i122 27
-L0 3 94
+!i122 39
+L0 3 93
 Z8 OT;L;2020.3;71
 31
-Z9 !s108 1657387298.000000
-!s107 C:/Users/charles/Desktop/fpga/Practicals/05 - Registers/ReadController/ReadController.v|
-Z10 !s90 -F=C:/lscc/diamond/3.12/modeltech/win32loem/vlog.opt|-F=|-reportprogress|300|-work|work|-sv|-O0|C:/Users/charles/Desktop/fpga/Practicals/05 - Registers/ReadController/ReadController.v|
+Z9 !s108 1657649645.000000
+Z10 !s107 C:/Users/charles/Desktop/fpga/Practicals/05 - Registers/ReadController/ReadController.v|
+Z11 !s90 -F=C:/lscc/diamond/3.12/modeltech/win32loem/vlog.opt|-F=|-reportprogress|300|-work|work|-O0|C:/Users/charles/Desktop/fpga/Practicals/05 - Registers/ReadController/ReadController.v|
 !s101 -O0
 !i113 1
-Z11 o-work work -sv -O0
-Z12 tSvlog 1 CvgOpt 0
+Z12 o-work work -O0
+Z13 tSvlog 1 CvgOpt 0
 n@read@controller
 vReadController_TB
 R0
 R1
 DXx4 work 24 ReadController_TB_v_unit 0 22 mahE;mPo:YVcLk4EZ0HN>0
-Z13 !s110 1657387067
+Z14 !s110 1657649641
 R3
 r1
 !s85 0
@@ -52,25 +52,25 @@ IW09S_><lZNfaDcUZS]DHI3
 !s105 ReadController_TB_v_unit
 S1
 R4
-Z14 w1657382943
-Z15 8C:/Users/charles/Desktop/fpga/Practicals/05 - Registers/ReadController/ReadController_TB.v
-Z16 FC:/Users/charles/Desktop/fpga/Practicals/05 - Registers/ReadController/ReadController_TB.v
-!i122 26
+Z15 w1657382943
+Z16 8C:/Users/charles/Desktop/fpga/Practicals/05 - Registers/ReadController/ReadController_TB.v
+Z17 FC:/Users/charles/Desktop/fpga/Practicals/05 - Registers/ReadController/ReadController_TB.v
+!i122 38
 L0 5 44
 R8
 31
-Z17 !s108 1657387066.000000
-Z18 !s107 C:/Users/charles/Desktop/fpga/Practicals/05 - Registers/ReadController/ReadController_TB.v|
-Z19 !s90 -F=C:/lscc/diamond/3.12/modeltech/win32loem/vlog.opt|-F=|-reportprogress|300|-work|work|-sv|-O0|C:/Users/charles/Desktop/fpga/Practicals/05 - Registers/ReadController/ReadController_TB.v|
+Z18 !s108 1657649641.000000
+Z19 !s107 C:/Users/charles/Desktop/fpga/Practicals/05 - Registers/ReadController/ReadController_TB.v|
+Z20 !s90 -F=C:/lscc/diamond/3.12/modeltech/win32loem/vlog.opt|-F=|-reportprogress|300|-work|work|-sv|-O0|C:/Users/charles/Desktop/fpga/Practicals/05 - Registers/ReadController/ReadController_TB.v|
 !s101 -O0
 !i113 1
-R11
-R12
+Z21 o-work work -sv -O0
+R13
 n@read@controller_@t@b
 XReadController_TB_v_unit
 R0
 R1
-R13
+R14
 VmahE;mPo:YVcLk4EZ0HN>0
 r1
 !s85 0
@@ -80,214 +80,355 @@ ImahE;mPo:YVcLk4EZ0HN>0
 !i103 1
 S1
 R4
-R14
 R15
 R16
-!i122 26
+R17
+!i122 38
 L0 3 0
 R8
 31
-R17
 R18
 R19
+R20
 !s101 -O0
 !i113 1
-R11
-R12
+R21
+R13
 n@read@controller_@t@b_v_unit
 XReadController_v_unit
 R0
 R1
 R2
-V42=Oaa<[fEP=i6;iin?I12
+VS@STWoc_<4?Un2LID;ln_0
 r1
 !s85 0
 !i10b 1
-!s100 ClJ1dg47kIlT3?AJ;o?;W0
-I42=Oaa<[fEP=i6;iin?I12
+!s100 263Pi2FIK0n:<19HZk:QD3
+IS@STWoc_<4?Un2LID;ln_0
 !i103 1
 S1
 R4
 R5
 R6
 R7
-!i122 27
-Z20 L0 1 0
+!i122 39
+Z22 L0 1 0
 R8
 31
 R9
-Z21 !s107 C:/Users/charles/Desktop/fpga/Practicals/05 - Registers/ReadController/ReadController.v|
 R10
+R11
 !s101 -O0
 !i113 1
-R11
 R12
+R13
 n@read@controller_v_unit
 vRegisters
 R0
 R1
-DXx4 work 16 Registers_v_unit 0 22 [GIR<T=cf8KD4G>OIO5k:1
-Z22 !s110 1657380914
+DXx4 work 16 Registers_v_unit 0 22 67ODNd?]C8LA>bZ=zAe2]0
+Z23 !s110 1657468844
 R3
 r1
 !s85 0
 !i10b 1
 !s100 RV;?bdY?Rc_0SgXAQDZ;Z3
-IR]0_[5hbeQ3[^`^3L4@g62
+I^J4az04TjXgAP9W8Sz`jI0
 !s105 Registers_v_unit
 S1
 R4
-Z23 w1657304799
-Z24 8C:/Users/charles/Desktop/fpga/Practicals/05 - Registers/Registers/Registers.v
-Z25 FC:/Users/charles/Desktop/fpga/Practicals/05 - Registers/Registers/Registers.v
-!i122 3
+Z24 w1657304799
+Z25 8C:/Users/charles/Desktop/fpga/Practicals/05 - Registers/Registers/Registers.v
+Z26 FC:/Users/charles/Desktop/fpga/Practicals/05 - Registers/Registers/Registers.v
+!i122 29
 L0 9 40
 R8
 31
-Z26 !s108 1657380914.000000
-Z27 !s107 C:/Users/charles/Desktop/fpga/Practicals/05 - Registers/Registers/Registers.v|
-Z28 !s90 -F=C:/lscc/diamond/3.12/modeltech/win32loem/vlog.opt|-F=|-reportprogress|300|-work|work|-sv|-stats=none|C:/Users/charles/Desktop/fpga/Practicals/05 - Registers/Registers/Registers.v|
+Z27 !s108 1657468844.000000
+Z28 !s107 C:/Users/charles/Desktop/fpga/Practicals/05 - Registers/Registers/Registers.v|
+Z29 !s90 -F=C:/lscc/diamond/3.12/modeltech/win32loem/vlog.opt|-F=|-reportprogress|300|-work|work|C:/Users/charles/Desktop/fpga/Practicals/05 - Registers/Registers/Registers.v|
 !s101 -O0
 !i113 1
-R11
 R12
+R13
 n@registers
 XRegisters_v_unit
 R0
 R1
-R22
-V[GIR<T=cf8KD4G>OIO5k:1
+R23
+V67ODNd?]C8LA>bZ=zAe2]0
 r1
 !s85 0
 !i10b 1
 !s100 2iQfHF?fLB@JcImLfo4<70
-I[GIR<T=cf8KD4G>OIO5k:1
+I67ODNd?]C8LA>bZ=zAe2]0
 !i103 1
 S1
 R4
-R23
 R24
 R25
-!i122 3
+R26
+!i122 29
 L0 6 0
 R8
 31
-R26
 R27
 R28
+R29
 !s101 -O0
 !i113 1
-R11
 R12
+R13
 n@registers_v_unit
 XStructures
 R0
-!s110 1657380891
+!s110 1657468706
 !i10b 1
 !s100 jIPdSfX[;W?FFWYjnbdgj2
-Z29 !s11b Dg1SIo80bB@j0V0VzS_@n1
-IeS^6^E=gz5WWP[A8@j5c81
+Z30 !s11b Dg1SIo80bB@j0V0VzS_@n1
+IOaZzldl:RdJ@;;W;]5;g[2
 S1
 R4
 w1655578903
 8C:/Users/charles/Desktop/fpga/Practicals/05 - Registers/Structures/Structures.v
 FC:/Users/charles/Desktop/fpga/Practicals/05 - Registers/Structures/Structures.v
-!i122 0
-R20
-VeS^6^E=gz5WWP[A8@j5c81
+!i122 28
+R22
+VOaZzldl:RdJ@;;W;]5;g[2
 R8
 r1
 !s85 0
 31
-!s108 1657380890.000000
+!s108 1657468706.000000
 !s107 C:/Users/charles/Desktop/fpga/Practicals/05 - Registers/Structures/Structures.v|
-!s90 -F=C:/lscc/diamond/3.12/modeltech/win32loem/vlog.opt|-F=|-reportprogress|300|-work|work|-sv|-stats=none|C:/Users/charles/Desktop/fpga/Practicals/05 - Registers/Structures/Structures.v|
+!s90 -F=C:/lscc/diamond/3.12/modeltech/win32loem/vlog.opt|-F=|-reportprogress|300|-work|work|C:/Users/charles/Desktop/fpga/Practicals/05 - Registers/Structures/Structures.v|
 !s101 -O0
 !i113 1
-R11
 R12
+R13
 n@structures
-vUART
+vTest
 R0
-!s110 1657380899
+R1
+DXx4 work 11 Test_v_unit 0 22 nVRjdIalRFa9cVQhK;hib0
+Z31 !s110 1657650183
+R3
+r1
+!s85 0
 !i10b 1
-!s100 WAjn;P]1gknD[[ZQd_HPP2
-R29
-IEVFOTZK6FM`6l^1e@:>?_0
+!s100 cMMKN2B2^C6geImTa=UY71
+I?_JDSB];kbNiP1R<_FoE=0
+!s105 Test_v_unit
 S1
 R4
-Z30 w1657301507
+Z32 w1657650175
+Z33 8C:/Users/charles/Desktop/fpga/Practicals/05 - Registers/Test/Test.v
+Z34 FC:/Users/charles/Desktop/fpga/Practicals/05 - Registers/Test/Test.v
+!i122 41
+L0 3 71
+R8
+31
+Z35 !s108 1657650183.000000
+!s107 C:/Users/charles/Desktop/fpga/Practicals/05 - Registers/Test/Test.v|
+Z36 !s90 -F=C:/lscc/diamond/3.12/modeltech/win32loem/vlog.opt|-F=|-reportprogress|300|-work|work|-O0|C:/Users/charles/Desktop/fpga/Practicals/05 - Registers/Test/Test.v|
+!s101 -O0
+!i113 1
+R12
+R13
+n@test
+vTest_TB
+R0
+!s110 1657649723
+!i10b 1
+!s100 @h9_]lk]=K58QIII:>1ma1
+R30
+I_>EPT[QBAX3mg^dECKO>V1
+S1
+R4
+Z37 w1657301507
+8C:/Users/charles/Desktop/fpga/Practicals/05 - Registers/Test/Test_TB.v
+FC:/Users/charles/Desktop/fpga/Practicals/05 - Registers/Test/Test_TB.v
+!i122 40
+L0 1 141
+R3
+R8
+r1
+!s85 0
+31
+!s108 1657649723.000000
+!s107 C:/Users/charles/Desktop/fpga/Practicals/05 - Registers/Test/Test_TB.v|
+!s90 -F=C:/lscc/diamond/3.12/modeltech/win32loem/vlog.opt|-F=|-reportprogress|300|-work|work|-O0|C:/Users/charles/Desktop/fpga/Practicals/05 - Registers/Test/Test_TB.v|
+!s101 -O0
+!i113 1
+R12
+R13
+n@test_@t@b
+XTest_v_unit
+R0
+R1
+R31
+VnVRjdIalRFa9cVQhK;hib0
+r1
+!s85 0
+!i10b 1
+!s100 cH@TYnA>V1oGhBS17DFP?2
+InVRjdIalRFa9cVQhK;hib0
+!i103 1
+S1
+R4
+R32
+R33
+R34
+!i122 41
+R22
+R8
+31
+R35
+Z38 !s107 C:/Users/charles/Desktop/fpga/Practicals/05 - Registers/Test/Test.v|
+R36
+!s101 -O0
+!i113 1
+R12
+R13
+n@test_v_unit
+vUART
+R0
+!s110 1657468860
+!i10b 1
+!s100 WAjn;P]1gknD[[ZQd_HPP2
+R30
+IWoTUUNZG7Y24IzmCiRC6?0
+S1
+R4
+R37
 8C:/Users/charles/Desktop/fpga/Practicals/05 - Registers/UART/UART.v
 FC:/Users/charles/Desktop/fpga/Practicals/05 - Registers/UART/UART.v
-!i122 1
+!i122 30
 L0 19 110
 R3
 R8
 r1
 !s85 0
 31
-!s108 1657380899.000000
+!s108 1657468860.000000
 !s107 C:/Users/charles/Desktop/fpga/Practicals/05 - Registers/UART/UART.v|
-!s90 -F=C:/lscc/diamond/3.12/modeltech/win32loem/vlog.opt|-F=|-reportprogress|300|-work|work|-sv|-stats=none|C:/Users/charles/Desktop/fpga/Practicals/05 - Registers/UART/UART.v|
+!s90 -F=C:/lscc/diamond/3.12/modeltech/win32loem/vlog.opt|-F=|-reportprogress|300|-work|work|C:/Users/charles/Desktop/fpga/Practicals/05 - Registers/UART/UART.v|
 !s101 -O0
 !i113 1
-R11
 R12
+R13
 n@u@a@r@t
 vUART_Packets
 R0
 R1
-DXx4 work 19 UART_packets_v_unit 0 22 :dzV8oIY@Vj^A<W<[hb_;2
-Z31 !s110 1657380906
+DXx4 work 19 UART_packets_v_unit 0 22 Y9NLOMDm2zBoM?GS^1=]c0
+Z39 !s110 1657468886
 R3
 r1
 !s85 0
 !i10b 1
 !s100 ?96bRlNH>kEFRBecF@l2m2
-IE620PQjWWG9bc;MnDU]gA2
+IozXg5F]dF1^N>H>Xk:Jdj2
 !s105 UART_packets_v_unit
 S1
 R4
-R30
-Z32 8C:/Users/charles/Desktop/fpga/Practicals/05 - Registers/UART_PACKETS/UART_packets.v
-Z33 FC:/Users/charles/Desktop/fpga/Practicals/05 - Registers/UART_PACKETS/UART_packets.v
-!i122 2
+R37
+Z40 8C:/Users/charles/Desktop/fpga/Practicals/05 - Registers/UART_PACKETS/UART_packets.v
+Z41 FC:/Users/charles/Desktop/fpga/Practicals/05 - Registers/UART_PACKETS/UART_packets.v
+!i122 32
 L0 4 205
 R8
 31
-Z34 !s108 1657380906.000000
-Z35 !s107 C:/Users/charles/Desktop/fpga/Practicals/05 - Registers/UART_PACKETS/UART_packets.v|
-Z36 !s90 -F=C:/lscc/diamond/3.12/modeltech/win32loem/vlog.opt|-F=|-reportprogress|300|-work|work|-sv|-stats=none|C:/Users/charles/Desktop/fpga/Practicals/05 - Registers/UART_PACKETS/UART_packets.v|
+Z42 !s108 1657468886.000000
+Z43 !s107 C:/Users/charles/Desktop/fpga/Practicals/05 - Registers/UART_PACKETS/UART_packets.v|
+Z44 !s90 -F=C:/lscc/diamond/3.12/modeltech/win32loem/vlog.opt|-F=|-reportprogress|300|-work|work|C:/Users/charles/Desktop/fpga/Practicals/05 - Registers/UART_PACKETS/UART_packets.v|
 !s101 -O0
 !i113 1
-R11
 R12
+R13
 n@u@a@r@t_@packets
 XUART_packets_v_unit
 R0
 R1
-R31
-V:dzV8oIY@Vj^A<W<[hb_;2
+R39
+VY9NLOMDm2zBoM?GS^1=]c0
 r1
 !s85 0
 !i10b 1
 !s100 EFhm@>D0I0ik[Daf_j8U71
-I:dzV8oIY@Vj^A<W<[hb_;2
+IY9NLOMDm2zBoM?GS^1=]c0
 !i103 1
 S1
 R4
-R30
-R32
-R33
-!i122 2
-R20
+R37
+R40
+R41
+!i122 32
+R22
 R8
 31
-R34
-R35
-R36
+R42
+R43
+R44
 !s101 -O0
 !i113 1
-R11
 R12
+R13
 n@u@a@r@t_packets_v_unit
+vWriteController
+R0
+R1
+DXx4 work 22 WriteController_v_unit 0 22 oQamTkHEad@[CV6E^9oa=3
+Z45 !s110 1657468894
+R3
+r1
+!s85 0
+!i10b 1
+!s100 <g]MN=Ozlan?N[<6J@J`R2
+IXTm90?OZD]]cTWYg`LbV_1
+!s105 WriteController_v_unit
+S1
+R4
+Z46 w1657397354
+Z47 8C:/Users/charles/Desktop/fpga/Practicals/05 - Registers/WriteController/WriteController.v
+Z48 FC:/Users/charles/Desktop/fpga/Practicals/05 - Registers/WriteController/WriteController.v
+!i122 33
+L0 3 58
+R8
+31
+Z49 !s108 1657468894.000000
+Z50 !s107 C:/Users/charles/Desktop/fpga/Practicals/05 - Registers/WriteController/WriteController.v|
+Z51 !s90 -F=C:/lscc/diamond/3.12/modeltech/win32loem/vlog.opt|-F=|-reportprogress|300|-work|work|C:/Users/charles/Desktop/fpga/Practicals/05 - Registers/WriteController/WriteController.v|
+!s101 -O0
+!i113 1
+R12
+R13
+n@write@controller
+XWriteController_v_unit
+R0
+R1
+R45
+VoQamTkHEad@[CV6E^9oa=3
+r1
+!s85 0
+!i10b 1
+!s100 HLF5=V:Y10@Pjo@jV3LBS1
+IoQamTkHEad@[CV6E^9oa=3
+!i103 1
+S1
+R4
+R46
+R47
+R48
+!i122 33
+R22
+R8
+31
+R49
+R50
+R51
+!s101 -O0
+!i113 1
+R12
+R13
+n@write@controller_v_unit

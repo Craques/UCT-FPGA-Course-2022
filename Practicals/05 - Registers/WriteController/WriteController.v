@@ -11,7 +11,6 @@ module WriteController #(DATA_LENGTH = 4) (
 );
   typedef enum { 
     IDLE,
-    GET_OPERATION, 
     GET_DATA
   } State;
   //local reset
@@ -34,9 +33,8 @@ module WriteController #(DATA_LENGTH = 4) (
      case (state)
       IDLE: begin
         dataLength <= DATA_LENGTH;
-        opTxWrEnable <=1;
+        opTxWrEnable <=0;
         if(ipRxStream.Source == 8'h01 && ipRxStream.SoP == 1) begin
-          opTxWrEnable <= 0;
           opAddress <= ipRxStream.Data;
           state <= GET_DATA;
         end
@@ -44,6 +42,7 @@ module WriteController #(DATA_LENGTH = 4) (
       GET_DATA: begin
         if(dataLength > 0) begin
           dataLength <= dataLength -1;
+          opTxWrEnable <= 1;
           opWrData <= {opWrData, ipRxStream.Data};
           if(ipRxStream.EoP) begin
             state <= IDLE;
