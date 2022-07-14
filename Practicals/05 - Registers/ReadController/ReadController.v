@@ -63,27 +63,32 @@ module ReadController #(
             opTxStream.Valid <= 0;
           end
 
+          if (dataLength == 0) begin
+            state <= IDLE;
+          end else begin
+            case(dataLength)
+              4:begin
+                opTxStream.SoP <= 1;
+                opTxStream.Data <=  ipReadData[31:24];
+              end
+              3: begin
+                opTxStream.SoP <= 0;
+                opTxStream.Data <=  ipReadData[23:16];
+              end
+              2: begin
+                opTxStream.Data <=  ipReadData[15:8];
+              end
+              1: begin
+                opTxStream.Data <=  ipReadData[7:0];
+                opTxStream.EoP <= 1;
+              end
+              default: begin
+                state <= IDLE;
+              end 
+            endcase
+          end
 
-          case(dataLength)
-            4:begin
-              opTxStream.SoP <= 1;
-              opTxStream.Data <=  ipReadData[31:24];
-            end
-            3: begin
-              opTxStream.SoP <= 0;
-              opTxStream.Data <=  ipReadData[23:16];
-            end
-            2: begin
-              opTxStream.Data <=  ipReadData[15:8];
-            end
-            1: begin
-              opTxStream.Data <=  ipReadData[7:0];
-              opTxStream.EoP <= 1;
-            end
-            default: begin
-              state <= IDLE;
-            end 
-          endcase 
+           
         end
         default: begin
           state <= IDLE;

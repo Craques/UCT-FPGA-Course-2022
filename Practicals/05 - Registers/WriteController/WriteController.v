@@ -34,7 +34,7 @@ module WriteController #(DATA_LENGTH = 4) (
       IDLE: begin
         dataLength <= DATA_LENGTH;
         opTxWrEnable <=0;
-        if(ipRxStream.Source == 8'h01 && ipRxStream.SoP == 1) begin
+        if(ipRxStream.Source == 8'h01 && ipRxStream.SoP == 1 && ipRxStream.Valid) begin
           opAddress <= ipRxStream.Data;
           state <= GET_DATA;
         end
