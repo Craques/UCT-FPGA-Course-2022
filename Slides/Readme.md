@@ -8,6 +8,10 @@ https://github.com/STFleming/EmSys
 
 https://www.youtube.com/playlist?list=PLDqMkB5cbBA4OW0fDTu1FY6aw4uBWOpBa
 
+## Cadence Systems
+
+https://www.youtube.com/watch?v=h_nXBnHTR4Q&list=PLYdInKVfi0KZ1HMVNNcxvvWhYJMmLAq_g&index=4
+
 ## Day 3
 
 ### FPGA pipelines
