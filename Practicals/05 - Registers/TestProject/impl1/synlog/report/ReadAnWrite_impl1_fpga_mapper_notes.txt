@@ -1,0 +1,23 @@
+@N: MF916 |Option synthesis_strategy=base is enabled. 
+@N: MF248 |Running in 64-bit mode.
+@N: MF666 |Clock conversion enabled. (Command "set_option -fix_gated_and_generated_clocks 1" in the project file.)
+@N: MO231 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_rvl.v":1098:4:1098:9|Found counter in view:work.UART_Packets_uniq_1(verilog) instance localTxLength[7:0] 
+@N: MO231 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_rvl.v":1098:4:1098:9|Found counter in view:work.UART_Packets_uniq_1(verilog) instance receiveDataLength[7:0] 
+@N: BN362 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_rvl.v":837:4:837:9|Removing sequential instance writeController.opAddress_cl_2[0] (in view: work.Test(verilog)) because it does not drive other instances.
+@N: BN362 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_rvl.v":837:4:837:9|Removing sequential instance writeController.opAddress_1[0] (in view: work.Test(verilog)) because it does not drive other instances.
+@N: BN362 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_rvl.v":837:4:837:9|Removing sequential instance writeController.opAddress_1[1] (in view: work.Test(verilog)) because it does not drive other instances.
+@N: BN362 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_rvl.v":837:4:837:9|Removing sequential instance writeController.opAddress_1[2] (in view: work.Test(verilog)) because it does not drive other instances.
+@N: BN362 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_rvl.v":837:4:837:9|Removing sequential instance writeController.opAddress_1[3] (in view: work.Test(verilog)) because it does not drive other instances.
+@N: BN362 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_rvl.v":837:4:837:9|Removing sequential instance writeController.opAddress_1[4] (in view: work.Test(verilog)) because it does not drive other instances.
+@N: BN362 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_rvl.v":837:4:837:9|Removing sequential instance writeController.opAddress_1[5] (in view: work.Test(verilog)) because it does not drive other instances.
+@N: BN362 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_rvl.v":837:4:837:9|Removing sequential instance writeController.opAddress_1[6] (in view: work.Test(verilog)) because it does not drive other instances.
+@N: BN362 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_rvl.v":837:4:837:9|Removing sequential instance writeController.opAddress_1[7] (in view: work.Test(verilog)) because it does not drive other instances.
+@N: BN362 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_rvl.v":1329:4:1329:9|Removing sequential instance uartPackets.UART_INST.opRxData_cl[0] (in view: work.Test(verilog)) because it does not drive other instances.
+@N: BN362 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_rvl.v":915:4:915:9|Removing sequential instance readController.opTxStream\.Source_cl[0] (in view: work.Test(verilog)) because it does not drive other instances.
+@N: BN362 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_rvl.v":837:4:837:9|Removing sequential instance writeController.opWrData_cl_37[0] (in view: work.Test(verilog)) because it does not drive other instances.
+@N: FX164 |The option to pack registers in the IOB has not been specified. Please set syn_useioff attribute.  
+@N: FX1056 |Writing EDF file: C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\TestProject\impl1\ReadAnWrite_impl1.edi
+@N: BW106 |Synplicity Constraint File capacitance units using default value of 1pF 
+@N: MT615 |Found clock ipClk with period 20.00ns 
+@N: MT320 |This timing report is an estimate of place and route data. For final timing results, use the FPGA vendor place and route report.
+@N: MT322 |Clock constraints include only register-to-register paths associated with each individual clock.

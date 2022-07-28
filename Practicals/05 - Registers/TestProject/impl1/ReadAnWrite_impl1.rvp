@@ -1,0 +1,41 @@
+#-- Lattice Semiconductor Corporation Ltd.
+#-- Bali Reveal project file
+
+#device options
+[Device]
+part = LFXP2-5E-6TN144I
+family = LatticeXP2
+device = LFXP2-5E
+speed = 6
+package = TQFP144
+operation = Industrial
+
+#design options
+[Design]
+title = ReadAnWrite
+path = C:/Users/charles/Desktop/fpga/Practicals/05 - Registers/TestProject/impl1
+core_generate = C:/Users/charles/Desktop/fpga/Practicals/05 - Registers/TestProject/impl1
+search_path = C:/Users/charles/Desktop/fpga/Practicals/05 - Registers/TestProject
+top = Test
+lpf = C:/Users/charles/Desktop/fpga/Practicals/05 - Registers/TestProject/ReadAnWrite.lpf
+synthesis = synplify
+
+#strategy options
+VHDL2008 = true
+
+#HDLs options
+[HDLs]
+C:/Users/charles/Desktop/fpga/Practicals/05 - Registers/Structures/Structures.v = System Verilog
+C:/Users/charles/Desktop/fpga/Practicals/05 - Registers/Registers/Registers.v = System Verilog
+C:/Users/charles/Desktop/fpga/Practicals/05 - Registers/UART/UART.v = System Verilog
+C:/Users/charles/Desktop/fpga/Practicals/05 - Registers/UART_PACKETS/UART_packets.v = System Verilog
+C:/Users/charles/Desktop/fpga/Practicals/05 - Registers/ReadController/ReadController.v = System Verilog
+C:/Users/charles/Desktop/fpga/Practicals/05 - Registers/WriteController/WriteController.v = System Verilog
+C:/Users/charles/Desktop/fpga/Practicals/05 - Registers/Test/Test.v = System Verilog
+[HDL_Defines]
+SBP_SYNTHESIS=
+[HDL_Param]
+[Generated]
+C:/Users/charles/Desktop/fpga/Practicals/05 - Registers/TestProject/impl1/reveal_workspace/tmpreveal/test_la0_trig_gen.v=Verilog
+C:/Users/charles/Desktop/fpga/Practicals/05 - Registers/TestProject/impl1/reveal_workspace/tmpreveal/test_la0_gen.v=Verilog
+C:/Users/charles/Desktop/fpga/Practicals/05 - Registers/TestProject/impl1/reveal_workspace/tmpreveal/Test_rvl.v=System Verilog,work

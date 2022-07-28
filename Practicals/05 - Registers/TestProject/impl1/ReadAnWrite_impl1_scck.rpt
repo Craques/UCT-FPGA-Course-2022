@@ -1,0 +1,55 @@
+
+Copyright (C) 1994-2020 Synopsys, Inc.
+This Synopsys software and all associated documentation are proprietary to Synopsys, Inc.
+and may only be used pursuant to the terms and conditions of a written license agreement
+with Synopsys, Inc. All other use, reproduction, modification, or distribution of the
+Synopsys software or the associated documentation is strictly prohibited.
+Tool: Synplify Pro (R)
+Build: Q-2020.03L-SP1
+Install: C:\lscc\diamond\3.12\synpbase
+OS: Windows 6.2
+
+Hostname: DESKTOP-UPLLRGT
+
+Implementation : impl1
+
+# Written on Thu Jul 14 12:50:00 2022
+
+##### FILES SYNTAX CHECKED ##############################################
+Constraint File(s):      "C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\TestProject\ReadAndWrite.fdc"
+
+#Run constraint checker to find more issues with constraints.
+#########################################################################
+
+
+
+No issues found in constraint syntax.
+
+
+
+Clock Summary
+*************
+
+          Start                                     Requested     Requested     Clock        Clock                   Clock
+Level     Clock                                     Frequency     Period        Type         Group                   Load 
+--------------------------------------------------------------------------------------------------------------------------
+0 -       ipClk                                     50.0 MHz      20.000        declared     default_clkgroup        472  
+                                                                                                                          
+0 -       System                                    200.0 MHz     5.000         system       system_clkgroup         0    
+                                                                                                                          
+0 -       reveal_coretop|jtck_inferred_clock[0]     200.0 MHz     5.000         inferred     Inferred_clkgroup_0     262  
+==========================================================================================================================
+
+
+Clock Load Summary
+******************
+
+                                          Clock     Source                                                              Clock Pin                                                              Non-clock Pin     Non-clock Pin                                                                
+Clock                                     Load      Pin                                                                 Seq Example                                                            Seq Example       Comb Example                                                                 
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ipClk                                     472       ipClk(port)                                                         readRegisters\.Buttons[3:0].C                                          -                 -                                                                            
+                                                                                                                                                                                                                                                                                              
+System                                    0         -                                                                   -                                                                      -                 -                                                                            
+                                                                                                                                                                                                                                                                                              
+reveal_coretop|jtck_inferred_clock[0]     262       Test_reveal_coretop_instance.jtagconn16_inst_0.jtck(jtagconn16)     Test_reveal_coretop_instance.test_la0_inst_0.tm_u.tm_first_rd_d1.C     -                 Test_reveal_coretop_instance.test_la0_inst_0.tm_u.genblk4\.un1_jtck.I[0](inv)
+==============================================================================================================================================================================================================================================================================================

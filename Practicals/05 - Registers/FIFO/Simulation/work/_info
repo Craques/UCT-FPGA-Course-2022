@@ -1,0 +1,65 @@
+m255
+K4
+z2
+!s11f vlog 2020.3 2020.10, Oct 14 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/lscc/diamond/3.12/modeltech/win32loem
+vFIFO
+Z0 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
+!s110 1657224669
+!i10b 1
+!s100 2Yc=@Ydm6zM;m7MP7e`m`2
+Z1 !s11b Dg1SIo80bB@j0V0VzS_@n1
+IzlA@LPl80e^27R<6hFe5F2
+S1
+Z2 dC:/Users/charles/Desktop/fpga/Practicals/06 - Data Stream/FIFO/Simulation
+w1657224664
+8C:/Users/charles/Desktop/fpga/Practicals/06 - Data Stream/FIFO/FIFO.v
+FC:/Users/charles/Desktop/fpga/Practicals/06 - Data Stream/FIFO/FIFO.v
+!i122 36
+L0 1 72
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+Z4 OT;L;2020.3;71
+r1
+!s85 0
+31
+!s108 1657224669.000000
+!s107 C:/Users/charles/Desktop/fpga/Practicals/06 - Data Stream/FIFO/FIFO.v|
+!s90 -F=C:/lscc/diamond/3.12/modeltech/win32loem/vlog.opt|-F=|-reportprogress|300|-work|work|-sv|-O0|C:/Users/charles/Desktop/fpga/Practicals/06 - Data Stream/FIFO/FIFO.v|
+!s101 -O0
+!i113 1
+Z5 o-work work -sv -O0
+Z6 tSvlog 1 CvgOpt 0
+n@f@i@f@o
+vFIFO_TB
+R0
+!s110 1657226341
+!i10b 1
+!s100 ONmQkGF^lG`X^M;NkOLD>2
+R1
+Ia1ECO1jUcnT;f6Je:?ehd2
+S1
+R2
+w1657226313
+8C:/Users/charles/Desktop/fpga/Practicals/06 - Data Stream/FIFO/FIFO_TB.v
+FC:/Users/charles/Desktop/fpga/Practicals/06 - Data Stream/FIFO/FIFO_TB.v
+!i122 46
+L0 3 72
+R3
+R4
+r1
+!s85 0
+31
+!s108 1657226341.000000
+!s107 C:/Users/charles/Desktop/fpga/Practicals/06 - Data Stream/FIFO/FIFO_TB.v|
+!s90 -F=C:/lscc/diamond/3.12/modeltech/win32loem/vlog.opt|-F=|-reportprogress|300|-work|work|-sv|-O0|C:/Users/charles/Desktop/fpga/Practicals/06 - Data Stream/FIFO/FIFO_TB.v|
+!s101 -O0
+!i113 1
+R5
+R6
+n@f@i@f@o_@t@b

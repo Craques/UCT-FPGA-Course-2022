@@ -1,0 +1,24 @@
+NOTE Copyright (C), 1992-2010, Lattice Semiconductor Corporation *
+NOTE All Rights Reserved *
+NOTE DATE CREATED: Thu Jul 14 12:51:23 2022 *
+NOTE DESIGN NAME: Test *
+NOTE DEVICE NAME: LFXP2-5E-6TQFP144 *
+NOTE PIN ASSIGNMENTS *
+NOTE PINS opTx : 109 : out *
+NOTE PINS ipClk : 21 : in *
+NOTE PINS opLEDs[7] : 37 : out *
+NOTE PINS opLEDs[6] : 38 : out *
+NOTE PINS opLEDs[5] : 39 : out *
+NOTE PINS opLEDs[4] : 40 : out *
+NOTE PINS opLEDs[3] : 43 : out *
+NOTE PINS opLEDs[2] : 44 : out *
+NOTE PINS opLEDs[1] : 45 : out *
+NOTE PINS opLEDs[0] : 46 : out *
+NOTE PINS ipButtons[3] : 54 : in *
+NOTE PINS ipButtons[2] : 53 : in *
+NOTE PINS ipButtons[1] : 50 : in *
+NOTE PINS ipButtons[0] : 52 : in *
+NOTE PINS ipRx : 110 : in *
+NOTE PINS ipReset : 19 : in *
+NOTE CONFIGURATION MODE: NONE *
+NOTE COMPRESSION: off *

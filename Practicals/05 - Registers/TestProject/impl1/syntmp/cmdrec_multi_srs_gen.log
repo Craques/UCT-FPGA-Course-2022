@@ -1,0 +1,7 @@
+C:\lscc\diamond\3.12\synpbase\bin64\syn_nfilter.exe  -link  -top  Test  -multisrs  "C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\TestProject\impl1\synwork\ReadAnWrite_impl1_comp.srs"  -osyn  "C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\TestProject\impl1\synwork\ReadAnWrite_impl1_mult.srs"  -log  "C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\TestProject\impl1\synlog\ReadAnWrite_impl1_multi_srs_gen.srr" 
+relcom:..\..\..\..\..\..\..\..\..\lscc\diamond\3.12\synpbase\bin64\syn_nfilter.exe -link -top Test -multisrs "C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\TestProject\impl1\synwork\ReadAnWrite_impl1_comp.srs" -osyn "C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\TestProject\impl1\synwork\ReadAnWrite_impl1_mult.srs" -log "C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\TestProject\impl1\synlog\ReadAnWrite_impl1_multi_srs_gen.srr"
+rc:0 success:1 runtime:0
+file:..\synwork\ReadAnWrite_impl1_comp.srs|io:i|time:1657795796|size:170987|exec:0|csum:C7C717DA2B81456CDC6AD86FE97F095C
+file:..\synwork\ReadAnWrite_impl1_mult.srs|io:o|time:1657795798|size:6319|exec:0|csum:
+file:..\synlog\ReadAnWrite_impl1_multi_srs_gen.srr|io:o|time:1657795798|size:1178|exec:0|csum:
+file:..\..\..\..\..\..\..\..\..\lscc\diamond\3.12\synpbase\bin64\syn_nfilter.exe|io:i|time:1603959522|size:8875008|exec:1|csum:43373AFF0ED6BCEB26CB4B4947B972DD

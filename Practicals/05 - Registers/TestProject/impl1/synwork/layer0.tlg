@@ -1,0 +1,140 @@
+@N: CG364 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\TestProject\impl1\reveal_workspace\tmpreveal\Test_rvl.v":2:8:2:17|Synthesizing module Structures in library work.
+@N: CG364 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\TestProject\impl1\reveal_workspace\tmpreveal\Test_rvl.v":129:0:129:5|Synthesizing module work_C:\lscc\diamond\3.12\cae_library\synthesis\verilog\pmi_def.v_unit in library work.
+Selecting top level module Test
+@N: CG364 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\TestProject\impl1\reveal_workspace\tmpreveal\Test_rvl.v":825:7:825:28|Synthesizing module WriteController_uniq_1 in library work.
+Running optimization stage 1 on WriteController_uniq_1 .......
+@N: CG364 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\TestProject\impl1\reveal_workspace\tmpreveal\Test_rvl.v":896:7:896:27|Synthesizing module ReadController_uniq_1 in library work.
+Running optimization stage 1 on ReadController_uniq_1 .......
+@N: CL189 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\TestProject\impl1\reveal_workspace\tmpreveal\Test_rvl.v":915:4:915:9|Register bit opTxStream.Length[0] is always 0.
+@N: CL189 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\TestProject\impl1\reveal_workspace\tmpreveal\Test_rvl.v":915:4:915:9|Register bit opTxStream.Length[1] is always 0.
+@N: CL189 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\TestProject\impl1\reveal_workspace\tmpreveal\Test_rvl.v":915:4:915:9|Register bit opTxStream.Length[2] is always 1.
+@N: CL189 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\TestProject\impl1\reveal_workspace\tmpreveal\Test_rvl.v":915:4:915:9|Register bit opTxStream.Length[3] is always 0.
+@N: CL189 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\TestProject\impl1\reveal_workspace\tmpreveal\Test_rvl.v":915:4:915:9|Register bit opTxStream.Length[4] is always 0.
+@N: CL189 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\TestProject\impl1\reveal_workspace\tmpreveal\Test_rvl.v":915:4:915:9|Register bit opTxStream.Length[5] is always 0.
+@N: CL189 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\TestProject\impl1\reveal_workspace\tmpreveal\Test_rvl.v":915:4:915:9|Register bit opTxStream.Length[6] is always 0.
+@N: CL189 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\TestProject\impl1\reveal_workspace\tmpreveal\Test_rvl.v":915:4:915:9|Register bit opTxStream.Length[7] is always 0.
+@N: CG364 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\TestProject\impl1\reveal_workspace\tmpreveal\Test_rvl.v":1003:7:1003:22|Synthesizing module Registers_uniq_1 in library work.
+Running optimization stage 1 on Registers_uniq_1 .......
+@N: CG364 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\TestProject\impl1\reveal_workspace\tmpreveal\Test_rvl.v":1307:7:1307:17|Synthesizing module UART_uniq_1 in library work.
+Running optimization stage 1 on UART_uniq_1 .......
+@N: CG364 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\TestProject\impl1\reveal_workspace\tmpreveal\Test_rvl.v":1052:7:1052:25|Synthesizing module UART_Packets_uniq_1 in library work.
+Running optimization stage 1 on UART_Packets_uniq_1 .......
+@W: CL169 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\TestProject\impl1\reveal_workspace\tmpreveal\Test_rvl.v":1098:4:1098:9|Pruning unused register UART_TxData_cl[7]. Make sure that there are no unused intermediate registers.
+@W: CL169 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\TestProject\impl1\reveal_workspace\tmpreveal\Test_rvl.v":1098:4:1098:9|Pruning unused register UART_TxData_cl[6]. Make sure that there are no unused intermediate registers.
+@W: CL169 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\TestProject\impl1\reveal_workspace\tmpreveal\Test_rvl.v":1098:4:1098:9|Pruning unused register UART_TxData_cl[5]. Make sure that there are no unused intermediate registers.
+@W: CL169 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\TestProject\impl1\reveal_workspace\tmpreveal\Test_rvl.v":1098:4:1098:9|Pruning unused register UART_TxData_cl[4]. Make sure that there are no unused intermediate registers.
+@W: CL169 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\TestProject\impl1\reveal_workspace\tmpreveal\Test_rvl.v":1098:4:1098:9|Pruning unused register UART_TxData_cl[3]. Make sure that there are no unused intermediate registers.
+@W: CL169 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\TestProject\impl1\reveal_workspace\tmpreveal\Test_rvl.v":1098:4:1098:9|Pruning unused register UART_TxData_cl[2]. Make sure that there are no unused intermediate registers.
+@W: CL169 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\TestProject\impl1\reveal_workspace\tmpreveal\Test_rvl.v":1098:4:1098:9|Pruning unused register UART_TxData_cl[1]. Make sure that there are no unused intermediate registers.
+@W: CL169 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\TestProject\impl1\reveal_workspace\tmpreveal\Test_rvl.v":1098:4:1098:9|Pruning unused register UART_TxData_cl[0]. Make sure that there are no unused intermediate registers.
+@N: CG364 :"C:\lscc\diamond\3.12\synpbase\lib\lucent\xp2.v":1269:7:1269:9|Synthesizing module VHI in library work.
+Running optimization stage 1 on VHI .......
+Running optimization stage 1 on rvl_jtag_int_43s_2s_0s_0s_6s_43s_43s .......
+Running optimization stage 1 on rvl_decode_2s_2s .......
+Running optimization stage 1 on rvl_tu_1s_0s_0s_0s_1s .......
+Running optimization stage 1 on pmi_ram_dp_Z2 .......
+Running optimization stage 1 on rvl_te_Z1 .......
+Running optimization stage 1 on pmi_distributed_dpram_4s_2s_2s_reg_none_binary_XP2_pmi_distributed_dpram_Z4 .......
+Running optimization stage 1 on rvl_te_Z3 .......
+Running optimization stage 1 on rvl_tcnt_2s_3s_1_0s .......
+@N: CG364 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\TestProject\impl1\reveal_workspace\tmpreveal\test_la0_trig_gen.v":11:7:11:19|Synthesizing module test_la0_trig in library work.
+Running optimization stage 1 on test_la0_trig .......
+Running optimization stage 1 on pmi_ram_dp_Z6 .......
+Running optimization stage 1 on rvl_tm_Z5 .......
+@N: CG364 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\TestProject\impl1\reveal_workspace\tmpreveal\test_la0_gen.v":12:7:12:14|Synthesizing module test_la0 in library work.
+Running optimization stage 1 on test_la0 .......
+@N: CG364 :"C:\lscc\diamond\3.12\cae_library\synthesis\verilog\pmi_def.v":1162:7:1162:16|Synthesizing module jtagconn16 in library work.
+Running optimization stage 1 on jtagconn16 .......
+@N: CG364 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\TestProject\impl1\reveal_workspace\tmpreveal\Test_rvl.v":23:7:23:20|Synthesizing module reveal_coretop in library work.
+@W: CG360 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\TestProject\impl1\reveal_workspace\tmpreveal\Test_rvl.v":36:29:36:39|Removing wire trigger_out, as there is no assignment to it.
+Running optimization stage 1 on reveal_coretop .......
+@N: CG364 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\TestProject\impl1\reveal_workspace\tmpreveal\Test_rvl.v":730:7:730:10|Synthesizing module Test in library work.
+@W: CG133 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\TestProject\impl1\reveal_workspace\tmpreveal\Test_rvl.v":4:21:4:30|Object readRegisters.ClockTicks is declared but not assigned. Either assign a value or remove the declaration.
+Running optimization stage 1 on Test .......
+Running optimization stage 2 on Test .......
+@A: CL153 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\TestProject\impl1\reveal_workspace\tmpreveal\Test_rvl.v":4:21:4:30|*Unassigned bits of readRegisters.ClockTicks[31:0] are referenced and tied to 0 -- simulation mismatch possible.
+Running optimization stage 2 on reveal_coretop .......
+Running optimization stage 2 on jtagconn16 .......
+Running optimization stage 2 on test_la0 .......
+@N: CL159 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\TestProject\impl1\reveal_workspace\tmpreveal\test_la0_gen.v":53:7:53:13|Input reset_n is unused.
+@N: CL159 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\TestProject\impl1\reveal_workspace\tmpreveal\test_la0_gen.v":65:7:65:16|Input trigger_en is unused.
+Running optimization stage 2 on pmi_ram_dp_Z6 .......
+Running optimization stage 2 on rvl_tm_Z5 .......
+Running optimization stage 2 on test_la0_trig .......
+Running optimization stage 2 on rvl_tcnt_2s_3s_1_0s .......
+Running optimization stage 2 on pmi_distributed_dpram_4s_2s_2s_reg_none_binary_XP2_pmi_distributed_dpram_Z4 .......
+Running optimization stage 2 on rvl_te_Z3 .......
+Extracted state machine for register next_then_shift
+State machine has 3 reachable states with original encodings of:
+   00
+   01
+   10
+Running optimization stage 2 on pmi_ram_dp_Z2 .......
+Running optimization stage 2 on rvl_te_Z1 .......
+Running optimization stage 2 on rvl_tu_1s_0s_0s_0s_1s .......
+Running optimization stage 2 on rvl_decode_2s_2s .......
+Running optimization stage 2 on rvl_jtag_int_43s_2s_0s_0s_6s_43s_43s .......
+Running optimization stage 2 on VHI .......
+Running optimization stage 2 on UART_Packets_uniq_1 .......
+@W: CL177 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\TestProject\impl1\reveal_workspace\tmpreveal\Test_rvl.v":1072:8:1072:12|Sharing sequential element UART_TxData_tri_enable. Add a syn_preserve attribute to the element to prevent sharing.
+@W: CL177 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\TestProject\impl1\reveal_workspace\tmpreveal\Test_rvl.v":1072:8:1072:12|Sharing sequential element UART_TxData_tri_enable. Add a syn_preserve attribute to the element to prevent sharing.
+@W: CL177 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\TestProject\impl1\reveal_workspace\tmpreveal\Test_rvl.v":1072:8:1072:12|Sharing sequential element UART_TxData_tri_enable. Add a syn_preserve attribute to the element to prevent sharing.
+@W: CL177 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\TestProject\impl1\reveal_workspace\tmpreveal\Test_rvl.v":1072:8:1072:12|Sharing sequential element UART_TxData_tri_enable. Add a syn_preserve attribute to the element to prevent sharing.
+@W: CL177 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\TestProject\impl1\reveal_workspace\tmpreveal\Test_rvl.v":1072:8:1072:12|Sharing sequential element UART_TxData_tri_enable. Add a syn_preserve attribute to the element to prevent sharing.
+@W: CL177 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\TestProject\impl1\reveal_workspace\tmpreveal\Test_rvl.v":1072:8:1072:12|Sharing sequential element UART_TxData_tri_enable. Add a syn_preserve attribute to the element to prevent sharing.
+@W: CL177 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\TestProject\impl1\reveal_workspace\tmpreveal\Test_rvl.v":1072:8:1072:12|Sharing sequential element UART_TxData_tri_enable. Add a syn_preserve attribute to the element to prevent sharing.
+@N: CL201 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\TestProject\impl1\reveal_workspace\tmpreveal\Test_rvl.v":1098:4:1098:9|Trying to extract state machine for register txState.
+Extracted state machine for register txState
+State machine has 6 reachable states with original encodings of:
+   00000000000000000000000000000000
+   00000000000000000000000000000001
+   00000000000000000000000000000010
+   00000000000000000000000000000011
+   00000000000000000000000000000100
+   00000000000000000000000000000101
+@N: CL201 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\TestProject\impl1\reveal_workspace\tmpreveal\Test_rvl.v":1098:4:1098:9|Trying to extract state machine for register rxState.
+Extracted state machine for register rxState
+State machine has 5 reachable states with original encodings of:
+   00000000000000000000000000000000
+   00000000000000000000000000000001
+   00000000000000000000000000000010
+   00000000000000000000000000000011
+   00000000000000000000000000000100
+@W: CL246 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\TestProject\impl1\reveal_workspace\tmpreveal\Test_rvl.v":1055:26:1055:35|Input port bits 10 to 9 of ipTxStream[34:0] are unused. Assign logic for all port bits or change the input port size.
+Running optimization stage 2 on UART_uniq_1 .......
+@N: CL189 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\TestProject\impl1\reveal_workspace\tmpreveal\Test_rvl.v":1329:4:1329:9|Register bit rxCounter[10] is always 0.
+@N: CL189 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\TestProject\impl1\reveal_workspace\tmpreveal\Test_rvl.v":1329:4:1329:9|Register bit txCounter[10] is always 0.
+@W: CL260 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\TestProject\impl1\reveal_workspace\tmpreveal\Test_rvl.v":1329:4:1329:9|Pruning register bit 10 of txCounter[10:0]. If this is not the intended behavior, drive the input with valid values, or an input from the top level.
+@W: CL260 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\TestProject\impl1\reveal_workspace\tmpreveal\Test_rvl.v":1329:4:1329:9|Pruning register bit 10 of rxCounter[10:0]. If this is not the intended behavior, drive the input with valid values, or an input from the top level.
+@N: CL189 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\TestProject\impl1\reveal_workspace\tmpreveal\Test_rvl.v":1329:4:1329:9|Register bit rxCounter[9] is always 0.
+@N: CL189 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\TestProject\impl1\reveal_workspace\tmpreveal\Test_rvl.v":1329:4:1329:9|Register bit txCounter[9] is always 0.
+@W: CL260 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\TestProject\impl1\reveal_workspace\tmpreveal\Test_rvl.v":1329:4:1329:9|Pruning register bit 9 of txCounter[9:0]. If this is not the intended behavior, drive the input with valid values, or an input from the top level.
+@W: CL260 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\TestProject\impl1\reveal_workspace\tmpreveal\Test_rvl.v":1329:4:1329:9|Pruning register bit 9 of rxCounter[9:0]. If this is not the intended behavior, drive the input with valid values, or an input from the top level.
+@N: CL201 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\TestProject\impl1\reveal_workspace\tmpreveal\Test_rvl.v":1329:4:1329:9|Trying to extract state machine for register txState.
+Extracted state machine for register txState
+State machine has 2 reachable states with original encodings of:
+   00000000000000000000000000000000
+   00000000000000000000000000000001
+Running optimization stage 2 on Registers_uniq_1 .......
+@W: CL246 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\TestProject\impl1\reveal_workspace\tmpreveal\Test_rvl.v":1009:17:1009:24|Input port bits 31 to 8 of ipWrData[31:0] are unused. Assign logic for all port bits or change the input port size.
+Running optimization stage 2 on ReadController_uniq_1 .......
+@N: CL201 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\TestProject\impl1\reveal_workspace\tmpreveal\Test_rvl.v":915:4:915:9|Trying to extract state machine for register state.
+Extracted state machine for register state
+State machine has 2 reachable states with original encodings of:
+   00000000000000000000000000000000
+   00000000000000000000000000000001
+@W: CL246 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\TestProject\impl1\reveal_workspace\tmpreveal\Test_rvl.v":901:22:901:31|Input port bits 18 to 9 of ipRxStream[34:0] are unused. Assign logic for all port bits or change the input port size.
+Running optimization stage 2 on WriteController_uniq_1 .......
+@N: CL189 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\TestProject\impl1\reveal_workspace\tmpreveal\Test_rvl.v":837:4:837:9|Register bit dataLength[3] is always 0.
+@W: CL260 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\TestProject\impl1\reveal_workspace\tmpreveal\Test_rvl.v":837:4:837:9|Pruning register bit 3 of dataLength[3:0]. If this is not the intended behavior, drive the input with valid values, or an input from the top level.
+@N: CL201 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\TestProject\impl1\reveal_workspace\tmpreveal\Test_rvl.v":837:4:837:9|Trying to extract state machine for register state.
+Extracted state machine for register state
+State machine has 2 reachable states with original encodings of:
+   00000000000000000000000000000000
+   00000000000000000000000000000001
+@W: CL246 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\TestProject\impl1\reveal_workspace\tmpreveal\Test_rvl.v":828:22:828:31|Input port bits 26 to 11 of ipRxStream[34:0] are unused. Assign logic for all port bits or change the input port size.
+
+For a summary of runtime and memory usage per design unit, please see file:
+==========================================================
+@L: C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\TestProject\impl1\synwork\layer0.rt.csv
+

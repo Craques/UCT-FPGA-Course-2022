@@ -1,0 +1,375 @@
+# Thu Jul 14 12:49:58 2022
+
+
+Copyright (C) 1994-2020 Synopsys, Inc.
+This Synopsys software and all associated documentation are proprietary to Synopsys, Inc.
+and may only be used pursuant to the terms and conditions of a written license agreement
+with Synopsys, Inc. All other use, reproduction, modification, or distribution of the
+Synopsys software or the associated documentation is strictly prohibited.
+Tool: Synplify Pro (R)
+Build: Q-2020.03L-SP1
+Install: C:\lscc\diamond\3.12\synpbase
+OS: Windows 6.2
+
+Hostname: DESKTOP-UPLLRGT
+
+Implementation : impl1
+Synopsys Lattice Technology Pre-mapping, Version map202003lat, Build 172R, Built Nov  2 2020 09:31:45, @
+
+
+Mapper Startup Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 117MB peak: 117MB)
+
+Reading constraint file: C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\TestProject\ReadAndWrite.fdc
+@W: derive_clock_uncertainty  not supported.
+@L: C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\TestProject\impl1\ReadAnWrite_impl1_scck.rpt 
+See clock summary report "C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\TestProject\impl1\ReadAnWrite_impl1_scck.rpt"
+@N: MF916 |Option synthesis_strategy=base is enabled. 
+@N: MF248 |Running in 64-bit mode.
+@N: MF666 |Clock conversion enabled. (Command "set_option -fix_gated_and_generated_clocks 1" in the project file.)
+
+Design Input Complete (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 131MB peak: 131MB)
+
+
+Mapper Initialization Complete (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 131MB peak: 131MB)
+
+
+Start loading timing files (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 142MB peak: 142MB)
+
+
+Finished loading timing files (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 143MB peak: 144MB)
+
+@N: FX493 |Applying initial value "00" on instance edgeDetector[1:0].
+@W: FX474 |User-specified initial value defined for some sequential elements which can prevent optimum synthesis results from being achieved. 
+@A: FX681 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_rvl.v":915:4:915:9|Initial value on register dataLength[3:0] is non-zero which can prevent the register from being packed into a block RAM or DSP.
+@N: FX493 |Applying initial value "0100" on instance dataLength[3:0].
+@N: FX493 |Applying initial value "00" on instance edgeDetector[1:0].
+@N: FX493 |Applying initial value "0" on instance clockEnable.
+@A: FX681 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_rvl.v":1329:4:1329:9|Initial value on register txBitCounter[4:0] is non-zero which can prevent the register from being packed into a block RAM or DSP.
+@N: FX493 |Applying initial value "01001" on instance txBitCounter[4:0].
+@A: FX681 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_rvl.v":1329:4:1329:9|Initial value on register txCounter[8:0] is non-zero which can prevent the register from being packed into a block RAM or DSP.
+@N: FX493 |Applying initial value "110110001" on instance txCounter[8:0].
+@A: FX681 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_rvl.v":1329:4:1329:9|Initial value on register rxCounter[8:0] is non-zero which can prevent the register from being packed into a block RAM or DSP.
+@N: FX493 |Applying initial value "110110001" on instance rxCounter[8:0].
+@N: FX493 |Applying initial value "0" on instance reset.
+@W: BN117 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_la0_trig_gen.v":103:0:103:7|Instance decode_u of partition view:work.rvl_decode_2s_2s(verilog) has no references to its outputs; instance not removed. 
+@W: BN117 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_la0_trig_gen.v":117:0:117:3|Instance tu_0 of partition view:work.rvl_tu_1s_0s_0s_0s_1s(verilog) has no references to its outputs; instance not removed. 
+@W: BN117 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_la0_trig_gen.v":131:0:131:3|Instance tu_1 of partition view:work.rvl_tu_1s_0s_0s_0s_1s(verilog) has no references to its outputs; instance not removed. 
+@W: BN117 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_la0_trig_gen.v":151:0:151:3|Instance te_0 of partition view:work.rvl_te_Z1(verilog) has no references to its outputs; instance not removed. 
+@W: BN117 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_la0_trig_gen.v":188:0:188:3|Instance te_1 of partition view:work.rvl_te_Z3(verilog) has no references to its outputs; instance not removed. 
+@W: BN117 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_la0_trig_gen.v":221:0:221:5|Instance tcnt_0 of partition view:work.rvl_tcnt_2s_3s_1_0s(verilog) has no references to its outputs; instance not removed. 
+@W: BN117 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_la0_trig_gen.v":103:0:103:7|Instance decode_u of partition view:work.rvl_decode_2s_2s(verilog) has no references to its outputs; instance not removed. 
+@W: BN117 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_la0_trig_gen.v":117:0:117:3|Instance tu_0 of partition view:work.rvl_tu_1s_0s_0s_0s_1s(verilog) has no references to its outputs; instance not removed. 
+@W: BN117 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_la0_trig_gen.v":131:0:131:3|Instance tu_1 of partition view:work.rvl_tu_1s_0s_0s_0s_1s(verilog) has no references to its outputs; instance not removed. 
+@W: BN117 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_la0_trig_gen.v":151:0:151:3|Instance te_0 of partition view:work.rvl_te_Z1(verilog) has no references to its outputs; instance not removed. 
+@W: BN117 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_la0_trig_gen.v":188:0:188:3|Instance te_1 of partition view:work.rvl_te_Z3(verilog) has no references to its outputs; instance not removed. 
+@W: BN117 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_la0_trig_gen.v":221:0:221:5|Instance tcnt_0 of partition view:work.rvl_tcnt_2s_3s_1_0s(verilog) has no references to its outputs; instance not removed. 
+@W: BN117 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_la0_trig_gen.v":103:0:103:7|Instance decode_u of partition view:work.rvl_decode_2s_2s(verilog) has no references to its outputs; instance not removed. 
+@W: BN117 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_la0_trig_gen.v":117:0:117:3|Instance tu_0 of partition view:work.rvl_tu_1s_0s_0s_0s_1s(verilog) has no references to its outputs; instance not removed. 
+@W: BN117 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_la0_trig_gen.v":131:0:131:3|Instance tu_1 of partition view:work.rvl_tu_1s_0s_0s_0s_1s(verilog) has no references to its outputs; instance not removed. 
+@W: BN117 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_la0_trig_gen.v":151:0:151:3|Instance te_0 of partition view:work.rvl_te_Z1(verilog) has no references to its outputs; instance not removed. 
+@W: BN117 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_la0_trig_gen.v":188:0:188:3|Instance te_1 of partition view:work.rvl_te_Z3(verilog) has no references to its outputs; instance not removed. 
+@W: BN117 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_la0_trig_gen.v":221:0:221:5|Instance tcnt_0 of partition view:work.rvl_tcnt_2s_3s_1_0s(verilog) has no references to its outputs; instance not removed. 
+@W: BN117 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_la0_gen.v":98:0:98:9|Instance jtag_int_u of partition view:work.rvl_jtag_int_43s_2s_0s_0s_6s_43s_43s(verilog) has no references to its outputs; instance not removed. 
+@W: BN117 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_la0_gen.v":176:0:176:3|Instance tm_u of partition view:work.rvl_tm_Z5(verilog) has no references to its outputs; instance not removed. 
+@W: BN117 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_la0_gen.v":98:0:98:9|Instance jtag_int_u of partition view:work.rvl_jtag_int_43s_2s_0s_0s_6s_43s_43s(verilog) has no references to its outputs; instance not removed. 
+@W: BN117 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_la0_gen.v":176:0:176:3|Instance tm_u of partition view:work.rvl_tm_Z5(verilog) has no references to its outputs; instance not removed. 
+@W: BN117 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_la0_gen.v":98:0:98:9|Instance jtag_int_u of partition view:work.rvl_jtag_int_43s_2s_0s_0s_6s_43s_43s(verilog) has no references to its outputs; instance not removed. 
+@W: BN117 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_la0_gen.v":176:0:176:3|Instance tm_u of partition view:work.rvl_tm_Z5(verilog) has no references to its outputs; instance not removed. 
+@W: BN132 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_rvl.v":915:4:915:9|Removing sequential instance readController.opTxStream.Source_cl_7[0] because it is equivalent to instance readController.opTxStream.Source_cl_6[0]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: BN132 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_rvl.v":915:4:915:9|Removing sequential instance readController.opTxStream.Source_cl_6[0] because it is equivalent to instance readController.opTxStream.Source_cl_5[0]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: BN132 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_rvl.v":915:4:915:9|Removing sequential instance readController.opTxStream.Source_cl_5[0] because it is equivalent to instance readController.opTxStream.Source_cl_4[0]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: BN132 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_rvl.v":915:4:915:9|Removing sequential instance readController.opTxStream.Source_cl_4[0] because it is equivalent to instance readController.opTxStream.Source_cl_3[0]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: BN132 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_rvl.v":915:4:915:9|Removing sequential instance readController.opTxStream.Source_cl_3[0] because it is equivalent to instance readController.opTxStream.Source_cl_2[0]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: BN132 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_rvl.v":915:4:915:9|Removing sequential instance readController.opTxStream.Source_cl_2[0] because it is equivalent to instance readController.opTxStream.Source_cl_1[0]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: BN132 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_rvl.v":915:4:915:9|Removing sequential instance readController.opTxStream.Source_cl_1[0] because it is equivalent to instance readController.opTxStream.Source_cl[0]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: BN132 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_rvl.v":915:4:915:9|Removing sequential instance readController.opTxStream.Destination_cl_7[0] because it is equivalent to instance readController.opTxStream.Source_cl[0]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: BN132 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_rvl.v":915:4:915:9|Removing sequential instance readController.opTxStream.Destination_cl_6[0] because it is equivalent to instance readController.opTxStream.Source_cl[0]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: BN132 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_rvl.v":915:4:915:9|Removing sequential instance readController.opTxStream.Destination_cl_5[0] because it is equivalent to instance readController.opTxStream.Source_cl[0]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: BN132 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_rvl.v":915:4:915:9|Removing sequential instance readController.opTxStream.Destination_cl_4[0] because it is equivalent to instance readController.opTxStream.Source_cl[0]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: BN132 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_rvl.v":915:4:915:9|Removing sequential instance readController.opTxStream.Destination_cl_3[0] because it is equivalent to instance readController.opTxStream.Source_cl[0]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: BN132 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_rvl.v":915:4:915:9|Removing sequential instance readController.opTxStream.Destination_cl_2[0] because it is equivalent to instance readController.opTxStream.Source_cl[0]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: BN132 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_rvl.v":915:4:915:9|Removing sequential instance readController.opTxStream.Destination_cl_1[0] because it is equivalent to instance readController.opTxStream.Source_cl[0]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: BN132 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_rvl.v":915:4:915:9|Removing sequential instance readController.opTxStream.Destination_cl[0] because it is equivalent to instance readController.opTxStream.Source_cl[0]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: BN117 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_la0_trig_gen.v":103:0:103:7|Instance decode_u of partition view:work.rvl_decode_2s_2s(verilog) has no references to its outputs; instance not removed. 
+@W: BN117 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_la0_trig_gen.v":117:0:117:3|Instance tu_0 of partition view:work.rvl_tu_1s_0s_0s_0s_1s(verilog) has no references to its outputs; instance not removed. 
+@W: BN117 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_la0_trig_gen.v":131:0:131:3|Instance tu_1 of partition view:work.rvl_tu_1s_0s_0s_0s_1s(verilog) has no references to its outputs; instance not removed. 
+@W: BN117 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_la0_trig_gen.v":151:0:151:3|Instance te_0 of partition view:work.rvl_te_Z1(verilog) has no references to its outputs; instance not removed. 
+@W: BN117 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_la0_trig_gen.v":188:0:188:3|Instance te_1 of partition view:work.rvl_te_Z3(verilog) has no references to its outputs; instance not removed. 
+@W: BN117 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_la0_trig_gen.v":221:0:221:5|Instance tcnt_0 of partition view:work.rvl_tcnt_2s_3s_1_0s(verilog) has no references to its outputs; instance not removed. 
+@W: BN117 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_la0_trig_gen.v":103:0:103:7|Instance decode_u of partition view:work.rvl_decode_2s_2s(verilog) has no references to its outputs; instance not removed. 
+@W: BN117 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_la0_trig_gen.v":117:0:117:3|Instance tu_0 of partition view:work.rvl_tu_1s_0s_0s_0s_1s(verilog) has no references to its outputs; instance not removed. 
+@W: BN117 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_la0_trig_gen.v":131:0:131:3|Instance tu_1 of partition view:work.rvl_tu_1s_0s_0s_0s_1s(verilog) has no references to its outputs; instance not removed. 
+@W: BN117 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_la0_trig_gen.v":151:0:151:3|Instance te_0 of partition view:work.rvl_te_Z1(verilog) has no references to its outputs; instance not removed. 
+@W: BN117 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_la0_trig_gen.v":188:0:188:3|Instance te_1 of partition view:work.rvl_te_Z3(verilog) has no references to its outputs; instance not removed. 
+@W: BN117 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_la0_trig_gen.v":221:0:221:5|Instance tcnt_0 of partition view:work.rvl_tcnt_2s_3s_1_0s(verilog) has no references to its outputs; instance not removed. 
+@W: BN117 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_la0_trig_gen.v":103:0:103:7|Instance decode_u of partition view:work.rvl_decode_2s_2s(verilog) has no references to its outputs; instance not removed. 
+@W: BN117 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_la0_trig_gen.v":117:0:117:3|Instance tu_0 of partition view:work.rvl_tu_1s_0s_0s_0s_1s(verilog) has no references to its outputs; instance not removed. 
+@W: BN117 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_la0_trig_gen.v":131:0:131:3|Instance tu_1 of partition view:work.rvl_tu_1s_0s_0s_0s_1s(verilog) has no references to its outputs; instance not removed. 
+@W: BN117 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_la0_trig_gen.v":151:0:151:3|Instance te_0 of partition view:work.rvl_te_Z1(verilog) has no references to its outputs; instance not removed. 
+@W: BN117 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_la0_trig_gen.v":188:0:188:3|Instance te_1 of partition view:work.rvl_te_Z3(verilog) has no references to its outputs; instance not removed. 
+@W: BN117 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_la0_trig_gen.v":221:0:221:5|Instance tcnt_0 of partition view:work.rvl_tcnt_2s_3s_1_0s(verilog) has no references to its outputs; instance not removed. 
+@W: BN117 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_la0_trig_gen.v":103:0:103:7|Instance decode_u of partition view:work.rvl_decode_2s_2s(verilog) has no references to its outputs; instance not removed. 
+@W: BN117 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_la0_trig_gen.v":117:0:117:3|Instance tu_0 of partition view:work.rvl_tu_1s_0s_0s_0s_1s(verilog) has no references to its outputs; instance not removed. 
+@W: BN117 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_la0_trig_gen.v":131:0:131:3|Instance tu_1 of partition view:work.rvl_tu_1s_0s_0s_0s_1s(verilog) has no references to its outputs; instance not removed. 
+@W: BN117 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_la0_trig_gen.v":151:0:151:3|Instance te_0 of partition view:work.rvl_te_Z1(verilog) has no references to its outputs; instance not removed. 
+@W: BN117 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_la0_trig_gen.v":188:0:188:3|Instance te_1 of partition view:work.rvl_te_Z3(verilog) has no references to its outputs; instance not removed. 
+@W: BN117 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_la0_trig_gen.v":221:0:221:5|Instance tcnt_0 of partition view:work.rvl_tcnt_2s_3s_1_0s(verilog) has no references to its outputs; instance not removed. 
+@W: BN117 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_la0_trig_gen.v":103:0:103:7|Instance decode_u of partition view:work.rvl_decode_2s_2s(verilog) has no references to its outputs; instance not removed. 
+@W: BN117 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_la0_trig_gen.v":117:0:117:3|Instance tu_0 of partition view:work.rvl_tu_1s_0s_0s_0s_1s(verilog) has no references to its outputs; instance not removed. 
+@W: BN117 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_la0_trig_gen.v":131:0:131:3|Instance tu_1 of partition view:work.rvl_tu_1s_0s_0s_0s_1s(verilog) has no references to its outputs; instance not removed. 
+@W: BN117 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_la0_trig_gen.v":151:0:151:3|Instance te_0 of partition view:work.rvl_te_Z1(verilog) has no references to its outputs; instance not removed. 
+@W: BN117 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_la0_trig_gen.v":188:0:188:3|Instance te_1 of partition view:work.rvl_te_Z3(verilog) has no references to its outputs; instance not removed. 
+@W: BN117 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_la0_trig_gen.v":221:0:221:5|Instance tcnt_0 of partition view:work.rvl_tcnt_2s_3s_1_0s(verilog) has no references to its outputs; instance not removed. 
+@W: BN117 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_la0_gen.v":98:0:98:9|Instance jtag_int_u of partition view:work.rvl_jtag_int_43s_2s_0s_0s_6s_43s_43s(verilog) has no references to its outputs; instance not removed. 
+@W: BN117 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_la0_gen.v":176:0:176:3|Instance tm_u of partition view:work.rvl_tm_Z5(verilog) has no references to its outputs; instance not removed. 
+@W: BN117 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_la0_gen.v":98:0:98:9|Instance jtag_int_u of partition view:work.rvl_jtag_int_43s_2s_0s_0s_6s_43s_43s(verilog) has no references to its outputs; instance not removed. 
+@W: BN117 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_la0_gen.v":176:0:176:3|Instance tm_u of partition view:work.rvl_tm_Z5(verilog) has no references to its outputs; instance not removed. 
+@W: BN117 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_la0_gen.v":98:0:98:9|Instance jtag_int_u of partition view:work.rvl_jtag_int_43s_2s_0s_0s_6s_43s_43s(verilog) has no references to its outputs; instance not removed. 
+@W: BN117 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_la0_gen.v":176:0:176:3|Instance tm_u of partition view:work.rvl_tm_Z5(verilog) has no references to its outputs; instance not removed. 
+@W: BN117 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_la0_gen.v":98:0:98:9|Instance jtag_int_u of partition view:work.rvl_jtag_int_43s_2s_0s_0s_6s_43s_43s(verilog) has no references to its outputs; instance not removed. 
+@W: BN117 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_la0_gen.v":176:0:176:3|Instance tm_u of partition view:work.rvl_tm_Z5(verilog) has no references to its outputs; instance not removed. 
+@W: BN117 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_la0_gen.v":98:0:98:9|Instance jtag_int_u of partition view:work.rvl_jtag_int_43s_2s_0s_0s_6s_43s_43s(verilog) has no references to its outputs; instance not removed. 
+@W: BN117 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_la0_gen.v":176:0:176:3|Instance tm_u of partition view:work.rvl_tm_Z5(verilog) has no references to its outputs; instance not removed. 
+@N: BN362 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_rvl.v":837:4:837:9|Removing sequential instance opWrData_1[24] (in view: work.WriteController_uniq_1(verilog)) of type view:PrimLib.dffe(prim) because it does not drive other instances.
+@N: BN362 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_rvl.v":837:4:837:9|Removing sequential instance opWrData_1[25] (in view: work.WriteController_uniq_1(verilog)) of type view:PrimLib.dffe(prim) because it does not drive other instances.
+@N: BN362 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_rvl.v":837:4:837:9|Removing sequential instance opWrData_1[26] (in view: work.WriteController_uniq_1(verilog)) of type view:PrimLib.dffe(prim) because it does not drive other instances.
+@N: BN362 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_rvl.v":837:4:837:9|Removing sequential instance opWrData_1[27] (in view: work.WriteController_uniq_1(verilog)) of type view:PrimLib.dffe(prim) because it does not drive other instances.
+@N: BN362 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_rvl.v":837:4:837:9|Removing sequential instance opWrData_1[28] (in view: work.WriteController_uniq_1(verilog)) of type view:PrimLib.dffe(prim) because it does not drive other instances.
+@N: BN362 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_rvl.v":837:4:837:9|Removing sequential instance opWrData_1[29] (in view: work.WriteController_uniq_1(verilog)) of type view:PrimLib.dffe(prim) because it does not drive other instances.
+@N: BN362 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_rvl.v":837:4:837:9|Removing sequential instance opWrData_1[30] (in view: work.WriteController_uniq_1(verilog)) of type view:PrimLib.dffe(prim) because it does not drive other instances.
+@N: BN362 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_rvl.v":837:4:837:9|Removing sequential instance opWrData_1[31] (in view: work.WriteController_uniq_1(verilog)) of type view:PrimLib.dffe(prim) because it does not drive other instances.
+@N: BN362 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_rvl.v":837:4:837:9|Removing sequential instance opWrData_cl_13[0] (in view: work.WriteController_uniq_1(verilog)) of type view:PrimLib.sdffse(prim) because it does not drive other instances.
+@N: BN362 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_rvl.v":837:4:837:9|Removing sequential instance opWrData_cl_23[0] (in view: work.WriteController_uniq_1(verilog)) of type view:PrimLib.sdffse(prim) because it does not drive other instances.
+@N: BN362 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_rvl.v":837:4:837:9|Removing sequential instance opWrData_cl_17[0] (in view: work.WriteController_uniq_1(verilog)) of type view:PrimLib.sdffse(prim) because it does not drive other instances.
+@N: BN362 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_rvl.v":837:4:837:9|Removing sequential instance opWrData_cl_14[0] (in view: work.WriteController_uniq_1(verilog)) of type view:PrimLib.sdffse(prim) because it does not drive other instances.
+@N: BN362 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_rvl.v":837:4:837:9|Removing sequential instance opWrData_cl_11[0] (in view: work.WriteController_uniq_1(verilog)) of type view:PrimLib.sdffse(prim) because it does not drive other instances.
+@N: BN362 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_rvl.v":837:4:837:9|Removing sequential instance opWrData_cl_15[0] (in view: work.WriteController_uniq_1(verilog)) of type view:PrimLib.sdffse(prim) because it does not drive other instances.
+@N: BN362 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_rvl.v":837:4:837:9|Removing sequential instance opWrData_cl_20[0] (in view: work.WriteController_uniq_1(verilog)) of type view:PrimLib.sdffse(prim) because it does not drive other instances.
+@N: BN362 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_rvl.v":837:4:837:9|Removing sequential instance opWrData_cl_18[0] (in view: work.WriteController_uniq_1(verilog)) of type view:PrimLib.sdffse(prim) because it does not drive other instances.
+@N: BN362 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_rvl.v":837:4:837:9|Removing sequential instance opWrData_1[16] (in view: work.WriteController_uniq_1(verilog)) of type view:PrimLib.dffe(prim) because it does not drive other instances.
+@N: BN362 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_rvl.v":837:4:837:9|Removing sequential instance opWrData_1[17] (in view: work.WriteController_uniq_1(verilog)) of type view:PrimLib.dffe(prim) because it does not drive other instances.
+@N: BN362 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_rvl.v":837:4:837:9|Removing sequential instance opWrData_1[18] (in view: work.WriteController_uniq_1(verilog)) of type view:PrimLib.dffe(prim) because it does not drive other instances.
+@N: BN362 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_rvl.v":837:4:837:9|Removing sequential instance opWrData_1[19] (in view: work.WriteController_uniq_1(verilog)) of type view:PrimLib.dffe(prim) because it does not drive other instances.
+@N: BN362 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_rvl.v":837:4:837:9|Removing sequential instance opWrData_1[20] (in view: work.WriteController_uniq_1(verilog)) of type view:PrimLib.dffe(prim) because it does not drive other instances.
+@N: BN362 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_rvl.v":837:4:837:9|Removing sequential instance opWrData_1[21] (in view: work.WriteController_uniq_1(verilog)) of type view:PrimLib.dffe(prim) because it does not drive other instances.
+@N: BN362 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_rvl.v":837:4:837:9|Removing sequential instance opWrData_1[22] (in view: work.WriteController_uniq_1(verilog)) of type view:PrimLib.dffe(prim) because it does not drive other instances.
+@N: BN362 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_rvl.v":837:4:837:9|Removing sequential instance opWrData_1[23] (in view: work.WriteController_uniq_1(verilog)) of type view:PrimLib.dffe(prim) because it does not drive other instances.
+@N: BN362 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_rvl.v":837:4:837:9|Removing sequential instance opWrData_cl_21[0] (in view: work.WriteController_uniq_1(verilog)) of type view:PrimLib.sdffse(prim) because it does not drive other instances.
+@N: BN362 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_rvl.v":837:4:837:9|Removing sequential instance opWrData_cl_22[0] (in view: work.WriteController_uniq_1(verilog)) of type view:PrimLib.sdffse(prim) because it does not drive other instances.
+@N: BN362 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_rvl.v":837:4:837:9|Removing sequential instance opWrData_cl_12[0] (in view: work.WriteController_uniq_1(verilog)) of type view:PrimLib.sdffse(prim) because it does not drive other instances.
+@N: BN362 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_rvl.v":837:4:837:9|Removing sequential instance opWrData_cl_8[0] (in view: work.WriteController_uniq_1(verilog)) of type view:PrimLib.sdffse(prim) because it does not drive other instances.
+@N: BN362 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_rvl.v":837:4:837:9|Removing sequential instance opWrData_cl_19[0] (in view: work.WriteController_uniq_1(verilog)) of type view:PrimLib.sdffse(prim) because it does not drive other instances.
+@N: BN362 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_rvl.v":837:4:837:9|Removing sequential instance opWrData_cl_10[0] (in view: work.WriteController_uniq_1(verilog)) of type view:PrimLib.sdffse(prim) because it does not drive other instances.
+@N: BN362 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_rvl.v":837:4:837:9|Removing sequential instance opWrData_cl_9[0] (in view: work.WriteController_uniq_1(verilog)) of type view:PrimLib.sdffse(prim) because it does not drive other instances.
+@N: BN362 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_rvl.v":837:4:837:9|Removing sequential instance opWrData_cl_16[0] (in view: work.WriteController_uniq_1(verilog)) of type view:PrimLib.sdffse(prim) because it does not drive other instances.
+@N: BN362 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_rvl.v":837:4:837:9|Removing sequential instance opWrData_1[8] (in view: work.WriteController_uniq_1(verilog)) of type view:PrimLib.dffe(prim) because it does not drive other instances.
+@N: BN362 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_rvl.v":837:4:837:9|Removing sequential instance opWrData_1[9] (in view: work.WriteController_uniq_1(verilog)) of type view:PrimLib.dffe(prim) because it does not drive other instances.
+@N: BN362 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_rvl.v":837:4:837:9|Removing sequential instance opWrData_1[10] (in view: work.WriteController_uniq_1(verilog)) of type view:PrimLib.dffe(prim) because it does not drive other instances.
+@N: BN362 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_rvl.v":837:4:837:9|Removing sequential instance opWrData_1[11] (in view: work.WriteController_uniq_1(verilog)) of type view:PrimLib.dffe(prim) because it does not drive other instances.
+@N: BN362 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_rvl.v":837:4:837:9|Removing sequential instance opWrData_1[12] (in view: work.WriteController_uniq_1(verilog)) of type view:PrimLib.dffe(prim) because it does not drive other instances.
+@N: BN362 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_rvl.v":837:4:837:9|Removing sequential instance opWrData_1[13] (in view: work.WriteController_uniq_1(verilog)) of type view:PrimLib.dffe(prim) because it does not drive other instances.
+@N: BN362 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_rvl.v":837:4:837:9|Removing sequential instance opWrData_1[14] (in view: work.WriteController_uniq_1(verilog)) of type view:PrimLib.dffe(prim) because it does not drive other instances.
+@N: BN362 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_rvl.v":837:4:837:9|Removing sequential instance opWrData_1[15] (in view: work.WriteController_uniq_1(verilog)) of type view:PrimLib.dffe(prim) because it does not drive other instances.
+@N: BN362 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_rvl.v":837:4:837:9|Removing sequential instance opWrData_cl[0] (in view: work.WriteController_uniq_1(verilog)) of type view:PrimLib.sdffse(prim) because it does not drive other instances.
+@N: BN362 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_rvl.v":837:4:837:9|Removing sequential instance opWrData_cl_3[0] (in view: work.WriteController_uniq_1(verilog)) of type view:PrimLib.sdffse(prim) because it does not drive other instances.
+@N: BN362 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_rvl.v":837:4:837:9|Removing sequential instance opWrData_cl_2[0] (in view: work.WriteController_uniq_1(verilog)) of type view:PrimLib.sdffse(prim) because it does not drive other instances.
+@N: BN362 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_rvl.v":837:4:837:9|Removing sequential instance opWrData_cl_6[0] (in view: work.WriteController_uniq_1(verilog)) of type view:PrimLib.sdffse(prim) because it does not drive other instances.
+@N: BN362 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_rvl.v":837:4:837:9|Removing sequential instance opWrData_cl_1[0] (in view: work.WriteController_uniq_1(verilog)) of type view:PrimLib.sdffse(prim) because it does not drive other instances.
+@N: BN362 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_rvl.v":837:4:837:9|Removing sequential instance opWrData_cl_4[0] (in view: work.WriteController_uniq_1(verilog)) of type view:PrimLib.sdffse(prim) because it does not drive other instances.
+@N: BN362 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_rvl.v":837:4:837:9|Removing sequential instance opWrData_cl_7[0] (in view: work.WriteController_uniq_1(verilog)) of type view:PrimLib.sdffse(prim) because it does not drive other instances.
+@N: BN362 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_rvl.v":837:4:837:9|Removing sequential instance opWrData_cl_5[0] (in view: work.WriteController_uniq_1(verilog)) of type view:PrimLib.sdffse(prim) because it does not drive other instances.
+@W: BN117 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_la0_gen.v":98:0:98:9|Instance jtag_int_u of partition view:work.rvl_jtag_int_43s_2s_0s_0s_6s_43s_43s(verilog) has no references to its outputs; instance not removed. 
+@W: BN117 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_la0_gen.v":176:0:176:3|Instance tm_u of partition view:work.rvl_tm_Z5(verilog) has no references to its outputs; instance not removed. 
+@W: BN117 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_la0_trig_gen.v":103:0:103:7|Instance decode_u of partition view:work.rvl_decode_2s_2s(verilog) has no references to its outputs; instance not removed. 
+@W: BN117 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_la0_trig_gen.v":117:0:117:3|Instance tu_0 of partition view:work.rvl_tu_1s_0s_0s_0s_1s_1(verilog) has no references to its outputs; instance not removed. 
+@W: BN117 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_la0_trig_gen.v":131:0:131:3|Instance tu_1 of partition view:work.rvl_tu_1s_0s_0s_0s_1s_0(verilog) has no references to its outputs; instance not removed. 
+@W: BN117 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_la0_trig_gen.v":151:0:151:3|Instance te_0 of partition view:work.rvl_te_Z1(verilog) has no references to its outputs; instance not removed. 
+@W: BN117 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_la0_trig_gen.v":188:0:188:3|Instance te_1 of partition view:work.rvl_te_Z3(verilog) has no references to its outputs; instance not removed. 
+@W: BN117 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_la0_trig_gen.v":221:0:221:5|Instance tcnt_0 of partition view:work.rvl_tcnt_2s_3s_1_0s(verilog) has no references to its outputs; instance not removed. 
+@N: BN362 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_rvl.v":915:4:915:9|Removing sequential instance opTxStream\.SoP (in view: work.ReadController_uniq_1(verilog)) of type view:PrimLib.dffe(prim) because it does not drive other instances.
+@N: BN362 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_rvl.v":915:4:915:9|Removing sequential instance opTxStream\.EoP (in view: work.ReadController_uniq_1(verilog)) of type view:PrimLib.dffe(prim) because it does not drive other instances.
+@N: BN362 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_rvl.v":837:4:837:9|Removing sequential instance opWrData_cl_55[0] (in view: work.WriteController_uniq_1(verilog)) of type view:PrimLib.dff(prim) because it does not drive other instances.
+@N: BN362 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_rvl.v":837:4:837:9|Removing sequential instance opWrData_cl_54[0] (in view: work.WriteController_uniq_1(verilog)) of type view:PrimLib.dff(prim) because it does not drive other instances.
+@N: BN362 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_rvl.v":837:4:837:9|Removing sequential instance opWrData_cl_53[0] (in view: work.WriteController_uniq_1(verilog)) of type view:PrimLib.dff(prim) because it does not drive other instances.
+@N: BN362 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_rvl.v":837:4:837:9|Removing sequential instance opWrData_cl_52[0] (in view: work.WriteController_uniq_1(verilog)) of type view:PrimLib.dff(prim) because it does not drive other instances.
+@N: BN362 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_rvl.v":837:4:837:9|Removing sequential instance opWrData_cl_49[0] (in view: work.WriteController_uniq_1(verilog)) of type view:PrimLib.dff(prim) because it does not drive other instances.
+@N: BN362 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_rvl.v":837:4:837:9|Removing sequential instance opWrData_cl_47[0] (in view: work.WriteController_uniq_1(verilog)) of type view:PrimLib.dff(prim) because it does not drive other instances.
+@N: BN362 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_rvl.v":837:4:837:9|Removing sequential instance opWrData_cl_46[0] (in view: work.WriteController_uniq_1(verilog)) of type view:PrimLib.dff(prim) because it does not drive other instances.
+@N: BN362 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_rvl.v":837:4:837:9|Removing sequential instance opWrData_cl_45[0] (in view: work.WriteController_uniq_1(verilog)) of type view:PrimLib.dff(prim) because it does not drive other instances.
+@N: BN362 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_rvl.v":837:4:837:9|Removing sequential instance opWrData_cl_44[0] (in view: work.WriteController_uniq_1(verilog)) of type view:PrimLib.dff(prim) because it does not drive other instances.
+@N: BN362 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_rvl.v":837:4:837:9|Removing sequential instance opWrData_cl_43[0] (in view: work.WriteController_uniq_1(verilog)) of type view:PrimLib.dff(prim) because it does not drive other instances.
+@N: BN362 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_rvl.v":837:4:837:9|Removing sequential instance opWrData_cl_42[0] (in view: work.WriteController_uniq_1(verilog)) of type view:PrimLib.dff(prim) because it does not drive other instances.
+@N: BN362 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_rvl.v":837:4:837:9|Removing sequential instance opWrData_cl_36[0] (in view: work.WriteController_uniq_1(verilog)) of type view:PrimLib.dff(prim) because it does not drive other instances.
+@N: BN362 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_rvl.v":837:4:837:9|Removing sequential instance opWrData_cl_35[0] (in view: work.WriteController_uniq_1(verilog)) of type view:PrimLib.dff(prim) because it does not drive other instances.
+@N: BN362 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_rvl.v":837:4:837:9|Removing sequential instance opWrData_cl_34[0] (in view: work.WriteController_uniq_1(verilog)) of type view:PrimLib.dff(prim) because it does not drive other instances.
+@N: BN362 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_rvl.v":837:4:837:9|Removing sequential instance opWrData_cl_33[0] (in view: work.WriteController_uniq_1(verilog)) of type view:PrimLib.dff(prim) because it does not drive other instances.
+@N: BN362 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_rvl.v":837:4:837:9|Removing sequential instance opWrData_cl_32[0] (in view: work.WriteController_uniq_1(verilog)) of type view:PrimLib.dff(prim) because it does not drive other instances.
+@N: BN362 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_rvl.v":837:4:837:9|Removing sequential instance opWrData_cl_31[0] (in view: work.WriteController_uniq_1(verilog)) of type view:PrimLib.dff(prim) because it does not drive other instances.
+@N: BN362 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_rvl.v":837:4:837:9|Removing sequential instance opWrData_cl_30[0] (in view: work.WriteController_uniq_1(verilog)) of type view:PrimLib.dff(prim) because it does not drive other instances.
+@N: BN362 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_rvl.v":837:4:837:9|Removing sequential instance opWrData_cl_29[0] (in view: work.WriteController_uniq_1(verilog)) of type view:PrimLib.dff(prim) because it does not drive other instances.
+@N: BN362 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_rvl.v":837:4:837:9|Removing sequential instance opWrData_cl_28[0] (in view: work.WriteController_uniq_1(verilog)) of type view:PrimLib.dff(prim) because it does not drive other instances.
+@N: BN362 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_rvl.v":837:4:837:9|Removing sequential instance opWrData_cl_27[0] (in view: work.WriteController_uniq_1(verilog)) of type view:PrimLib.dff(prim) because it does not drive other instances.
+@N: BN362 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_rvl.v":837:4:837:9|Removing sequential instance opWrData_cl_26[0] (in view: work.WriteController_uniq_1(verilog)) of type view:PrimLib.dff(prim) because it does not drive other instances.
+@N: BN362 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_rvl.v":837:4:837:9|Removing sequential instance opWrData_cl_25[0] (in view: work.WriteController_uniq_1(verilog)) of type view:PrimLib.dff(prim) because it does not drive other instances.
+@N: BN362 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_rvl.v":837:4:837:9|Removing sequential instance opWrData_cl_24[0] (in view: work.WriteController_uniq_1(verilog)) of type view:PrimLib.dff(prim) because it does not drive other instances.
+@W: BN117 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_la0_gen.v":98:0:98:9|Instance jtag_int_u of partition view:work.rvl_jtag_int_43s_2s_0s_0s_6s_43s_43s(verilog) has no references to its outputs; instance not removed. 
+@W: BN117 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_la0_gen.v":176:0:176:3|Instance tm_u of partition view:work.rvl_tm_Z5(verilog) has no references to its outputs; instance not removed. 
+@W: BN117 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_la0_trig_gen.v":103:0:103:7|Instance decode_u of partition view:work.rvl_decode_2s_2s(verilog) has no references to its outputs; instance not removed. 
+@W: BN117 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_la0_trig_gen.v":117:0:117:3|Instance tu_0 of partition view:work.rvl_tu_1s_0s_0s_0s_1s_1(verilog) has no references to its outputs; instance not removed. 
+@W: BN117 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_la0_trig_gen.v":131:0:131:3|Instance tu_1 of partition view:work.rvl_tu_1s_0s_0s_0s_1s_0(verilog) has no references to its outputs; instance not removed. 
+@W: BN117 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_la0_trig_gen.v":151:0:151:3|Instance te_0 of partition view:work.rvl_te_Z1(verilog) has no references to its outputs; instance not removed. 
+@W: BN117 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_la0_trig_gen.v":188:0:188:3|Instance te_1 of partition view:work.rvl_te_Z3(verilog) has no references to its outputs; instance not removed. 
+@W: BN117 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_la0_trig_gen.v":221:0:221:5|Instance tcnt_0 of partition view:work.rvl_tcnt_2s_3s_1_0s(verilog) has no references to its outputs; instance not removed. 
+Encoding state machine state[1:0] (in view: work.WriteController_uniq_1(verilog))
+original code -> new code
+   00000000000000000000000000000000 -> 0
+   00000000000000000000000000000001 -> 1
+@N: MO225 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_rvl.v":837:4:837:9|There are no possible illegal states for state machine state[1:0] (in view: work.WriteController_uniq_1(verilog)); safe FSM implementation is not required.
+Encoding state machine state[1:0] (in view: work.ReadController_uniq_1(verilog))
+original code -> new code
+   00000000000000000000000000000000 -> 0
+   00000000000000000000000000000001 -> 1
+@N: MO225 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_rvl.v":915:4:915:9|There are no possible illegal states for state machine state[1:0] (in view: work.ReadController_uniq_1(verilog)); safe FSM implementation is not required.
+Encoding state machine txState[1:0] (in view: work.UART_uniq_1(verilog))
+original code -> new code
+   00000000000000000000000000000000 -> 0
+   00000000000000000000000000000001 -> 1
+@N: MO225 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_rvl.v":1329:4:1329:9|There are no possible illegal states for state machine txState[1:0] (in view: work.UART_uniq_1(verilog)); safe FSM implementation is not required.
+Encoding state machine txState[5:0] (in view: work.UART_Packets_uniq_1(verilog))
+original code -> new code
+   00000000000000000000000000000000 -> 000001
+   00000000000000000000000000000001 -> 000010
+   00000000000000000000000000000010 -> 000100
+   00000000000000000000000000000011 -> 001000
+   00000000000000000000000000000100 -> 010000
+   00000000000000000000000000000101 -> 100000
+@N: FX493 |Applying initial value "1" on instance txState[0].
+@N: FX493 |Applying initial value "0" on instance txState[1].
+@N: FX493 |Applying initial value "0" on instance txState[2].
+@N: FX493 |Applying initial value "0" on instance txState[3].
+@N: FX493 |Applying initial value "0" on instance txState[4].
+@N: FX493 |Applying initial value "0" on instance txState[5].
+Encoding state machine rxState[4:0] (in view: work.UART_Packets_uniq_1(verilog))
+original code -> new code
+   00000000000000000000000000000000 -> 00001
+   00000000000000000000000000000001 -> 00010
+   00000000000000000000000000000010 -> 00100
+   00000000000000000000000000000011 -> 01000
+   00000000000000000000000000000100 -> 10000
+@N: FX493 |Applying initial value "1" on instance rxState[0].
+@N: FX493 |Applying initial value "0" on instance rxState[1].
+@N: FX493 |Applying initial value "0" on instance rxState[2].
+@N: FX493 |Applying initial value "0" on instance rxState[3].
+@N: FX493 |Applying initial value "0" on instance rxState[4].
+Encoding state machine next_then_shift[2:0] (in view: work.rvl_te_Z3(verilog))
+original code -> new code
+   00 -> 00
+   01 -> 01
+   10 -> 10
+
+Starting clock optimization phase (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:02s; Memory used current: 177MB peak: 177MB)
+
+
+Finished clock optimization phase (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:02s; Memory used current: 178MB peak: 178MB)
+
+
+Starting clock optimization report phase (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:02s; Memory used current: 178MB peak: 178MB)
+
+@W: BN117 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_la0_gen.v":98:0:98:9|Instance jtag_int_u of partition view:work.rvl_jtag_int_43s_2s_0s_0s_6s_43s_43s(verilog) has no references to its outputs; instance not removed. 
+@W: BN117 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_la0_gen.v":176:0:176:3|Instance tm_u of partition view:work.rvl_tm_Z5(verilog) has no references to its outputs; instance not removed. 
+@W: BN117 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_la0_trig_gen.v":103:0:103:7|Instance decode_u of partition view:work.rvl_decode_2s_2s(verilog) has no references to its outputs; instance not removed. 
+@W: BN117 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_la0_trig_gen.v":117:0:117:3|Instance tu_0 of partition view:work.rvl_tu_1s_0s_0s_0s_1s_1(verilog) has no references to its outputs; instance not removed. 
+@W: BN117 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_la0_trig_gen.v":131:0:131:3|Instance tu_1 of partition view:work.rvl_tu_1s_0s_0s_0s_1s_0(verilog) has no references to its outputs; instance not removed. 
+@W: BN117 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_la0_trig_gen.v":151:0:151:3|Instance te_0 of partition view:work.rvl_te_Z1(verilog) has no references to its outputs; instance not removed. 
+@W: BN117 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_la0_trig_gen.v":188:0:188:3|Instance te_1 of partition view:work.rvl_te_Z3(verilog) has no references to its outputs; instance not removed. 
+@W: BN117 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_la0_trig_gen.v":221:0:221:5|Instance tcnt_0 of partition view:work.rvl_tcnt_2s_3s_1_0s(verilog) has no references to its outputs; instance not removed. 
+@W: BN117 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_la0_gen.v":98:0:98:9|Instance jtag_int_u of partition view:work.rvl_jtag_int_43s_2s_0s_0s_6s_43s_43s(verilog) has no references to its outputs; instance not removed. 
+@W: BN117 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_la0_gen.v":176:0:176:3|Instance tm_u of partition view:work.rvl_tm_Z5(verilog) has no references to its outputs; instance not removed. 
+@W: BN117 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_la0_trig_gen.v":103:0:103:7|Instance decode_u of partition view:work.rvl_decode_2s_2s(verilog) has no references to its outputs; instance not removed. 
+@W: BN117 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_la0_trig_gen.v":117:0:117:3|Instance tu_0 of partition view:work.rvl_tu_1s_0s_0s_0s_1s_1(verilog) has no references to its outputs; instance not removed. 
+@W: BN117 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_la0_trig_gen.v":131:0:131:3|Instance tu_1 of partition view:work.rvl_tu_1s_0s_0s_0s_1s_0(verilog) has no references to its outputs; instance not removed. 
+@W: BN117 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_la0_trig_gen.v":151:0:151:3|Instance te_0 of partition view:work.rvl_te_Z1(verilog) has no references to its outputs; instance not removed. 
+@W: BN117 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_la0_trig_gen.v":188:0:188:3|Instance te_1 of partition view:work.rvl_te_Z3(verilog) has no references to its outputs; instance not removed. 
+@W: BN117 :"c:\users\charles\desktop\fpga\practicals\05 - registers\testproject\impl1\reveal_workspace\tmpreveal\test_la0_trig_gen.v":221:0:221:5|Instance tcnt_0 of partition view:work.rvl_tcnt_2s_3s_1_0s(verilog) has no references to its outputs; instance not removed. 
+
+Finished clock optimization report phase (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:02s; Memory used current: 178MB peak: 178MB)
+
+@N: FX1184 |Applying syn_allowed_resources blockrams=9 on top level netlist Test 
+
+Finished netlist restructuring (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:02s; Memory used current: 178MB peak: 178MB)
+
+
+
+Clock Summary
+******************
+
+          Start                                     Requested     Requested     Clock        Clock                   Clock
+Level     Clock                                     Frequency     Period        Type         Group                   Load 
+--------------------------------------------------------------------------------------------------------------------------
+0 -       ipClk                                     50.0 MHz      20.000        declared     default_clkgroup        472  
+                                                                                                                          
+0 -       System                                    200.0 MHz     5.000         system       system_clkgroup         0    
+                                                                                                                          
+0 -       reveal_coretop|jtck_inferred_clock[0]     200.0 MHz     5.000         inferred     Inferred_clkgroup_0     262  
+==========================================================================================================================
+
+
+
+Clock Load Summary
+***********************
+
+                                          Clock     Source                                                              Clock Pin                                                              Non-clock Pin     Non-clock Pin                                                                
+Clock                                     Load      Pin                                                                 Seq Example                                                            Seq Example       Comb Example                                                                 
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ipClk                                     472       ipClk(port)                                                         readRegisters\.Buttons[3:0].C                                          -                 -                                                                            
+                                                                                                                                                                                                                                                                                              
+System                                    0         -                                                                   -                                                                      -                 -                                                                            
+                                                                                                                                                                                                                                                                                              
+reveal_coretop|jtck_inferred_clock[0]     262       Test_reveal_coretop_instance.jtagconn16_inst_0.jtck(jtagconn16)     Test_reveal_coretop_instance.test_la0_inst_0.tm_u.tm_first_rd_d1.C     -                 Test_reveal_coretop_instance.test_la0_inst_0.tm_u.genblk4\.un1_jtck.I[0](inv)
+==============================================================================================================================================================================================================================================================================================
+
+
+ICG Latch Removal Summary:
+Number of ICG latches removed: 0
+Number of ICG latches not removed:	0
+
+
+@S |Clock Optimization Summary
+
+
+
+#### START OF PREMAP CLOCK OPTIMIZATION REPORT #####[
+
+2 non-gated/non-generated clock tree(s) driving 734 clock pin(s) of sequential element(s)
+0 gated/generated clock tree(s) driving 0 clock pin(s) of sequential element(s)
+0 instances converted, 0 sequential instances remain driven by gated/generated clocks
+
+=================================================== Non-Gated/Non-Generated Clocks ====================================================
+Clock Tree ID     Driving Element                                         Drive Element Type     Fanout     Sample Instance            
+---------------------------------------------------------------------------------------------------------------------------------------
+@KP:ckid0_0       ipClk                                                   port                   472        readRegisters\.Buttons[3:0]
+@KP:ckid0_1       Test_reveal_coretop_instance.jtagconn16_inst_0.jtck     jtagconn16             262        ENCRYPTED                  
+=======================================================================================================================================
+
+
+##### END OF CLOCK OPTIMIZATION REPORT ######
+
+@N: FX1143 |Skipping assigning INTERNAL_VREF to iobanks, because the table of mapping from pin to iobank is not initialized.
+Finished Pre Mapping Phase.
+
+Starting constraint checker (Real Time elapsed 0h:00m:03s; CPU Time elapsed 0h:00m:03s; Memory used current: 178MB peak: 178MB)
+
+
+Finished constraint checker preprocessing (Real Time elapsed 0h:00m:03s; CPU Time elapsed 0h:00m:03s; Memory used current: 178MB peak: 179MB)
+
+
+Finished constraint checker (Real Time elapsed 0h:00m:03s; CPU Time elapsed 0h:00m:03s; Memory used current: 179MB peak: 179MB)
+
+Pre-mapping successful!
+
+At Mapper Exit (Real Time elapsed 0h:00m:04s; CPU Time elapsed 0h:00m:03s; Memory used current: 94MB peak: 180MB)
+
+Process took 0h:00m:04s realtime, 0h:00m:03s cputime
+# Thu Jul 14 12:50:03 2022
+
+###########################################################]

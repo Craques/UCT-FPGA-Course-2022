@@ -1,0 +1,39 @@
+@N|Running in 64-bit mode
+@N|Running in 64-bit mode
+@N: CG1349 :	| Running Verilog Compiler in System Verilog mode
+@N: CG1350 :	| Running Verilog Compiler in Multiple File Compilation Unit mode
+@N: CG364 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\TestProject\impl1\reveal_workspace\tmpreveal\Test_rvl.v":2:8:2:17|Synthesizing module Structures in library work.
+@N: CG364 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\TestProject\impl1\reveal_workspace\tmpreveal\Test_rvl.v":129:0:129:5|Synthesizing module work_C:\lscc\diamond\3.12\cae_library\synthesis\verilog\pmi_def.v_unit in library work.
+@N: CG364 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\TestProject\impl1\reveal_workspace\tmpreveal\Test_rvl.v":825:7:825:28|Synthesizing module WriteController_uniq_1 in library work.
+@N: CG364 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\TestProject\impl1\reveal_workspace\tmpreveal\Test_rvl.v":896:7:896:27|Synthesizing module ReadController_uniq_1 in library work.
+@N: CL189 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\TestProject\impl1\reveal_workspace\tmpreveal\Test_rvl.v":915:4:915:9|Register bit opTxStream.Length[0] is always 0.
+@N: CL189 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\TestProject\impl1\reveal_workspace\tmpreveal\Test_rvl.v":915:4:915:9|Register bit opTxStream.Length[1] is always 0.
+@N: CL189 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\TestProject\impl1\reveal_workspace\tmpreveal\Test_rvl.v":915:4:915:9|Register bit opTxStream.Length[2] is always 1.
+@N: CL189 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\TestProject\impl1\reveal_workspace\tmpreveal\Test_rvl.v":915:4:915:9|Register bit opTxStream.Length[3] is always 0.
+@N: CL189 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\TestProject\impl1\reveal_workspace\tmpreveal\Test_rvl.v":915:4:915:9|Register bit opTxStream.Length[4] is always 0.
+@N: CL189 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\TestProject\impl1\reveal_workspace\tmpreveal\Test_rvl.v":915:4:915:9|Register bit opTxStream.Length[5] is always 0.
+@N: CL189 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\TestProject\impl1\reveal_workspace\tmpreveal\Test_rvl.v":915:4:915:9|Register bit opTxStream.Length[6] is always 0.
+@N: CL189 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\TestProject\impl1\reveal_workspace\tmpreveal\Test_rvl.v":915:4:915:9|Register bit opTxStream.Length[7] is always 0.
+@N: CG364 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\TestProject\impl1\reveal_workspace\tmpreveal\Test_rvl.v":1003:7:1003:22|Synthesizing module Registers_uniq_1 in library work.
+@N: CG364 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\TestProject\impl1\reveal_workspace\tmpreveal\Test_rvl.v":1307:7:1307:17|Synthesizing module UART_uniq_1 in library work.
+@N: CG364 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\TestProject\impl1\reveal_workspace\tmpreveal\Test_rvl.v":1052:7:1052:25|Synthesizing module UART_Packets_uniq_1 in library work.
+@N: CG364 :"C:\lscc\diamond\3.12\synpbase\lib\lucent\xp2.v":1269:7:1269:9|Synthesizing module VHI in library work.
+@N: CG364 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\TestProject\impl1\reveal_workspace\tmpreveal\test_la0_trig_gen.v":11:7:11:19|Synthesizing module test_la0_trig in library work.
+@N: CG364 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\TestProject\impl1\reveal_workspace\tmpreveal\test_la0_gen.v":12:7:12:14|Synthesizing module test_la0 in library work.
+@N: CG364 :"C:\lscc\diamond\3.12\cae_library\synthesis\verilog\pmi_def.v":1162:7:1162:16|Synthesizing module jtagconn16 in library work.
+@N: CG364 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\TestProject\impl1\reveal_workspace\tmpreveal\Test_rvl.v":23:7:23:20|Synthesizing module reveal_coretop in library work.
+@N: CG364 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\TestProject\impl1\reveal_workspace\tmpreveal\Test_rvl.v":730:7:730:10|Synthesizing module Test in library work.
+@N: CL159 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\TestProject\impl1\reveal_workspace\tmpreveal\test_la0_gen.v":53:7:53:13|Input reset_n is unused.
+@N: CL159 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\TestProject\impl1\reveal_workspace\tmpreveal\test_la0_gen.v":65:7:65:16|Input trigger_en is unused.
+@N: CL201 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\TestProject\impl1\reveal_workspace\tmpreveal\Test_rvl.v":1098:4:1098:9|Trying to extract state machine for register txState.
+@N: CL201 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\TestProject\impl1\reveal_workspace\tmpreveal\Test_rvl.v":1098:4:1098:9|Trying to extract state machine for register rxState.
+@N: CL189 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\TestProject\impl1\reveal_workspace\tmpreveal\Test_rvl.v":1329:4:1329:9|Register bit rxCounter[10] is always 0.
+@N: CL189 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\TestProject\impl1\reveal_workspace\tmpreveal\Test_rvl.v":1329:4:1329:9|Register bit txCounter[10] is always 0.
+@N: CL189 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\TestProject\impl1\reveal_workspace\tmpreveal\Test_rvl.v":1329:4:1329:9|Register bit rxCounter[9] is always 0.
+@N: CL189 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\TestProject\impl1\reveal_workspace\tmpreveal\Test_rvl.v":1329:4:1329:9|Register bit txCounter[9] is always 0.
+@N: CL201 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\TestProject\impl1\reveal_workspace\tmpreveal\Test_rvl.v":1329:4:1329:9|Trying to extract state machine for register txState.
+@N: CL201 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\TestProject\impl1\reveal_workspace\tmpreveal\Test_rvl.v":915:4:915:9|Trying to extract state machine for register state.
+@N: CL189 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\TestProject\impl1\reveal_workspace\tmpreveal\Test_rvl.v":837:4:837:9|Register bit dataLength[3] is always 0.
+@N: CL201 :"C:\Users\charles\Desktop\fpga\Practicals\05 - Registers\TestProject\impl1\reveal_workspace\tmpreveal\Test_rvl.v":837:4:837:9|Trying to extract state machine for register state.
+@N|Running in 64-bit mode
+
