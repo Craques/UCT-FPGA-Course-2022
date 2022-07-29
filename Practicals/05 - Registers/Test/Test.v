@@ -11,6 +11,7 @@ module Test #(parameter BLOCK_WIDTH = 32) (
 );
 
   reg opTxReady;
+  wire localReset = ~ipReset;
   wire [7:0] ipAddress;
   reg opTxWrEnable;
   UART_PACKET opRxStream;
@@ -22,15 +23,11 @@ module Test #(parameter BLOCK_WIDTH = 32) (
   //need memory to communicate read and write
   reg [BLOCK_WIDTH -1:0] localWriteMemory;
   reg [BLOCK_WIDTH -1:0] localReadMemory;
-
-  always @(posedge ipClk) begin
-   readRegisters.Buttons <= ipButtons;
-  end
   
 
   WriteController writeController(
     .ipClk(ipClk),
-    .ipReset(ipReset),
+    .ipReset(localReset),
     .opAddress(ipAddress), // this will be input to the Registers module, taken from incoming stream
     .opWrData(localWriteMemory),// data from the packet that will be input to the registers module
     .ipRxStream(opRxStream), //input generated from bits
@@ -40,7 +37,7 @@ module Test #(parameter BLOCK_WIDTH = 32) (
   ReadController readController(
     .ipReadData(localReadMemory),
     .opTxStream(ipTxStream), //output will be transmitted
-    .ipReset(ipReset),
+    .ipReset(localReset),
     .ipClk(ipClk),
     .ipRxStream(opRxStream),
     .opReadAddress(ipAddress),
@@ -50,7 +47,7 @@ module Test #(parameter BLOCK_WIDTH = 32) (
 
   Registers registers(
     .ipClk(ipClk),
-    .ipReset(ipReset),
+    .ipReset(localReset),
     .ipRdRegisters(readRegisters),
     .opWrRegisters(opWrRegisters),
     .ipAddress(ipAddress),  
@@ -62,12 +59,22 @@ module Test #(parameter BLOCK_WIDTH = 32) (
  //may have to use a seperate uart to transmit data
   UART_Packets uartPackets(
     .ipClk(ipClk),
-    .ipReset(ipReset),
+    .ipReset(localReset),
     .ipTxStream(ipTxStream),
     .opTxReady(opTxReady),
     .opTx(opTx),
     .ipRx(ipRx),
     .opRxStream(opRxStream)
   );
-  assign opLEDs = opWrRegisters.LEDs;
+
+
+  always @(posedge ipClk) begin
+    if(ipReset) begin
+      readRegisters.ClockTicks <= 0;
+    end else begin
+      readRegisters.ClockTicks <=  readRegisters.ClockTicks + 1;
+      readRegisters.Buttons <= ipButtons;
+    end
+  end
+  assign opLEDs = ~opWrRegisters.LEDs;
 endmodule //Test

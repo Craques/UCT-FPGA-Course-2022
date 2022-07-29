@@ -1,7 +1,7 @@
 import Structures::*;
 
 module ReadController #(
-  parameter DATA_LENGTH = 4
+  parameter DATA_LENGTH = 5
 ) (
   input   reg [31:0]    ipReadData,
   input   reg           ipTxReady,
@@ -67,12 +67,15 @@ module ReadController #(
             state <= IDLE;
           end else begin
             case(dataLength)
-              4:begin
+              5: begin
                 opTxStream.SoP <= 1;
+                opTxStream.Data <=  opReadAddress;
+              end
+              4:begin
+               opTxStream.SoP <= 0;
                 opTxStream.Data <=  ipReadData[31:24];
               end
               3: begin
-                opTxStream.SoP <= 0;
                 opTxStream.Data <=  ipReadData[23:16];
               end
               2: begin
