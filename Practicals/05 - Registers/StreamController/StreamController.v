@@ -1,3 +1,5 @@
+import Structures::*;
+
 /*************************************************************************
  * DEPENDING ON THE GIVEN ADDRESS THIS MODULE WILL EITHER READ OR WRITE, *
  *          - DURING THE READ PROCESS WE NEED TO SEND A PACKET,          *
@@ -13,15 +15,18 @@
 
   output  UART_PACKET   opTxStream, // we will be assigning items to send here
   output  reg [7:0]     opAddress,
-  output reg [31:0]     opWriteData 
+  output  reg [31:0]    opWriteData,
+  output  reg           opWriteEnable  
  );
 
   reg [3:0] readDataLength =  4'b0100;
   //handle read first
-  typedef struct {
+  typedef enum {
     IDLE,
     SEND_READ_ADDRESS,
-    SEND_DATA
+    READ_DATA, 
+    SEND_WRITE_ADDRESS,
+    WRITE_DATA
   } State; 
 
   State state;
@@ -29,10 +34,12 @@
     if (ipReset) begin
       state <= IDLE;
       opTxStream.Valid <= 0;
+      opWriteEnable <= 0;
     end else begin
       case (state)
         IDLE: begin
-          readDataLength =  4'b0100;
+          readDataLength <=  4'b0100;
+          opWriteEnable <= 0;
           //Read transmit packet setup
           opTxStream.Source <= opTxStream.Destination;
           opTxStream.Destination <= opTxStream.Source;
@@ -40,11 +47,11 @@
           opAddress <= ipRxStream.Data;
           readDataLength <= 4;
           // Check address to verify if it is read or write
-          if(ipRxStream.Valid && ipRxStream.Sop) begin
+          if(ipRxStream.Valid && ipRxStream.SoP) begin
             case (ipRxStream.Destination)
               8'h00: state <= SEND_READ_ADDRESS;
-              8'h01:;
-              default:;
+              8'h01: state <= WRITE_DATA;
+              default: state <= state;
             endcase
           end
         end
@@ -54,11 +61,11 @@
             opTxStream.Data <= opAddress;
             opTxStream.Valid <= 1;
             opTxStream.SoP <= 1;
-            state <= SEND_DATA;
+            state <= READ_DATA;
           end
         end
         
-        SEND_DATA: begin
+        READ_DATA: begin
           if(ipTxReady) begin
             readDataLength <= readDataLength - 1;
             case (readDataLength)
@@ -73,12 +80,32 @@
               end
               4'b0001: begin
                 opTxStream.Data <= ipReadData[ (1 * 8)-1 -:8];
+                opTxStream.EoP <= 1;
               end
               default:begin
                 opTxStream.Valid <=0;
                 state <= IDLE;
-              end;
+              end
             endcase
+          end
+
+        end
+
+        SEND_WRITE_ADDRESS: begin
+          if(ipRxStream.Valid) begin 
+            opAddress <= ipRxStream.Data;
+            state <= WRITE_DATA;
+          end
+        end
+
+        WRITE_DATA: begin 
+          if (ipRxStream.Valid) begin
+            readDataLength <= readDataLength - 1;
+            opWriteData <= {ipRxStream.Data, opWriteData[31:8]};
+            if(readDataLength == 0) begin
+              state <= IDLE;
+              opWriteEnable <= 1;
+            end
           end
         end
         default:;

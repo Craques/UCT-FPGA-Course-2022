@@ -26,7 +26,7 @@ module Test_TB;
     ipClk = ~ipClk;
   end
 
-  integer n=9;
+  integer n=4;
   integer writeLength = 9;
   integer readEnable = 0;
 
@@ -90,7 +90,7 @@ module Test_TB;
  **********************************************************/
   
   always @(posedge ipClk) begin
-    if(n == -100)begin
+    if(ipTxData == ReadAddress)begin
       $stop;
     end else if(!opTxBusy && readEnable) begin
      
@@ -109,6 +109,9 @@ module Test_TB;
         end
         0: begin
           ipTxData <= ReadAddress;
+        end 
+        default: begin
+          $stop;
         end
       endcase
     end

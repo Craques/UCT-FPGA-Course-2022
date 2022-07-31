@@ -11,8 +11,8 @@ module Test #(parameter BLOCK_WIDTH = 32) (
 );
 
   reg opTxReady;
-  wire localReset = ~ipReset;
-  wire [7:0] ipAddress;
+  reg localReset = ~ipReset;
+  reg [7:0] ipAddress;
   reg opTxWrEnable;
   UART_PACKET opRxStream;
   UART_PACKET ipTxStream;
@@ -25,23 +25,18 @@ module Test #(parameter BLOCK_WIDTH = 32) (
   reg [BLOCK_WIDTH -1:0] localReadMemory;
   
 
-  WriteController writeController(
-    .ipClk(ipClk),
-    .ipReset(localReset),
-    .opAddress(ipAddress), // this will be input to the Registers module, taken from incoming stream
-    .opWrData(localWriteMemory),// data from the packet that will be input to the registers module
-    .ipRxStream(opRxStream), //input generated from bits
-    .opTxWrEnable(opTxWrEnable)
-  );
 
-  ReadController readController(
+  StreamController streamController(
     .ipReadData(localReadMemory),
-    .opTxStream(ipTxStream), //output will be transmitted
     .ipReset(localReset),
     .ipClk(ipClk),
     .ipRxStream(opRxStream),
-    .opReadAddress(ipAddress),
-    .ipTxReady(opTxReady)
+    .ipTxReady(opTxReady),
+
+    .opTxStream(ipTxStream), //output will be transmitted
+    .opAddress(ipAddress),
+    .opWriteData(localWriteMemory),
+    .opWriteEnable(opTxWrEnable)
   );
   
 
@@ -73,8 +68,9 @@ module Test #(parameter BLOCK_WIDTH = 32) (
       readRegisters.ClockTicks <= 0;
     end else begin
       readRegisters.ClockTicks <=  readRegisters.ClockTicks + 1;
-      readRegisters.Buttons <= ipButtons;
     end
   end
+
+  assign readRegisters.Buttons = ~ipButtons;
   assign opLEDs = ~opWrRegisters.LEDs;
 endmodule //Test
