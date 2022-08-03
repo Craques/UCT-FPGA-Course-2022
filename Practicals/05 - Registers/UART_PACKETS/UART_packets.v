@@ -136,23 +136,33 @@ module UART_Packets(
 				end
 
 				TX_SEND_DATA: begin
-					UART_TxData <= localTxData;
 					if(!UART_TxBusy && !UART_TxSend) begin
 						// check length
-						opTxReady <= 0;
-						localTxData <= ipTxStream.Data;
+						UART_TxData <= localTxData;
 						UART_TxSend <= 1;
+
+						if(localTxLength != 1) begin
+							opTxReady <= 1;
+							txState <= TX_WAIT_FOR_DATA;
+						end
 					end else if(UART_TxBusy && UART_TxSend) begin
 						UART_TxSend <= 0;
-						opTxReady <= 0;
-						if (localTxLength == 0) begin
+						if (localTxLength == 1) begin
 							txState <= TX_IDLE;
 						end else begin
 							localTxLength <= localTxLength - 1;
-							opTxReady <=1;
 						end
 					end
 				end
+
+				TX_WAIT_FOR_DATA: begin
+					if(ipTxStream.Valid) begin
+						localTxData <= ipTxStream.Data;
+						opTxReady <= 0;
+						txState <= TX_SEND_DATA;
+					end
+				end	
+
 				default: txState <= TX_IDLE;
 			endcase
 
