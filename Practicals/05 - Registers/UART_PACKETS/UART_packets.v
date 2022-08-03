@@ -35,7 +35,8 @@ module UART_Packets(
 		TX_SEND_DESTINATION,
 		TX_SEND_SOURCE,
 		TX_SEND_LENGTH,
-		TX_SEND_DATA, 
+		TX_SEND_DATA,
+		TX_WAIT_FOR_DATA, 
 		TX_BUSY, 
 		TX_FINISHED
 	} TxState;
@@ -80,28 +81,22 @@ module UART_Packets(
 		end else begin
 			case(txState)
 				TX_IDLE: begin
-					if(!UART_TxBusy && !UART_TxSend) begin
-						opTxReady <= 1;
-					end
-					
-					if (ipTxStream.Valid && !UART_TxBusy) begin
+					if (ipTxStream.Valid && ipTxStream.SoP) begin
 						locaTxDestination <= ipTxStream.Destination;
 						localTxLength <= ipTxStream.Length;
 						localTxSource <= ipTxStream.Source;
 						localTxData <= ipTxStream.Data;
-						UART_TxSend <= 1;
 						opTxReady <= 0;
 						txState <= TX_SEND_SYNC;
 					end else begin
-						if(UART_TxBusy) begin
-							UART_TxSend <= 0;
-						end
+						UART_TxSend <= 0;
+						opTxReady <= 1;
 					end
 				end
 
 				TX_SEND_SYNC: begin
-					UART_TxData <= 8'h55;
 					if ( !UART_TxBusy && !UART_TxSend) begin
+						UART_TxData <= 8'h55;
 						UART_TxSend <= 1;
 					end else if(UART_TxSend && UART_TxBusy) begin
 						txState <= TX_SEND_DESTINATION;
@@ -110,8 +105,8 @@ module UART_Packets(
 				end
 
 				TX_SEND_DESTINATION: begin
-					UART_TxData <= locaTxDestination;
 					if ( !UART_TxBusy && !UART_TxSend) begin
+						UART_TxData <= locaTxDestination;
 						UART_TxSend <= 1;
 					end else if(UART_TxBusy && UART_TxSend)begin
 						txState <= TX_SEND_SOURCE;
@@ -120,8 +115,8 @@ module UART_Packets(
 				end
 
 				TX_SEND_SOURCE: begin
-					UART_TxData <= localTxSource;
 					if (!UART_TxBusy && !UART_TxSend) begin
+						UART_TxData <= localTxSource;
 						UART_TxSend <= 1;
 					end else if(UART_TxBusy && UART_TxSend)begin
 						txState <= TX_SEND_LENGTH;
@@ -131,8 +126,8 @@ module UART_Packets(
 
 				TX_SEND_LENGTH: begin
 					
-					UART_TxData <= localTxLength;
 					if (!UART_TxBusy && !UART_TxSend) begin
+						UART_TxData <= localTxLength;
 						UART_TxSend <= 1;
 					end else if(UART_TxBusy && UART_TxSend)begin
 						txState <= TX_SEND_DATA;

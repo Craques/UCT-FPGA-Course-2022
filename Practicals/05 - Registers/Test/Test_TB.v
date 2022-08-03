@@ -37,12 +37,6 @@ module Test_TB;
     end
   end
 
-  always @(posedge opTxBusy) begin
-     if(readEnable) begin
-       n <= n -1;
-     end
-  end
-
 
 /**********************************************************
  * THIS SECTION WILL CONTAIN THE LOGIC TO WRITE TO MEMORY *
@@ -50,7 +44,7 @@ module Test_TB;
 
  always @(posedge ipClk) begin
     if(writeLength == -1)begin
-      #50 readEnable <=1;
+     
     end else if(!opTxBusy) begin
      
       case (writeLength)
@@ -80,6 +74,7 @@ module Test_TB;
         end
         0: begin
           ipTxData <= 8'h06;
+          #50 readEnable <=1;
         end
       endcase
     end
@@ -90,10 +85,10 @@ module Test_TB;
  **********************************************************/
   
   always @(posedge ipClk) begin
-    if(ipTxData == ReadAddress)begin
-      $stop;
-    end else if(!opTxBusy && readEnable) begin
-     
+
+    
+    if(!opTxBusy && readEnable) begin
+       n <= n -1;
       case (n)
         4: begin
           ipTxData <= SYNC;

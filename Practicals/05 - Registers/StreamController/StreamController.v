@@ -41,9 +41,7 @@ import Structures::*;
           readDataLength <=  4'b0100;
           opWriteEnable <= 0;
           //Read transmit packet setup
-          opTxStream.Source <= opTxStream.Destination;
-          opTxStream.Destination <= opTxStream.Source;
-          opTxStream.Length <= 5;
+         
           opAddress <= ipRxStream.Data;
           readDataLength <= 4;
           // Check address to verify if it is read or write
@@ -58,6 +56,9 @@ import Structures::*;
 
         SEND_READ_ADDRESS: begin
           if (ipTxReady) begin
+            opTxStream.Source <= ipRxStream.Destination;
+            opTxStream.Destination <= ipRxStream.Source;
+            opTxStream.Length <= 5;
             opTxStream.Data <= opAddress;
             opTxStream.Valid <= 1;
             opTxStream.SoP <= 1;
