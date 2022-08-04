@@ -22,7 +22,7 @@ with serial.Serial(port='COM9', baudrate=115200) as s:
     for n in range(500):
         print(Read(s, Buttons))
         Time = Read(s, ClockTicks)
-        # Write(s, LEDs, Time >> 23)
+        Write(s, LEDs, Time >> 23)
 
         print(Time >> 23)
         sys.stdout.flush()

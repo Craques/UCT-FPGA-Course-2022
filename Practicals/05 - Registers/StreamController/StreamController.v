@@ -20,6 +20,7 @@ import Structures::*;
  );
 
   reg [3:0] readDataLength =  4'b0100;
+  reg [3:0] writeDataLength = 4'b0100;
   //handle read first
   typedef enum {
     IDLE,
@@ -39,6 +40,7 @@ import Structures::*;
       case (state)
         IDLE: begin
           readDataLength <=  4'b0100;
+          writeDataLength <= 4'b0100;
           opWriteEnable <= 0;
           //Read transmit packet setup
          
@@ -48,7 +50,7 @@ import Structures::*;
           if(ipRxStream.Valid && ipRxStream.SoP) begin
             case (ipRxStream.Destination)
               8'h00: state <= SEND_READ_ADDRESS;
-              8'h01: state <= WRITE_DATA;
+              8'h01: state <= SEND_WRITE_ADDRESS;
               default: state <= state;
             endcase
           end
@@ -101,11 +103,12 @@ import Structures::*;
 
         WRITE_DATA: begin 
           if (ipRxStream.Valid) begin
-            readDataLength <= readDataLength - 1;
             opWriteData <= {ipRxStream.Data, opWriteData[31:8]};
-            if(readDataLength == 0) begin
+            if(writeDataLength == 1) begin
               state <= IDLE;
               opWriteEnable <= 1;
+            end else begin
+              writeDataLength <= writeDataLength - 1;
             end
           end
         end
