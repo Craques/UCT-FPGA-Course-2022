@@ -171,43 +171,61 @@ module UART_Packets(
 			// TODO: Implement the Rx stream
 			//------------------------------------------------------------------------------
 			if (UART_RxValid) begin
+				if (reset) begin
+					opRxStream.Valid <= 0;
+				end else begin		
+					case (rxState)
+						RX_IDLE: begin
+							opRxStream.EoP <= 0;
+							opRxStream.SoP <= 0;
+							opRxStream.EoP <= 0;
+							if (UART_RxValid &&  UART_RX_DATA == 8'h55  ) begin
+								opRxStream.SoP <= 1;
+								rxState <= RX_GET_DESTINATION;
+							end
+						end
+						RX_GET_DESTINATION: begin
+							if (UART_RxValid) begin
+								opRxStream.Destination <= UART_RX_DATA;
+								rxState <= RX_GET_SOURCE;
+							end
+						end
+						RX_GET_SOURCE: begin
+							if (UART_RxValid) begin
+								opRxStream.Source <= UART_RX_DATA;
+								rxState <= RX_GET_LENGTH;
+							end
+						end
+						RX_GET_LENGTH: begin
+							if (UART_RxValid) begin
+								receiveDataLength <= UART_RX_DATA;
+								opRxStream.Length <= UART_RX_DATA;
+								opRxStream.SoP <= 1;
+								rxState <= RX_GET_DATA;
 
-				case (rxState)
-					RX_IDLE: begin
-						opRxStream.EoP <= 0;
-						if ( UART_RX_DATA == 8'h55  ) begin
-							opRxStream.SoP <= 1;
-							rxState <= RX_GET_DESTINATION;
+							end
 						end
-					end
-					RX_GET_DESTINATION: begin
-						opRxStream.Destination <= UART_RX_DATA;
-						rxState <= RX_GET_SOURCE;
-					end
-					RX_GET_SOURCE: begin
-						opRxStream.Source <= UART_RX_DATA;
-						rxState <= RX_GET_LENGTH;
-					end
-					RX_GET_LENGTH: begin
-						receiveDataLength <= UART_RX_DATA;
-						opRxStream.Length <= UART_RX_DATA;
-						rxState <= RX_GET_DATA;
-					end
-					RX_GET_DATA: begin
-						opRxStream.Data <= UART_RX_DATA;
-						opRxStream.Valid <= 1;
-						//check length
-						if (receiveDataLength == 1) begin
-							opRxStream.EoP <= 1;	
-							rxState <= RX_IDLE;	
+						RX_GET_DATA: begin
+							opRxStream.Data <= UART_RX_DATA;
+							opRxStream.Valid <= UART_RxValid;
+
+							if (opRxStream.Valid) begin
+								opRxStream.SoP <= 0;
+							end
+							//check length
+							if (UART_RxValid) begin	
+								if (receiveDataLength == 1) begin
+									opRxStream.EoP <= 1;	
+									rxState <= RX_IDLE;	
+								end
+							end else begin
+								receiveDataLength <= receiveDataLength - 1;
+							end
+
 						end
-						receiveDataLength <= receiveDataLength - 1;
-					end
-				endcase
-			end else if(opRxStream.Valid)begin
-				opRxStream.SoP <= 0;
-				opRxStream.Valid <= 0;
-			end
+					endcase
+				end
+			end 
 		end
 	end
 endmodule   
