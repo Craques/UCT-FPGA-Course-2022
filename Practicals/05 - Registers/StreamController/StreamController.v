@@ -26,7 +26,6 @@ import Structures::*;
     IDLE,
     SEND_READ_ADDRESS,
     READ_DATA, 
-    SEND_WRITE_ADDRESS,
     WRITE_DATA
   } State; 
 
@@ -48,9 +47,11 @@ import Structures::*;
           readDataLength <= 4;
           // Check address to verify if it is read or write
           if(ipRxStream.Valid && ipRxStream.SoP) begin
+            opTxStream.Source <= ipRxStream.Destination;
+            opTxStream.Destination <= ipRxStream.Source;
             case (ipRxStream.Destination)
               8'h00: state <= SEND_READ_ADDRESS;
-              8'h01: state <= SEND_WRITE_ADDRESS;
+              8'h01: state <= WRITE_DATA;
               default: state <= state;
             endcase
           end
@@ -58,8 +59,6 @@ import Structures::*;
 
         SEND_READ_ADDRESS: begin
           if (ipTxReady) begin
-            opTxStream.Source <= ipRxStream.Destination;
-            opTxStream.Destination <= ipRxStream.Source;
             opTxStream.Length <= 5;
             opTxStream.Data <= opAddress;
             opTxStream.Valid <= 1;
@@ -73,16 +72,16 @@ import Structures::*;
             readDataLength <= readDataLength - 1;
             case (readDataLength)
               4'b0100: begin
-                opTxStream.Data <= ipReadData[ (4 * 8)-1 -:8];
+                opTxStream.Data <= ipReadData[ (1 * 8)-1 -:8];
               end
               4'b0011: begin
-                opTxStream.Data <= ipReadData[ (3 * 8)-1 -:8];
-              end
-              4'b0010: begin
                 opTxStream.Data <= ipReadData[ (2 * 8)-1 -:8];
               end
+              4'b0010: begin
+                opTxStream.Data <= ipReadData[ (3 * 8)-1 -:8];
+              end
               4'b0001: begin
-                opTxStream.Data <= ipReadData[ (1 * 8)-1 -:8];
+                opTxStream.Data <= ipReadData[ (4 * 8)-1 -:8];
                 opTxStream.EoP <= 1;
               end
               default:begin
@@ -94,17 +93,10 @@ import Structures::*;
 
         end
 
-        SEND_WRITE_ADDRESS: begin
-          if(ipRxStream.Valid) begin 
-            opAddress <= ipRxStream.Data;
-            state <= WRITE_DATA;
-          end
-        end
-
         WRITE_DATA: begin 
           if (ipRxStream.Valid) begin
             opWriteData <= {ipRxStream.Data, opWriteData[31:8]};
-            if(writeDataLength == 1) begin
+            if(writeDataLength == 1 || ipRxStream.EoP) begin
               state <= IDLE;
               opWriteEnable <= 1;
             end else begin
