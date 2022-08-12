@@ -64,7 +64,7 @@ module Test #(parameter BLOCK_WIDTH = 32) (
 
 
   always @(posedge ipClk) begin
-    if(ipReset) begin
+    if(localReset) begin
       readRegisters.ClockTicks <= 0;
     end else begin
       readRegisters.ClockTicks <=  readRegisters.ClockTicks + 1;
