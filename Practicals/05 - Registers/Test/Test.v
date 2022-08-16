@@ -1,12 +1,18 @@
+import Structures::*;
+
 module Test #(parameter BLOCK_WIDTH = 32) (
-  input ipClk,
-  input ipReset,
-  input ipRx,
-  output opTx
+  input  ipClk,
+  input  ipReset,
+  input  ipRx,
+  input [3:0] ipButtons,
+
+  output opTx,
+  output  [7:0] opLEDs
 );
 
   reg opTxReady;
-  reg [7:0] ipAddress; 
+  reg localReset = ~ipReset;
+  reg [7:0] ipAddress;
   reg opTxWrEnable;
   UART_PACKET opRxStream;
   UART_PACKET ipTxStream;
@@ -15,37 +21,40 @@ module Test #(parameter BLOCK_WIDTH = 32) (
   WR_REGISTERS opWrRegisters;
 
   //need memory to communicate read and write
-  reg [BLOCK_WIDTH -1:0] ipWrData;
+  reg [BLOCK_WIDTH -1:0] localWriteMemory;
   reg [BLOCK_WIDTH -1:0] localReadMemory;
-  reg opTxWrEnable;
+  
 
 
-  TransmitController txController(
+  StreamController streamController(
+    .ipReadData(localReadMemory),
+    .ipReset(localReset),
     .ipClk(ipClk),
-    .ipReset(ipReset),
-    .opWrRegisters(opWrRegisters),
-    .opAddress(ipAddress), // this will be input to the Registers module, taken from incoming stream
-    .opWrData(ipWrData),// data from the packet that will be input to the registers module
-    .ipTxReady(opTxReady), // will use this to gate on the ready of the packet module
-    .ipTxStream(ipTxStream),
-    .opTxWrEnable(opTxWrEnable)
-  )
+    .ipRxStream(opRxStream),
+    .ipTxReady(opTxReady),
+
+    .opTxStream(ipTxStream), //output will be transmitted
+    .opAddress(ipAddress),
+    .opWriteData(localWriteMemory),
+    .opWriteEnable(opTxWrEnable)
+  );
   
 
   Registers registers(
     .ipClk(ipClk),
-    .ipReset(ipReset),
+    .ipReset(localReset),
     .ipRdRegisters(readRegisters),
     .opWrRegisters(opWrRegisters),
-    .ipAddress(ipAddress), 
-    .ipWrData(ipWrData),
+    .ipAddress(ipAddress),  
+    .ipWrData(localWriteMemory),
     .ipWrEnable(opTxWrEnable),
     .opRdData(localReadMemory)
   );
 
+ //may have to use a seperate uart to transmit data
   UART_Packets uartPackets(
     .ipClk(ipClk),
-    .ipReset(ipReset),
+    .ipReset(localReset),
     .ipTxStream(ipTxStream),
     .opTxReady(opTxReady),
     .opTx(opTx),
@@ -54,4 +63,14 @@ module Test #(parameter BLOCK_WIDTH = 32) (
   );
 
 
+  always @(posedge ipClk) begin
+    if(localReset) begin
+      readRegisters.ClockTicks <= 0;
+    end else begin
+      readRegisters.ClockTicks <=  readRegisters.ClockTicks + 1;
+    end
+  end
+
+  assign readRegisters.Buttons = ~ipButtons;
+  assign opLEDs = ~opWrRegisters.LEDs;
 endmodule //Test

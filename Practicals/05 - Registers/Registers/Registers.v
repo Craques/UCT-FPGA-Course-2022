@@ -12,7 +12,6 @@ module Registers(
 
   input  RD_REGISTERS ipRdRegisters,
   output WR_REGISTERS opWrRegisters,
-
   input         [ 7:0]ipAddress,
   input         [31:0]ipWrData,
   input               ipWrEnable,

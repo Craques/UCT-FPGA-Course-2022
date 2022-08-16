@@ -20,8 +20,8 @@ module UART #(parameter WIDTH =8, parameter CLOCK_DIV = 434) (
   input           ipClk,
   input           ipReset,
 
-  input      [7:0] ipTxData,
-  input           ipTxSend,
+  input   [7:0] 	ipTxData,
+  input          	ipTxSend,
   output reg      opTxBusy,
   output reg      opTx,
 
@@ -60,7 +60,10 @@ module UART #(parameter WIDTH =8, parameter CLOCK_DIV = 434) (
 			clockEnable <= 0;
 			txState <= IDLE;
 			opTx <=1;
+			opTxBusy <= 0;
+			opRxValid <= 0;
 			localRxData <= 10'h3FF;
+			opRxData <= 8'bz;
 		end else begin	
 			if(txCounter == 0)begin
 				txCounter <= CLOCK_DIV - 1;
