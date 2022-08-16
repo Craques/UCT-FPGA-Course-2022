@@ -184,6 +184,7 @@ module UART_Packets(
 					opRxStream.EoP <= 0;
 					opRxStream.SoP <= 0;
 					opRxStream.EoP <= 0;
+					opRxStream.Valid <= 0;
 					if (UART_RxValid &&  UART_RX_DATA == 8'h55  ) begin
 						rxState <= RX_GET_DESTINATION;
 					end
@@ -208,13 +209,13 @@ module UART_Packets(
 					end
 				end
 				RX_GET_DATA: begin
-					opRxStream.Data <= opRxStream.SoP;
+					opRxStream.Data <= UART_RX_DATA;
 					opRxStream.Valid <= UART_RxValid;
 
 					if (opRxStream.Length == receiveDataLength) begin
 						opRxStream.SoP <= 1;
 					end else begin
-						opRxStream.SoP <= 0;
+						opRxStream.EoP <= 0;
 					end
 
 					if (UART_RxValid) begin	
